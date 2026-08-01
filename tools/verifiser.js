@@ -57,8 +57,14 @@ const legg = (alvor, hva) => funn.push(`${alvor} ${hva}`);
 // så de får en id med seg.
 const NYTTELAST = { oppskrift: 'r-01', notat: 'n-01' };
 
-const SKJERMER = await page.evaluate(() =>
+const DOM_SKJERMER = await page.evaluate(() =>
   [...document.querySelectorAll('.screen')].map(s => s.id.replace(/^s-/, '')));
+const ONBOARDING_RUTER = [
+  'onboarding-navn','onboarding-hverdag','onboarding-mal','onboarding-interesser',
+  'onboarding-preferanser','onboarding-hensyn','onboarding-barrierer',
+  'onboarding-laeringsform','onboarding-tid','onboarding-generering','onboarding-klar'
+];
+const SKJERMER = [...DOM_SKJERMER.filter(n => n !== 'onboarding-steg'), ...ONBOARDING_RUTER];
 
 const rapport = [];
 for (const navn of SKJERMER) {
@@ -75,7 +81,8 @@ for (const navn of SKJERMER) {
     const v = [...document.querySelectorAll('.screen')].filter(s => !s.hidden);
     return v.length === 1 ? v[0].id.replace(/^s-/, '') : null;
   });
-  if (landet !== navn) {
+  const forventet = navn.startsWith('onboarding-') ? 'onboarding-steg' : navn;
+  if (landet !== forventet) {
     legg('✗', `${navn}: deeplink landet på «${landet}»`);
     continue;
   }
