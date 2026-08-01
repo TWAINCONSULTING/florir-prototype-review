@@ -11,7 +11,7 @@ Botanical-versjonen.
 - `review/wireframes.html` — samlet wireframebrett
 - `review/screens.csv` — Notion-klart skjermmanifest
 - `screens/` — mobilbilder for hovedskjermer, onboarding og designsystem
-- `assets/ingredients/` — 50 transparente ingrediensbilder
+- `assets/ingredients/` — 51 transparente ingrediensbilder
 - `tools/remove_chroma_key.py` — normalisering til transparent 256 × 256 PNG
 
 ## Deling

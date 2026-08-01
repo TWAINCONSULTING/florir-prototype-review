@@ -31,6 +31,7 @@ kiwi,kiwi.png,verified,2026-07-31,OpenAI imagegen,reconstructed-template
 mango,mango.png,verified,2026-07-31,OpenAI imagegen,reconstructed-template
 milk,milk.png,verified,2026-07-30,OpenAI imagegen,historical-prompt-missing
 nutmeg,nutmeg.png,verified,2026-07-31,OpenAI imagegen,reconstructed-template
+oil,oil.png,verified,2026-08-01,OpenAI imagegen,florir-ui-fixes-iteration
 oats,oats.png,verified,2026-07-30,OpenAI imagegen,historical-prompt-missing
 peach,peach.png,verified,2026-07-31,OpenAI imagegen,reconstructed-template
 peanut-butter,peanut-butter.png,verified,2026-07-31,OpenAI imagegen,reconstructed-template
@@ -49,4 +50,3 @@ vegetable-mix,vegetable-mix.png,verified,2026-07-31,OpenAI imagegen,reconstructe
 walnuts,walnuts.png,verified,2026-07-31,OpenAI imagegen,reconstructed-template
 water,water.png,verified,2026-07-30,OpenAI imagegen,historical-prompt-missing
 yogurt,yogurt.png,verified,2026-07-31,OpenAI imagegen,reconstructed-template
-
