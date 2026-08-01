@@ -1,7 +1,8 @@
 # Florir · delingspakke
 
 Statisk, selvstendig reviewleveranse for Botanical-versjonen av Florir.
-Reviewrunde 1C.0 utvider pakken med komplett onboarding og designsystemreview.
+Reviewpakken inkluderer komplett onboarding og designsystemreview i den samme
+Botanical-versjonen.
 
 ## Innhold
 
@@ -9,7 +10,7 @@ Reviewrunde 1C.0 utvider pakken med komplett onboarding og designsystemreview.
 - `review/index.html` — skjermoversikt med stabile skjermnøkler
 - `review/wireframes.html` — samlet wireframebrett
 - `review/screens.csv` — Notion-klart skjermmanifest
-- `screens/` — 21 mobilbilder fra fase 1B og 15 oppdaterte/nyere bilder fra 1C.0
+- `screens/` — mobilbilder for hovedskjermer, onboarding og designsystem
 - `assets/ingredients/` — 50 transparente ingrediensbilder
 - `tools/remove_chroma_key.py` — normalisering til transparent 256 × 256 PNG
 

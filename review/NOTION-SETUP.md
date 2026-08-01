@@ -1,20 +1,8 @@
 # Notion-oppsett · Florir skjermreview
 
-## Historikkmodell fra 1C.0
-
-- `Florir — Skjermer` — én stabil rad per skjermidentitet.
-- `Florir — App-versjoner` — én rad per reviewbar milepæl.
-- `Florir — Skjermversjoner` — én rad per kombinasjon av skjerm og appversjon.
-
-Den opprinnelige `Florir App Review` beholdes urørt som 1B.1-arkiv, slik at
-tidligere feedback ikke blir overskrevet. 1C.0-kortene opprettes i den nye
-skjermversjonsdatabasen og relateres til både skjerm og appversjon.
-
-Obligatoriske visninger er `Skjermhistorikk`, `Gjeldende versjon`,
-`Appversjon` og `Endringer siden sist`.
-
-Bruk én rad per stabil skjerm. F-numrene er reviewreferanser og skal ikke
-brukes som permanente primærnøkler.
+Alle reviewkort ligger i den eksisterende databasen `Florir App Review`.
+Det er én aktiv Botanical-versjon, og eksisterende kort og tilbakemeldinger
+beholdes når nye reviewflater legges til.
 
 - Klikkbar prototype: https://twainconsulting.github.io/florir-prototype-review/
 - Review-galleri: https://twainconsulting.github.io/florir-prototype-review/review/
