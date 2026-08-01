@@ -3,6 +3,11 @@
 Bruk én rad per stabil skjerm. F-numrene er reviewreferanser og skal ikke
 brukes som permanente primærnøkler.
 
+- Klikkbar prototype: https://twainconsulting.github.io/florir-prototype-review/
+- Review-galleri: https://twainconsulting.github.io/florir-prototype-review/review/
+- Wireframe-brett: https://twainconsulting.github.io/florir-prototype-review/review/wireframes.html
+- Importmanifest: `screens.csv` (inkluderer endelige prototype- og bilde-URL-er)
+
 ## Egenskaper
 
 - `Skjerm` — title
@@ -60,4 +65,3 @@ Skriv her.
 2. `Til review` — gallery filtrert på `Klar for review`.
 3. `Reviewstatus` — board gruppert på `Status`.
 4. `Endringslogg` — table sortert på `Reviewdato` synkende.
-
