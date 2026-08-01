@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#FBFCF9">
+<title>Florir · skjermreview</title>
+<style>
+:root{
+  color-scheme:light;
+  --canvas:#FBFCF9;--surface:#F3F7F2;--raised:#fff;--text:#1C241F;
+  --muted:#687269;--border:#DDE5DE;--primary:#3F7D61;--pressed:#2E6249;
+  --soft:#E5F0E9;--shadow:0 16px 44px rgba(28,36,31,.08);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1240px,calc(100% - 40px));margin:0 auto;padding:56px 0 88px}
+header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;
+  padding-bottom:32px;border-bottom:1px solid var(--border)}
+.kicker{display:block;margin-bottom:10px;color:var(--primary);font-size:13px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase}
+h1{max-width:720px;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(36px,6vw,68px);
+  line-height:1.02;font-weight:500;letter-spacing:-.04em}
+.lead{max-width:680px;margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.65}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;
+  border:1px solid var(--border);border-radius:14px;background:var(--raised);text-decoration:none;font-weight:650}
+.button.primary{border-color:var(--primary);background:var(--primary);color:#fff}
+.button:hover{border-color:var(--primary)}
+.meta-strip{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 36px}
+.pill{padding:8px 12px;border-radius:999px;background:var(--soft);color:var(--pressed);font-size:13px;font-weight:650}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{overflow:hidden;border:1px solid var(--border);border-radius:24px;background:var(--raised);
+  box-shadow:var(--shadow)}
+.shot{display:block;width:100%;aspect-ratio:393/620;object-fit:cover;object-position:top;
+  background:var(--surface);border-bottom:1px solid var(--border)}
+.body{padding:20px}
+.top{display:flex;gap:16px;align-items:flex-start;justify-content:space-between}
+h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:25px;font-weight:500;letter-spacing:-.02em}
+.key{display:inline-block;margin-top:6px;color:var(--muted);font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+.status{flex:0 0 auto;width:10px;height:10px;margin-top:8px;border-radius:50%;background:var(--primary)}
+.details{margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--border);color:var(--muted);
+  font-size:13px;line-height:1.55}
+.open{display:inline-flex;margin-top:16px;color:var(--pressed);font-weight:700;text-underline-offset:4px}
+footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+@media(max-width:900px){header{grid-template-columns:1fr}.actions{justify-content:flex-start}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.wrap{width:min(100% - 28px,1240px);padding-top:34px}.grid{grid-template-columns:1fr}.shot{aspect-ratio:393/560}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div>
+      <span class="kicker">Designreview · 1B.1 Botanical</span>
+      <h1>Florir, skjerm for skjerm</h1>
+      <p class="lead">Én stabil post per hovedskjerm. Åpne den klikkbare versjonen for å teste flyten, og bruk skjermnøkkelen når du gir tilbakemelding.</p>
+    </div>
+    <nav class="actions" aria-label="Reviewlenker">
+      <a class="button" href="wireframes.html">Se wireframes</a>
+      <a class="button primary" href="../#/onboarding">Åpne prototype</a>
+    </nav>
+  </header>
+
+  <div class="meta-strip" aria-label="Versjonsinformasjon">
+    <span class="pill">19 hovedskjermer</span>
+    <span class="pill">21 reviewbilder</span>
+    <span class="pill">Botanical</span>
+    <span class="pill">1. august 2026</span>
+  </div>
+
+  <section class="grid" aria-label="Skjermer">
+    <article class="card"><img class="shot" src="../screens/phase-1b-F01-onboarding.png" alt="Onboarding"><div class="body"><div class="top"><div><h2>Onboarding</h2><span class="key">ONBOARDING · F01</span></div><span class="status"></span></div><p class="details">Kom i gang · Wireframe F01</p><a class="open" href="../#/onboarding">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F02-hjem.png" alt="Hjem"><div class="body"><div class="top"><div><h2>Hjem</h2><span class="key">HJEM · F02</span></div><span class="status"></span></div><p class="details">Hjem · Wireframe F02</p><a class="open" href="../#/hjem">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F04-moduler.png" alt="Moduler"><div class="body"><div class="top"><div><h2>Moduler</h2><span class="key">LARING-MODULER · F04</span></div><span class="status"></span></div><p class="details">Læring · Wireframe F04</p><a class="open" href="../#/moduler">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F05-video.png" alt="Videoleksjon"><div class="body"><div class="top"><div><h2>Videoleksjon</h2><span class="key">LARING-VIDEO · F05</span></div><span class="status"></span></div><p class="details">Læring · Wireframe F05</p><a class="open" href="../#/video">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F06-refleksjon.png" alt="Refleksjon"><div class="body"><div class="top"><div><h2>Refleksjon</h2><span class="key">LARING-REFLEKSJON · F06</span></div><span class="status"></span></div><p class="details">Læring · Wireframe F06</p><a class="open" href="../#/refleksjon">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F07-mat.png" alt="Mat"><div class="body"><div class="top"><div><h2>Mat</h2><span class="key">MAT-HJEM · F07</span></div><span class="status"></span></div><p class="details">Mat · Wireframes F07–F09 · inkluderer planplassering</p><a class="open" href="../#/oppskrifter">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F07b-oppskriftsliste.png" alt="Oppskriftsbibliotek"><div class="body"><div class="top"><div><h2>Oppskriftsbibliotek</h2><span class="key">MAT-BIBLIOTEK · F07b</span></div><span class="status"></span></div><p class="details">Mat · Wireframes F10–F13</p><a class="open" href="../#/oppskriftsliste">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F08-meg.png" alt="Meg"><div class="body"><div class="top"><div><h2>Meg</h2><span class="key">MEG-HJEM · F08</span></div><span class="status"></span></div><p class="details">Meg · Wireframes F25–F26</p><a class="open" href="../#/meg">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F09-hjelp.png" alt="Hjelp"><div class="body"><div class="top"><div><h2>Hjelp</h2><span class="key">HJELP · F09</span></div><span class="status"></span></div><p class="details">Hjelp · Wireframes F27–F28</p><a class="open" href="../#/hjelp">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F10-innstillinger.png" alt="Innstillinger"><div class="body"><div class="top"><div><h2>Innstillinger</h2><span class="key">INNSTILLINGER · F10</span></div><span class="status"></span></div><p class="details">Meg · Wireframe F33</p><a class="open" href="../#/innstillinger">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F11-tilbakeblikk.png" alt="Tilbakeblikk"><div class="body"><div class="top"><div><h2>Tilbakeblikk</h2><span class="key">TILBAKEBLIKK · F11</span></div><span class="status"></span></div><p class="details">Meg · Wireframe F29</p><a class="open" href="../#/tilbakeblikk">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F12-notater.png" alt="Notater"><div class="body"><div class="top"><div><h2>Notater</h2><span class="key">NOTATER · F12</span></div><span class="status"></span></div><p class="details">Meg · Wireframe F30</p><a class="open" href="../#/notater">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F13-notat.png" alt="Ett notat"><div class="body"><div class="top"><div><h2>Ett notat</h2><span class="key">NOTAT-DETALJ · F13</span></div><span class="status"></span></div><p class="details">Meg · Wireframe F31</p><a class="open" href="../#/notat/n-01">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F14-oppskrift.png" alt="Oppskrift"><div class="body"><div class="top"><div><h2>Oppskrift</h2><span class="key">MAT-OPPSKRIFT · F14</span></div><span class="status"></span></div><p class="details">Mat · Wireframes F14–F19</p><a class="open" href="../#/oppskrift/r-01">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F15-notat-opptak.png" alt="Nytt notat"><div class="body"><div class="top"><div><h2>Nytt notat</h2><span class="key">NOTAT-NY · F15</span></div><span class="status"></span></div><p class="details">Meg · Wireframe F32</p><a class="open" href="../#/notat-opptak">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F16-maltidsplan-tom.png" alt="Måltidsplan"><div class="body"><div class="top"><div><h2>Måltidsplan</h2><span class="key">MAT-PLAN · F16</span></div><span class="status"></span></div><p class="details">Mat · Wireframes F20–F24 · tom og aktiv uke</p><a class="open" href="../#/maltidsplan">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F17-interesser.png" alt="Interesser"><div class="body"><div class="top"><div><h2>Interesser</h2><span class="key">INTERESSER · F17</span></div><span class="status"></span></div><p class="details">Profil · Wireframe F34</p><a class="open" href="../#/interesser">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F18-profil-navn.png" alt="Profilnavn"><div class="body"><div class="top"><div><h2>Profilnavn</h2><span class="key">PROFIL-NAVN · F18</span></div><span class="status"></span></div><p class="details">Profil · Wireframe F35</p><a class="open" href="../#/profil-navn">Åpne skjermen ↗</a></div></article>
+    <article class="card"><img class="shot" src="../screens/phase-1b-F19-konto.png" alt="Konto"><div class="body"><div class="top"><div><h2>Konto</h2><span class="key">KONTO · F19</span></div><span class="status"></span></div><p class="details">Profil · Wireframe F36</p><a class="open" href="../#/konto">Åpne skjermen ↗</a></div></article>
+  </section>
+
+  <footer>Florir · Botanical · reviewpakke 1B.1 · Ikke for søkeindeksering</footer>
+</main>
+</body>
+</html>
+

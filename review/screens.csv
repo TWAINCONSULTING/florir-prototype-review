@@ -1,0 +1,21 @@
+Skjerm,Skjermnøkkel,Område,Rute,Review-ID,Wireframe-rammer,Skjermbilde,Status,Versjon,Reviewdato
+Onboarding,ONBOARDING,Kom i gang,#/onboarding,F01,F01,screens/phase-1b-F01-onboarding.png,Klar for review,1B.1 Botanical,2026-08-01
+Hjem,HJEM,Hjem,#/hjem,F02,F02,screens/phase-1b-F02-hjem.png,Klar for review,1B.1 Botanical,2026-08-01
+Moduler,LARING-MODULER,Læring,#/moduler,F04,F04,screens/phase-1b-F04-moduler.png,Klar for review,1B.1 Botanical,2026-08-01
+Videoleksjon,LARING-VIDEO,Læring,#/video,F05,F05,screens/phase-1b-F05-video.png,Klar for review,1B.1 Botanical,2026-08-01
+Refleksjon,LARING-REFLEKSJON,Læring,#/refleksjon,F06,F06,screens/phase-1b-F06-refleksjon.png,Klar for review,1B.1 Botanical,2026-08-01
+Mat,MAT-HJEM,Mat,#/oppskrifter,F07,F07–F09,screens/phase-1b-F07-mat.png,Klar for review,1B.1 Botanical,2026-08-01
+Oppskriftsbibliotek,MAT-BIBLIOTEK,Mat,#/oppskriftsliste,F07b,F10–F13,screens/phase-1b-F07b-oppskriftsliste.png,Klar for review,1B.1 Botanical,2026-08-01
+Meg,MEG-HJEM,Meg,#/meg,F08,F25–F26,screens/phase-1b-F08-meg.png,Klar for review,1B.1 Botanical,2026-08-01
+Hjelp,HJELP,Hjelp,#/hjelp,F09,F27–F28,screens/phase-1b-F09-hjelp.png,Klar for review,1B.1 Botanical,2026-08-01
+Innstillinger,INNSTILLINGER,Meg,#/innstillinger,F10,F33,screens/phase-1b-F10-innstillinger.png,Klar for review,1B.1 Botanical,2026-08-01
+Tilbakeblikk,TILBAKEBLIKK,Meg,#/tilbakeblikk,F11,F29,screens/phase-1b-F11-tilbakeblikk.png,Klar for review,1B.1 Botanical,2026-08-01
+Notater,NOTATER,Meg,#/notater,F12,F30,screens/phase-1b-F12-notater.png,Klar for review,1B.1 Botanical,2026-08-01
+Ett notat,NOTAT-DETALJ,Meg,#/notat/n-01,F13,F31,screens/phase-1b-F13-notat.png,Klar for review,1B.1 Botanical,2026-08-01
+Oppskrift,MAT-OPPSKRIFT,Mat,#/oppskrift/r-01,F14,F14–F19,screens/phase-1b-F14-oppskrift.png,Klar for review,1B.1 Botanical,2026-08-01
+Nytt notat,NOTAT-NY,Meg,#/notat-opptak,F15,F32,screens/phase-1b-F15-notat-opptak.png,Klar for review,1B.1 Botanical,2026-08-01
+Måltidsplan,MAT-PLAN,Mat,#/maltidsplan,F16,F20–F24,screens/phase-1b-F16-maltidsplan-tom.png,Klar for review,1B.1 Botanical,2026-08-01
+Interesser,INTERESSER,Profil,#/interesser,F17,F34,screens/phase-1b-F17-interesser.png,Klar for review,1B.1 Botanical,2026-08-01
+Profilnavn,PROFIL-NAVN,Profil,#/profil-navn,F18,F35,screens/phase-1b-F18-profil-navn.png,Klar for review,1B.1 Botanical,2026-08-01
+Konto,KONTO,Profil,#/konto,F19,F36,screens/phase-1b-F19-konto.png,Klar for review,1B.1 Botanical,2026-08-01
+
