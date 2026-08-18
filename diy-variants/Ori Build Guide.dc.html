@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F5646;text-decoration:none}
+a:hover{color:#1F3D31}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px 24px;background:{{ pageBg }};font-family:'Nunito',sans-serif">
+  <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+    <div data-screen-label="ORI build guide" style="height:100%;overflow:auto;background:{{ screenBg }}">
+      <div style="position:relative;height:320px;display:flex;align-items:flex-end;justify-content:center;padding:70px 90px 8px">
+        <a href="Explore%20Variations.dc.html" style="position:absolute;top:64px;left:16px;width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.55);box-shadow:0 1px 3px rgba(0,0,0,0.08);backdrop-filter:blur(10px);color:#1C1C1A;font-size:20px;font-weight:700;text-decoration:none;z-index:2">‹</a>
+        <img src="assets/elements/ori-cutout.png" alt="ORI wall lamp" style="max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 20px 32px rgba(120,70,20,0.24))">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding:16px 20px 4px">
+        <h1 style="margin:0;font-family:'Nunito',sans-serif;font-size:27px;line-height:1.2;font-weight:700;letter-spacing:-0.3px;color:#1C1C1A">ORI Wall Lamp</h1>
+        <p style="margin:0;font-size:14px;font-weight:500;color:#6E6E68">12 steps · 11–22 hours · NOK 6,500–14,000</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:6px">
+          <div style="flex:1;height:6px;border-radius:3px;background:rgba(0,0,0,0.09);overflow:hidden"><div style="height:6px;border-radius:3px;background:{{ ctaColor }};width:{{ progressPct }}%;transition:width 0.5s cubic-bezier(0.32,0.72,0,1)"></div></div>
+        </div>
+      </div>
+      <div style="margin:16px 20px 0;padding:14px 16px;border-radius:16px;background:rgba(166,56,42,0.12);display:flex;flex-direction:column;gap:4px">
+        <span style="font-size:14px;font-weight:700;color:#7E3325">Professional help required</span>
+        <span style="font-size:13.5px;line-height:1.45;font-weight:600;color:#7E3325">This project includes electrical work and wall mounting. Do not start until a qualified electrician has approved the plan.</span>
+      </div>
+      
+      <div style="padding:18px 20px 6px">
+        <p style="margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Tools</p>
+        <div style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:0 20px 4px">
+          <div style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:19px;background:rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:13.5px;font-weight:600;color:#1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1" y="5" width="12" height="4" rx="1.5" fill="none" stroke="#6E6E68" stroke-width="1.4"></rect><circle cx="7" cy="7" r="1.2" fill="#6E6E68"></circle></svg>Spirit level</div>
+          <div style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:19px;background:rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:13.5px;font-weight:600;color:#1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1" y="4" width="8" height="6" rx="1.5" fill="#6E6E68"></rect><rect x="9" y="6" width="4" height="2" rx="1" fill="#6E6E68"></rect></svg>Drill</div>
+          <div style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:19px;background:rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:13.5px;font-weight:600;color:#1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1.5" y="4" width="11" height="6" rx="2" fill="none" stroke="#6E6E68" stroke-width="1.6"></rect><circle cx="5" cy="7" r="1.3" fill="#6E6E68"></circle></svg>Tape measure and ruler</div>
+          <div style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:19px;background:rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:13.5px;font-weight:600;color:#1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="6" width="8" height="2.4" rx="1.2" fill="#6E6E68"></rect><rect x="10" y="6.4" width="2.5" height="1.6" rx="0.8" fill="#6E6E68"></rect></svg>Marker</div>
+          <div style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:19px;background:rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:13.5px;font-weight:600;color:#1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="6.2" width="10" height="1.6" rx="0.8" fill="#6E6E68"></rect><circle cx="11.5" cy="7" r="1.6" fill="#6E6E68"></circle></svg>Awl</div>
+          <div style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:19px;background:rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:13.5px;font-weight:600;color:#1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="none" stroke="#6E6E68" stroke-width="1.6"></circle><circle cx="7" cy="7" r="1.3" fill="#6E6E68"></circle></svg>Sewing machine and scissors</div>
+          <div style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:19px;background:rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:13.5px;font-weight:600;color:#1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="5" fill="none" stroke="#A6382A" stroke-width="1.6"></rect></svg>Safety glasses and mask</div>
+          
+        </div>
+      </div>
+      
+      <div style="padding:20px 20px 60px">
+        <p style="margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Steps</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ steps }}" as="step" hint-placeholder-count="12">
+            <div onClick="{{ step.onOpen }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);cursor:pointer;min-height:44px" style-active="transform:scale(0.985)">
+              <div style="width:30px;height:30px;border-radius:15px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:{{ step.numBg }};color:{{ step.numColor }};font-size:13.5px;font-weight:700">{{ step.numLabel }}</div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:1px">
+                <span style="font-size:15px;font-weight:700;color:#1C1C1A;line-height:1.25">{{ step.title }}</span>
+                <span style="font-size:12.5px;font-weight:600;color:{{ step.statusColor }};line-height:1.3">{{ step.statusLine }}</span>
+              </div>
+              <span style="font-size:17px;font-weight:700;color:#B4AFA3">›</span>
+            </div>
+          </sc-for>
+        </div>
+        
+        <div onClick="{{ onComplete }}" style="height:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;margin-top:16px;background:{{ completeBg }};color:{{ completeColor }};font-size:16px;font-weight:700;letter-spacing:0.2px;cursor:{{ completeCursor }};transition:background 0.3s,color 0.3s;text-align:center;padding:0 16px" style-active="transform:scale(0.985)">{{ completeLabel }}</div>
+        
+      </div>
+      
+      <sc-if value="{{ showStep }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;justify-content:flex-end">
+          <div onClick="{{ closeStep }}" style="position:absolute;inset:0;background:rgba(28,28,26,0.35);backdrop-filter:blur(3px)"></div>
+          <div style="position:relative;border-radius:28px 28px 0 0;background:#FAF8F3;padding:14px 20px 48px;display:flex;flex-direction:column;gap:12px;max-height:84%;overflow:auto">
+            <div style="width:40px;height:5px;border-radius:3px;background:rgba(0,0,0,0.15);margin:0 auto 2px"></div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Step {{ active.n }} of 12</span>
+              <div onClick="{{ closeStep }}" style="width:30px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.06);color:#6E6E68;font-size:14px;font-weight:700;cursor:pointer">✕</div>
+            </div>
+            <span style="font-size:21px;font-weight:700;color:#1C1C1A;line-height:1.2">{{ active.title }}</span>
+            <div style="height:130px;border-radius:16px;background:repeating-linear-gradient(-45deg,rgba(0,0,0,0.045) 0 10px,rgba(0,0,0,0.015) 10px 20px);display:flex;align-items:center;justify-content:center">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#8A867C">Step {{ active.n }} illustration</span>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <sc-for list="{{ active.needs }}" as="need" hint-placeholder-count="3">
+                <span style="display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:14px;background:rgba(0,0,0,0.055);font-size:12px;font-weight:700;color:#55524B">{{ need }}</span>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ active.paras }}" as="para" hint-placeholder-count="2">
+                <p style="margin:0;font-size:14px;line-height:1.55;font-weight:500;color:#3D3B36">{{ para }}</p>
+              </sc-for>
+            </div>
+            <div style="border-radius:14px;background:rgba(178,58,44,0.12);padding:12px 14px;display:flex;flex-direction:column;gap:3px">
+              <span style="font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#A6382A">Safety</span>
+              <span style="font-size:13.5px;line-height:1.5;font-weight:600;color:#7E3325">{{ active.warning }}</span>
+            </div>
+            
+            <div onClick="{{ toggleDone }}" style="height:54px;border-radius:27px;display:flex;align-items:center;justify-content:center;gap:8px;background:{{ active.btnBg }};color:{{ active.btnColor }};border:1.8px solid {{ active.btnBorder }};font-size:16px;font-weight:700;cursor:pointer;margin-top:4px" style-active="transform:scale(0.98)">{{ active.btnLabel }}</div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;background&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;section&quot;: &quot;Colors&quot;, &quot;default&quot;: [&quot;#F1EEE7&quot;, &quot;#DBD5C7&quot;], &quot;tsType&quot;: &quot;string[]&quot;, &quot;options&quot;: [[&quot;#F0E5D2&quot;, &quot;#CDD6C1&quot;], [&quot;#F5E4D8&quot;, &quot;#E3C9B8&quot;], [&quot;#EAEDF1&quot;, &quot;#C9D4DC&quot;], [&quot;#F1EEE7&quot;, &quot;#DBD5C7&quot;], [&quot;#EFE3CE&quot;, &quot;#D9C9E0&quot;]]},
+  &quot;ctaColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;section&quot;: &quot;Colors&quot;, &quot;default&quot;: &quot;#26313B&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#2F5646&quot;, &quot;#B85C38&quot;, &quot;#26313B&quot;, &quot;#8A9B7A&quot;]}
+}">
+class Component extends DCLogic {
+  state = { activeStep: null, showParts: false, done: {}, started: {}, completed: false, pChecked: {}, tChecked: {} };
+  renderVals() {
+    const pal = this.props.background ?? ["#F1EEE7", "#DBD5C7"];
+    const [c1, c2] = Array.isArray(pal) ? pal : [pal, pal];
+    const cta = this.props.ctaColor ?? "#26313B";
+    const stepsData = [
+      { title: "Confirm the safety plan", needs: ["Electrical system", "E14 holder", "E14 bulb", "Qualified electrician"], paras: [
+        "Ask a qualified electrician to define the electrical system, cable route, clearances and test plan.",
+        "Decide whether this is an unpowered display model or a powered prototype.",
+      ], warning: "Do not build a powered prototype until every safety requirement is approved.", validation: "The electrical plan and test plan are signed by the right professional." },
+      { title: "Finalize the drawings", needs: ["All parts", "Tape measure", "Ruler", "Marker"], paras: [
+        "Create a measured drawing for the frame, lamp plate, canopy, five panels, ten rods and ten end caps.",
+        "Treat 350 × 850 × 215 mm as context only. Record all other measurements as prototype choices.",
+      ], warning: "The source video does not provide reliable frame or fabric measurements.", validation: "The drawing lists every part, measurement, tolerance, clearance and material." },
+      { title: "Make the oak parts", needs: ["Oak frame", "Lamp plate", "Top canopy", "Woodworking tools", "Safety gear"], paras: [
+        "Make one wall frame, one lamp plate and one top canopy from the approved drawing.",
+        "Round sharp edges, sand the wood and apply the approved finish.",
+      ], warning: "The source shows finished parts only. Follow the approved plan for the cable path and lamp opening.", validation: "The parts fit without force and cannot damage the cable or fabric." },
+      { title: "Sew the linen panels", needs: ["5 linen panels", "Sewing machine", "Tape measure", "Marker"], paras: [
+        "Cut four narrow rear panels and one wide front panel from the approved pattern.",
+        "Sew one rod pocket at the top and bottom of each panel.",
+      ], warning: "Do not use the fabric near a powered bulb until its heat requirements are approved.", validation: "All five panels are straight, labelled and free from loose threads." },
+      { title: "Make the rods and end caps", needs: ["5 top rods", "5 weight rods", "10 end caps", "Metal tools", "Safety gear"], paras: [
+        "Make five top rods and five smooth weight rods to the approved lengths.",
+        "Make ten rounded end caps that stay securely on the weight rods.",
+      ], warning: "Do not use exposed threaded rods inside the fabric pockets.", validation: "All rods and end caps are smooth, measured and labelled for the correct panel." },
+      { title: "Mount the wall frame", needs: ["Oak frame", "Wall fixings", "Spirit level", "Drill", "Safety gear"], paras: [
+        "Check the wall type and hidden services. Use fixings approved for that wall.",
+        "Level the frame before and after tightening it.",
+      ], warning: "The wrong wall fixing can cause the lamp to fall.", validation: "The frame is level, secure and approved for the lamp's measured weight." },
+      { title: "Install the approved lamp module", needs: ["Lamp plate", "E14 holder", "Electrical system", "Qualified electrician"], paras: [
+        "Have a qualified electrician complete and inspect the lamp module.",
+        "Fit the oak plate to the wall frame using the approved method.",
+      ], warning: "The source video skips the electrical work. Do not copy that step.", validation: "The module is secure and every required electrical test is documented." },
+      { title: "Fit the top canopy", needs: ["Top canopy", "Tape measure"], paras: [
+        "Place the canopy in the approved position and lock it in place.",
+        "Check that all five panel positions are open and clear of the lamp holder and cables.",
+      ], warning: "Do not drill extra holes near electrical parts.", validation: "The canopy is level, secure and clear of the bulb and holder." },
+      { title: "Hang the rear panels", needs: ["Panels 01–04", "Rods and end caps", "Awl"], paras: [
+        "For each rear panel, insert the top rod and place it in the correct canopy slot.",
+        "Insert the weight rod. Fit two end caps. Check the panel before moving on.",
+      ], warning: "Stop if a panel can slip, turn toward the bulb or lose an end cap.", validation: "Four rear panels hang freely with eight end caps fitted." },
+      { title: "Hang the front panel", needs: ["Panel 05", "Rod and 2 end caps", "Awl"], paras: [
+        "Hang the wide front panel in the outer position.",
+        "Insert its top rod, weight rod and final two end caps.",
+      ], warning: "The front panel must not hide unsafe bulb clearance or unfinished electrical work.", validation: "Five panels, ten rods and ten end caps are fitted." },
+      { title: "Test before power", needs: ["Qualified electrician", "Electrical test tools", "Temperature logger"], paras: [
+        "Check the wall fixing, panel supports, end caps, bulb clearance and cable retention.",
+        "Run an approved heat test with the exact LED bulb. Record temperatures at the fabric, wood, holder and cable path.",
+      ], warning: "Do not leave the lamp unattended during its first heat test.", validation: "Every safety test is passed and signed. Otherwise, keep the lamp unpowered." },
+      { title: "Document the result", needs: ["Tape measure", "Camera"], paras: [
+        "Photograph the lamp from all sides. Include the wall fixing, holder, cable path and panel supports.",
+        "Record final measurements, weight, bulb details, temperatures, issues and approval.",
+      ], warning: "A finished photo does not prove electrical or heat safety.", validation: "The review pack includes measurements, test results, issues and approval." },
+    ];
+    const doneCount = Object.values(this.state.done).filter(Boolean).length;
+    const steps = stepsData.map((s, i) => {
+      const done = !!this.state.done[i];
+      const started = !!this.state.started[i];
+      return {
+        n: i + 1, title: s.title,
+        numLabel: done ? "✓" : String(i + 1),
+        numBg: done ? cta : cta + "1A",
+        numColor: done ? "#FFFFFF" : cta,
+        statusLine: done ? "Done" : started ? "In progress" : "To do",
+        statusColor: done ? cta : started ? "#A6382A" : "#8A867C",
+        onOpen: () => this.setState(st => ({ activeStep: i, started: { ...st.started, [i]: true } })),
+      };
+    });
+    const ai = this.state.activeStep;
+    const a = ai === null ? null : stepsData[ai];
+    const aDone = ai !== null && !!this.state.done[ai];
+    const mkCheck = (key, arr) => arr.map((it, j) => {
+      const checked = !!this.state[key][j];
+      return { ...it, mark: checked ? "✓" : "",
+        boxBg: checked ? cta : "transparent",
+        boxBorder: checked ? cta : "rgba(0,0,0,0.22)",
+        deco: checked ? "line-through" : "none",
+        fade: checked ? 0.55 : 1,
+        onToggle: () => this.setState(st => ({ [key]: { ...st[key], [j]: !st[key][j] } })),
+      };
+    });
+    return {
+      screenBg: `linear-gradient(155deg, ${c1} 0%, ${c2} 100%)`,
+      pageBg: `linear-gradient(155deg, ${c1} 0%, ${c2} 100%)`,
+      ctaColor: cta,
+      numBg: cta + "1A",
+      progressPct: Math.round((doneCount / 12) * 100),
+      steps,
+      showStep: ai !== null,
+      active: a === null ? { n: 0, title: "", needs: [], paras: [], warning: "", validation: "", btnLabel: "", btnBg: cta, btnColor: "#fff", btnBorder: cta } : {
+        n: ai + 1, title: a.title, needs: a.needs, paras: a.paras, warning: a.warning, validation: a.validation,
+        btnLabel: aDone ? "✓  Done" : "Mark done",
+        btnBg: aDone ? "transparent" : cta,
+        btnColor: aDone ? cta : "#F6F3EC",
+        btnBorder: cta,
+      },
+      closeStep: () => this.setState({ activeStep: null }),
+      toggleDone: () => {
+        const i = this.state.activeStep;
+        const wasDone = !!this.state.done[i];
+        this.setState(st => ({ done: { ...st.done, [i]: !st.done[i] }, activeStep: wasDone ? i : null }));
+      },
+      completeLabel: this.state.completed ? "✓  Project complete" : (doneCount === 12 ? "Finish project" : "Complete all steps"),
+      completeBg: this.state.completed ? cta : (doneCount === 12 ? cta : "rgba(0,0,0,0.08)"),
+      completeColor: this.state.completed ? "#F6F3EC" : (doneCount === 12 ? "#F6F3EC" : "#A6A29A"),
+      completeCursor: doneCount === 12 ? "pointer" : "default",
+      onComplete: () => { if (Object.values(this.state.done).filter(Boolean).length === 12) this.setState({ completed: true }); },
+      _unusedPartItems: mkCheck("pChecked", [
+        { name: "Oak wall frame", spec: "Mount and level first · measurements unknown", qty: "× 1" },
+        { name: "Oak lamp plate", spec: "Vertical plate with polished brass holder", qty: "× 1" },
+        { name: "Oak top canopy", spec: "Supports five panels · hole pattern unknown", qty: "× 1" },
+        { name: "Linen panels", spec: "4 narrow rear panels + 1 wide front panel", qty: "× 5" },
+        { name: "Top panel rods", spec: "One per top pocket · diameter unknown", qty: "× 5" },
+        { name: "Stainless weight rods", spec: "Smooth rods for the bottom pockets", qty: "× 5" },
+        { name: "End caps", spec: "Two per weight rod · custom-made", qty: "× 10" },
+        { name: "Polished brass E14 holder", spec: "Model and approvals unknown", qty: "× 1" },
+        { name: "Warm E14 LED bulb", spec: "Source states 1800 K / 65 lm · power unclear", qty: "× 1" },
+        { name: "Complete electrical system", spec: "UNRESOLVED — professional approval required", qty: "—" },
+        { name: "Wall screws and anchors", spec: "UNRESOLVED — choose for the wall type and weight", qty: "—" },
+      ]),
+      toolItems: mkCheck("tChecked", [
+        { name: "Spirit level", spec: "" },
+        { name: "Drill and wall bit", spec: "Choose the bit for the actual wall type" },
+        { name: "Tape measure and ruler", spec: "" },
+        { name: "Pencil or marker", spec: "" },
+        { name: "Awl", spec: "For inserting the panel rods" },
+        { name: "Sewing tools", spec: "Use only after the panel pattern is approved" },
+        { name: "Woodworking tools", spec: "Professional fabrication recommended" },
+        { name: "Metalworking tools", spec: "Professional fabrication recommended" },
+        { name: "Safety glasses, hearing protection and mask", spec: "" },
+        { name: "Qualified electrician", spec: "REQUIRED — defines and checks the electrical system" },
+        { name: "Electrical test tools", spec: "Qualified users only" },
+        { name: "Temperature logger", spec: "For the approved heat test" },
+      ]),
+      showParts: this.state.showParts,
+      openParts: () => this.setState({ showParts: true }),
+      closeParts: () => this.setState({ showParts: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

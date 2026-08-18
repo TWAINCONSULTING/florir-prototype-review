@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F5646;text-decoration:none}
+a:hover{color:#1F3D31}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:{{ pageBg }};font-family:'Nunito',sans-serif">
+  <div style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 20px;background:rgba(241,238,231,0.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,0.06)">
+    <a href="index.html" style="font-size:13px;font-weight:700;color:#6E6E68">‹ All variations</a>
+    <span style="font-size:15px;font-weight:800;color:#1C1C1A;margin-left:4px">Profile</span>
+    <div style="display:flex;gap:6px;margin-left:10px">
+      <sc-for list="{{ variantChips }}" as="c">
+        <div onClick="{{ c.onPick }}" style="height:32px;display:flex;align-items:center;padding:0 13px;border-radius:16px;background:{{ c.bg }};color:{{ c.color }};font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ c.label }}</div>
+      </sc-for>
+    </div>
+    <div style="flex:1"></div>
+    <div style="display:flex;gap:6px">
+      <sc-for list="{{ sizeChips }}" as="s">
+        <div onClick="{{ s.onPick }}" style="height:32px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:16px;background:{{ s.bg }};color:{{ s.color }};font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ s.label }}<span style="font-size:11px;font-weight:600;opacity:0.65">{{ s.dims }}</span></div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="flex:1;display:flex;justify-content:center;padding:28px 24px 40px">
+    <div data-stage data-variant="{{ variant }}" style="width:{{ stageW }}px;height:{{ stageH }}px">
+      <div style="transform:scale({{ scale }});transform-origin:top left">
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" size="{{ sizeKey }}" hint-size="393px,852px">
+          <div data-screen-label="Profile" style="position:absolute;inset:0;background:{{ screenBg }}">
+            <div style="position:absolute;inset:0;overflow:auto">
+
+              <sc-if value="{{ isV1 }}">
+                <div style="padding:66px 20px 12px">
+                  <h1 style="margin:0;font-family:'Nunito',sans-serif;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-0.4px;color:#1C1C1A">Profile</h1>
+                </div>
+                <div style="display:flex;align-items:center;gap:14px;padding:0 20px 16px">
+                  <div style="width:56px;height:56px;border-radius:28px;background:rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <svg width="26" height="26" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="7.6" r="3.6" stroke="#8A867C" stroke-width="1.7"></circle><path d="M4.2 18.4c1-3.3 3.7-5 6.8-5s5.8 1.7 6.8 5" stroke="#8A867C" stroke-width="1.7" stroke-linecap="round"></path></svg>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+                    <span style="font-size:18px;font-weight:700;color:#1C1C1A">Alex</span>
+                    <span style="font-size:12.5px;font-weight:500;color:#6E6E68">3 projects · 14 steps done</span>
+                  </div>
+                </div>
+                <div style="display:flex;gap:10px;padding:0 20px 4px">
+                  <sc-for list="{{ stats }}" as="st">
+                    <div style="flex:1;display:flex;flex-direction:column;gap:2px;padding:12px 12px 11px;border-radius:18px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);min-width:0">
+                      <span style="font-size:15.5px;font-weight:800;letter-spacing:-0.2px;color:#1C1C1A;font-variant-numeric:tabular-nums;white-space:nowrap">{{ st.value }}</span>
+                      <span style="font-size:11px;line-height:1.3;font-weight:600;color:#8A867C">{{ st.label }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="padding:18px 20px 0">
+                  <p style="margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Projects</p>
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <sc-for list="{{ projects }}" as="p">
+                      <div onClick="{{ p.onOpen }}" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:18px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);cursor:pointer;min-height:44px;box-sizing:border-box" style-active="transform:scale(0.985)">
+                        <div style="width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;flex-shrink:0"><img src="{{ p.img }}" alt="{{ p.name }}" style="max-width:82%;max-height:82%;object-fit:contain"></div>
+                        <div style="flex:1;display:flex;flex-direction:column;gap:1px;min-width:0">
+                          <span style="font-size:14.5px;font-weight:700;color:#1C1C1A;line-height:1.25">{{ p.name }}</span>
+                          <span style="font-size:12px;font-weight:700;color:{{ p.statusColor }}">{{ p.status }}</span>
+                        </div>
+                        <span style="font-size:16px;font-weight:700;color:#B4AFA3">›</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="padding:18px 20px 0">
+                  <p style="margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Settings</p>
+                  <div style="border-radius:18px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden">
+                    <sc-for list="{{ settings }}" as="row">
+                      <div style="display:flex;align-items:center;gap:10px;min-height:48px;padding:0 16px;cursor:pointer">
+                        <span style="flex:1;font-size:14.5px;font-weight:600;color:#1C1C1A">{{ row.label }}</span>
+                        <span style="font-size:13px;font-weight:500;color:#8A867C">{{ row.detail }}</span>
+                        <span style="font-size:15px;font-weight:700;color:#B4AFA3">›</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;justify-content:center;padding:14px 20px 0">
+                  <div style="min-height:44px;display:flex;align-items:center;padding:0 16px;font-size:14px;font-weight:700;color:#8A867C;cursor:pointer">Sign out</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isV2 }}">
+                <div style="display:flex;align-items:center;gap:12px;padding:66px 20px 14px">
+                  <h1 style="margin:0;flex:1;font-family:'Nunito',sans-serif;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-0.4px;color:#1C1C1A">Profile</h1>
+                  <div style="width:44px;height:44px;border-radius:22px;background:rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="7.6" r="3.6" stroke="#8A867C" stroke-width="1.7"></circle><path d="M4.2 18.4c1-3.3 3.7-5 6.8-5s5.8 1.7 6.8 5" stroke="#8A867C" stroke-width="1.7" stroke-linecap="round"></path></svg>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px">
+                  <sc-for list="{{ projects }}" as="p">
+                    <div onClick="{{ p.onOpen }}" style="border-radius:22px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden;cursor:pointer" style-active="transform:scale(0.985)">
+                      <div style="aspect-ratio:5/4;display:flex;align-items:center;justify-content:center;padding:12px;box-sizing:border-box"><img src="{{ p.img }}" alt="{{ p.name }}" style="max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 8px 14px rgba(90,70,40,0.16))"></div>
+                      <div style="display:flex;flex-direction:column;gap:1px;padding:0 12px 12px">
+                        <span style="font-size:13.5px;font-weight:700;color:#1C1C1A;line-height:1.25">{{ p.name }}</span>
+                        <span style="font-size:11.5px;font-weight:700;color:{{ p.statusColor }}">{{ p.status }}</span>
+                      </div>
+                    </div>
+                  </sc-for>
+                  <div style="border-radius:22px;border:1.5px dashed rgba(0,0,0,0.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:120px;cursor:pointer" onClick="{{ onBrowse }}">
+                    <span style="font-size:22px;font-weight:600;color:#B4AFA3">+</span>
+                    <span style="font-size:12.5px;font-weight:700;color:#8A867C">Find a project</span>
+                  </div>
+                </div>
+                <div style="padding:18px 20px 0">
+                  <p style="margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Milestones</p>
+                  <div style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:0 20px 4px">
+                    <sc-for list="{{ milestones }}" as="m">
+                      <div style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:18px;background:rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:12.5px;font-weight:700;color:{{ m.color }}">{{ m.label }}</div>
+                    </sc-for>
+                  </div>
+                </div>
+                <p style="margin:16px 20px 0;font-size:13px;font-weight:600;color:#6E6E68">NOK 1,840 spent on parts so far.</p>
+                <div style="padding:14px 20px 0">
+                  <div style="display:flex;align-items:center;gap:10px;min-height:48px;padding:0 16px;border-radius:18px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);cursor:pointer">
+                    <span style="flex:1;font-size:14.5px;font-weight:600;color:#1C1C1A">Settings</span>
+                    <span style="font-size:15px;font-weight:700;color:#B4AFA3">›</span>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isV3 }}">
+                <div style="display:flex;align-items:center;gap:8px;padding:64px 20px 0">
+                  <div style="width:7px;height:7px;border-radius:4px;background:#A14E2C;flex-shrink:0"></div>
+                  <span style="font-size:12.5px;font-weight:600;color:#6E6E68">You're offline. Progress stays on this phone.</span>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:44px 32px 0;text-align:center">
+                  <div style="width:72px;height:72px;border-radius:36px;background:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center">
+                    <svg width="32" height="32" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="7.6" r="3.6" stroke="#B4AFA3" stroke-width="1.7"></circle><path d="M4.2 18.4c1-3.3 3.7-5 6.8-5s5.8 1.7 6.8 5" stroke="#B4AFA3" stroke-width="1.7" stroke-linecap="round"></path></svg>
+                  </div>
+                  <h1 style="margin:6px 0 0;font-family:'Nunito',sans-serif;font-size:22px;line-height:1.25;font-weight:800;letter-spacing:-0.3px;color:#1C1C1A;text-wrap:balance">Keep your builds with you</h1>
+                  <p style="margin:0;font-size:14px;line-height:1.5;font-weight:500;color:#6E6E68">Sign in to save progress on every device.</p>
+                  <div onClick="{{ onSignIn }}" style="height:52px;width:100%;max-width:280px;border-radius:26px;display:flex;align-items:center;justify-content:center;margin-top:8px;background:{{ ctaColor }};color:#F6F3EC;font-size:16px;font-weight:700;cursor:pointer" style-active="transform:scale(0.98)">Sign in</div>
+                </div>
+                <div style="padding:44px 20px 0">
+                  <p style="margin:0 0 6px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Projects</p>
+                  <p style="margin:0;font-size:14px;line-height:1.5;font-weight:500;color:#6E6E68">Nothing saved on this phone yet.</p>
+                  <div onClick="{{ onBrowse }}" style="display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:700;color:{{ ctaColor }};cursor:pointer">Browse projects ›</div>
+                </div>
+              </sc-if>
+
+              <div style="height:{{ tabInset }}px"></div>
+            </div>
+
+            <x-import component-from-global-scope="IOSTabBar" from="./ios-frame.jsx" active="profile" accent="{{ ctaColor }}" onSelect="{{ onTab }}" hint-size="345px,58px"></x-import>
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;background&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;section&quot;: &quot;Colors&quot;, &quot;default&quot;: [&quot;#F1EEE7&quot;, &quot;#DBD5C7&quot;], &quot;tsType&quot;: &quot;string[]&quot;, &quot;options&quot;: [[&quot;#F0E5D2&quot;, &quot;#CDD6C1&quot;], [&quot;#F5E4D8&quot;, &quot;#E3C9B8&quot;], [&quot;#EAEDF1&quot;, &quot;#C9D4DC&quot;], [&quot;#F1EEE7&quot;, &quot;#DBD5C7&quot;], [&quot;#EFE3CE&quot;, &quot;#D9C9E0&quot;]]},
+  &quot;ctaColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;section&quot;: &quot;Colors&quot;, &quot;default&quot;: &quot;#26313B&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#2F5646&quot;, &quot;#B85C38&quot;, &quot;#26313B&quot;, &quot;#8A9B7A&quot;]}
+}">
+const VARIANTS = [
+  { n: 1, label: "V1 · Stats" },
+  { n: 2, label: "V2 · Shelf" },
+  { n: 3, label: "V3 · Signed out" },
+];
+const SIZES = [
+  { key: "se", label: "SE", dims: "375" },
+  { key: "standard", label: "Standard", dims: "393" },
+  { key: "promax", label: "Pro Max", dims: "430" },
+];
+const DIMS = { se: [375, 667], standard: [393, 852], promax: [430, 932] };
+const TAB_INSET = 46 + 58 + 12; // IOSTabBarMetrics.inset
+
+class Component extends DCLogic {
+  state = (() => {
+    let v = 1, size = "standard";
+    try {
+      const q = new URLSearchParams(location.search);
+      const qv = parseInt(q.get("v"), 10);
+      if (qv >= 1 && qv <= 3) v = qv;
+      if (DIMS[q.get("size")]) size = q.get("size");
+    } catch (e) {}
+    return { variant: v, size, vh: 900 };
+  })();
+  _onResize = () => this.setState({ vh: window.innerHeight });
+  componentDidMount() {
+    this.setState({ vh: window.innerHeight });
+    window.addEventListener("resize", this._onResize);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this._onResize); }
+  _sync(patch) {
+    this.setState(patch, () => {
+      try {
+        const q = new URLSearchParams(location.search);
+        q.set("v", String(this.state.variant));
+        q.set("size", this.state.size);
+        history.replaceState(null, "", location.pathname + "?" + q.toString());
+      } catch (e) {}
+    });
+  }
+  renderVals() {
+    const pal = this.props.background ?? ["#F1EEE7", "#DBD5C7"];
+    const [c1, c2] = Array.isArray(pal) ? pal : [pal, pal];
+    const cta = this.props.ctaColor ?? "#26313B";
+    const { variant, size } = this.state;
+    const [devW, devH] = DIMS[size];
+    const scale = Math.min(1, (this.state.vh - 130) / devH);
+    const chip = (on) => ({
+      bg: on ? "#1C1C1A" : "rgba(255,255,255,0.7)",
+      color: on ? "#F6F3EC" : "#55524B",
+    });
+    const go = (href) => () => { window.location.href = href; };
+    return {
+      screenBg: `linear-gradient(155deg, ${c1} 0%, ${c2} 100%)`,
+      pageBg: `linear-gradient(155deg, ${c1} 0%, ${c2} 100%)`,
+      ctaColor: cta,
+      variant, sizeKey: size,
+      isV1: variant === 1, isV2: variant === 2, isV3: variant === 3,
+      tabInset: TAB_INSET,
+      stageW: Math.round(devW * scale), stageH: Math.round(devH * scale),
+      scale: Math.round(scale * 1000) / 1000,
+      variantChips: VARIANTS.map((v) => ({ label: v.label, ...chip(v.n === variant), onPick: () => this._sync({ variant: v.n }) })),
+      sizeChips: SIZES.map((s) => ({ label: s.label, dims: s.dims, ...chip(s.key === size), onPick: () => this._sync({ size: s.key }) })),
+      // Stat tiles are pure label/value pairs so retail-anchor labels can swap
+      // in later without any layout change.
+      stats: [
+        { label: "Parts spent", value: "NOK 1,840" },
+        { label: "Projects finished", value: "1" },
+        { label: "Steps done", value: "14" },
+      ],
+      projects: [
+        { name: "Layered Glow Lamp", img: "assets/elements/lamp-cutout.png", status: "Done", statusColor: cta, onOpen: go("Steps%20Variations.dc.html?size=" + size) },
+        { name: "Steel Tier Shelf", img: "assets/elements/shelf-cutout.png", status: "In progress · step 5 of 11", statusColor: "#A14E2C", onOpen: go("Guide%20Variations.dc.html?size=" + size) },
+        { name: "ORI Wall Lamp", img: "assets/elements/ori-cutout.png", status: "To do", statusColor: "#8A867C", onOpen: go("Ori%20Build%20Guide.dc.html") },
+      ],
+      settings: [
+        { label: "Notifications", detail: "On" },
+        { label: "Units", detail: "Metric (cm)" },
+        { label: "Help and feedback", detail: "" },
+      ],
+      milestones: [
+        { label: "✓ First build", color: cta },
+        { label: "✓ 10 steps in a day", color: cta },
+        { label: "Next: finish the shelf", color: "#8A867C" },
+      ],
+      onSignIn: () => this._sync({ variant: 1 }),
+      onBrowse: go("Explore%20Variations.dc.html?size=" + size),
+      onTab: (key) => {
+        if (key === "explore") window.location.href = "Explore%20Variations.dc.html?size=" + size;
+        if (key === "projects") window.location.href = "Explore%20Variations.dc.html?v=2&size=" + size;
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

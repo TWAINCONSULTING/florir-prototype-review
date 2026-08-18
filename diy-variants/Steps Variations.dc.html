@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F5646;text-decoration:none}
+a:hover{color:#1F3D31}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:{{ pageBg }};font-family:'Nunito',sans-serif">
+  <div style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 20px;background:rgba(241,238,231,0.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,0.06)">
+    <a href="index.html" style="font-size:13px;font-weight:700;color:#6E6E68">‹ All variations</a>
+    <span style="font-size:15px;font-weight:800;color:#1C1C1A;margin-left:4px">Steps + parts</span>
+    <div style="display:flex;gap:6px;margin-left:10px">
+      <sc-for list="{{ variantChips }}" as="c">
+        <div onClick="{{ c.onPick }}" style="height:32px;display:flex;align-items:center;padding:0 13px;border-radius:16px;background:{{ c.bg }};color:{{ c.color }};font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ c.label }}</div>
+      </sc-for>
+    </div>
+    <div style="flex:1"></div>
+    <div style="display:flex;gap:6px">
+      <sc-for list="{{ sizeChips }}" as="s">
+        <div onClick="{{ s.onPick }}" style="height:32px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:16px;background:{{ s.bg }};color:{{ s.color }};font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ s.label }}<span style="font-size:11px;font-weight:600;opacity:0.65">{{ s.dims }}</span></div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="flex:1;display:flex;justify-content:center;padding:28px 24px 40px">
+    <div data-stage data-variant="{{ variant }}" style="width:{{ stageW }}px;height:{{ stageH }}px">
+      <div style="transform:scale({{ scale }});transform-origin:top left">
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" size="{{ sizeKey }}" hint-size="393px,852px">
+          <div data-screen-label="Lamp build flow" style="position:absolute;inset:0;background:{{ screenBg }}">
+            <div style="position:absolute;inset:0;overflow:auto">
+              <div style="display:flex;align-items:center;gap:12px;padding:112px 20px 4px">
+                <div style="width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;flex-shrink:0"><img src="assets/elements/lamp-cutout.png" alt="Layered Glow Lamp" style="max-width:82%;max-height:82%;object-fit:contain"></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <h1 style="margin:0;font-family:'Nunito',sans-serif;font-size:19px;line-height:1.2;font-weight:700;letter-spacing:-0.2px;color:#1C1C1A">Layered Glow Lamp</h1>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <div style="flex:1;height:6px;border-radius:3px;background:rgba(0,0,0,0.09);overflow:hidden"><div style="height:6px;border-radius:3px;background:{{ ctaColor }};width:{{ progressPct }}%;transition:width 0.5s cubic-bezier(0.32,0.72,0,1)"></div></div>
+                    <span style="font-size:11.5px;font-weight:700;color:#8A867C;font-variant-numeric:tabular-nums">{{ doneCount }}/10</span>
+                  </div>
+                </div>
+              </div>
+
+              <sc-if value="{{ isV1 }}">
+                <div style="padding:12px 20px 2px">
+                  <div onClick="{{ openParts }}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:18px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);cursor:pointer" style-active="transform:scale(0.985)">
+                    <div style="display:flex">
+                      <img src="assets/elements/parts-globe.png" alt="" style="width:30px;height:30px;border-radius:9px;object-fit:cover;border:2px solid #FFFFFF">
+                      <img src="assets/elements/parts-plates.png" alt="" style="width:30px;height:30px;border-radius:9px;object-fit:cover;border:2px solid #FFFFFF;margin-left:-9px">
+                      <img src="assets/elements/parts-rods.png" alt="" style="width:30px;height:30px;border-radius:9px;object-fit:cover;border:2px solid #FFFFFF;margin-left:-9px">
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;gap:1px">
+                      <span style="font-size:14.5px;font-weight:700;color:#1C1C1A">Parts and materials</span>
+                      <span style="font-size:12.5px;font-weight:500;color:#6E6E68">5 items · About NOK 1,200</span>
+                    </div>
+                    <span style="font-size:17px;font-weight:700;color:#B4AFA3">›</span>
+                  </div>
+                </div>
+                <div style="padding:16px 20px 10px">
+                  <p style="margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Steps</p>
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <sc-for list="{{ steps }}" as="step">
+                      <div onClick="{{ step.onOpen }}" style="display:flex;align-items:center;gap:6px;padding:5px 8px 5px 2px;border-radius:18px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);cursor:pointer;min-height:54px;box-sizing:border-box" style-active="transform:scale(0.985)">
+                        <div data-check onClick="{{ step.onToggle }}" style="width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer">
+                          <div style="width:30px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:{{ step.numBg }};color:{{ step.numColor }};border:{{ step.numBorder }};box-sizing:border-box;font-size:13.5px;font-weight:700">{{ step.numLabel }}</div>
+                        </div>
+                        <span style="flex:1;font-size:15px;font-weight:700;color:{{ step.titleColor }};line-height:1.25">{{ step.title }}</span>
+                        <span style="font-size:17px;font-weight:700;color:#B4AFA3;padding-right:6px">›</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div onClick="{{ onComplete }}" style="height:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;margin-top:16px;background:{{ completeBg }};color:{{ completeColor }};font-size:17px;font-weight:700;letter-spacing:0.2px;cursor:{{ completeCursor }};transition:background 0.3s,color 0.3s" style-active="transform:scale(0.985)">{{ completeLabel }}</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isV2 }}">
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 20px 2px">
+                  <div onClick="{{ openParts }}" style="display:flex;align-items:center;gap:9px;height:44px;padding:0 14px 0 8px;border-radius:22px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);cursor:pointer" style-active="transform:scale(0.97)">
+                    <div style="display:flex">
+                      <img src="assets/elements/parts-globe.png" alt="" style="width:28px;height:28px;border-radius:9px;object-fit:cover;border:2px solid #FFFFFF">
+                      <img src="assets/elements/parts-plates.png" alt="" style="width:28px;height:28px;border-radius:9px;object-fit:cover;border:2px solid #FFFFFF;margin-left:-9px">
+                    </div>
+                    <span style="font-size:13px;font-weight:700;color:#1C1C1A">Parts · 5 items</span>
+                  </div>
+                  <span style="font-size:12.5px;font-weight:500;color:#6E6E68">About NOK 1,200</span>
+                </div>
+                <div style="padding:16px 20px 0">
+                  <p style="margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Up next</p>
+                  <div style="border-radius:22px;background:rgba(255,255,255,0.78);box-shadow:0 2px 8px rgba(0,0,0,0.07);overflow:hidden">
+                    <div style="aspect-ratio:16/9;background:repeating-linear-gradient(-45deg,rgba(0,0,0,0.045) 0 10px,rgba(0,0,0,0.015) 10px 20px);display:flex;align-items:center;justify-content:center">
+                      <span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#8A867C">Step {{ upNext.n }} illustration</span>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px">
+                      <span style="font-size:11.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#8A867C">Step {{ upNext.n }} of 10</span>
+                      <span style="font-size:19px;font-weight:700;color:#1C1C1A;line-height:1.2">{{ upNext.title }}</span>
+                      <p style="margin:0;font-size:13.5px;line-height:1.5;font-weight:500;color:#55524B">{{ upNext.preview }}</p>
+                      <div style="display:flex;gap:8px;margin-top:6px">
+                        <div onClick="{{ upNext.onDone }}" style="flex:1;height:46px;border-radius:23px;display:flex;align-items:center;justify-content:center;background:{{ ctaColor }};color:#F6F3EC;font-size:14.5px;font-weight:700;cursor:pointer" style-active="transform:scale(0.98)">Mark done</div>
+                        <div onClick="{{ upNext.onOpen }}" style="flex:1;height:46px;border-radius:23px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.06);color:#1C1C1A;font-size:14.5px;font-weight:700;cursor:pointer" style-active="transform:scale(0.98)">Open step</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="padding:18px 20px 0">
+                  <p style="margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Coming up</p>
+                  <div style="display:flex;flex-direction:column;gap:6px">
+                    <sc-for list="{{ comingUp }}" as="step">
+                      <div onClick="{{ step.onOpen }}" style="display:flex;align-items:center;gap:11px;padding:6px 10px 6px 6px;border-radius:16px;background:rgba(255,255,255,0.6);cursor:pointer;min-height:44px;box-sizing:border-box" style-active="transform:scale(0.985)">
+                        <div style="width:28px;height:28px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:{{ ctaColor }}1A;color:{{ ctaColor }};font-size:12.5px;font-weight:700">{{ step.n }}</div>
+                        <span style="flex:1;font-size:14px;font-weight:600;color:#1C1C1A;line-height:1.25">{{ step.title }}</span>
+                        <span style="font-size:16px;font-weight:700;color:#B4AFA3;padding-right:4px">›</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="padding:14px 20px 10px">
+                  <div onClick="{{ toggleDoneGroup }}" style="display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer">
+                    <span style="font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Done · {{ doneCount }}</span>
+                    <span style="font-size:12px;font-weight:700;color:#B4AFA3">{{ doneGroupGlyph }}</span>
+                  </div>
+                  <sc-if value="{{ doneGroupOpen }}">
+                    <div style="display:flex;flex-direction:column;gap:6px">
+                      <sc-for list="{{ doneList }}" as="step">
+                        <div onClick="{{ step.onOpen }}" style="display:flex;align-items:center;gap:11px;padding:6px 10px 6px 6px;border-radius:16px;background:rgba(255,255,255,0.45);cursor:pointer;min-height:44px;box-sizing:border-box">
+                          <div style="width:28px;height:28px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:{{ ctaColor }};color:#FFFFFF;font-size:12.5px;font-weight:700">✓</div>
+                          <span style="flex:1;font-size:14px;font-weight:600;color:#8A867C;line-height:1.25">{{ step.title }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isV3 }}">
+                <div onClick="{{ openParts }}" style="display:flex;align-items:center;gap:10px;margin:12px 20px 0;min-height:44px;cursor:pointer">
+                  <div style="display:flex">
+                    <img src="assets/elements/parts-globe.png" alt="" style="width:26px;height:26px;border-radius:8px;object-fit:cover;border:2px solid #FFFFFF">
+                    <img src="assets/elements/parts-plates.png" alt="" style="width:26px;height:26px;border-radius:8px;object-fit:cover;border:2px solid #FFFFFF;margin-left:-8px">
+                    <img src="assets/elements/parts-rods.png" alt="" style="width:26px;height:26px;border-radius:8px;object-fit:cover;border:2px solid #FFFFFF;margin-left:-8px">
+                  </div>
+                  <span style="flex:1;font-size:13.5px;font-weight:700;color:#1C1C1A">Parts · 5 items · About NOK 1,200</span>
+                  <span style="font-size:16px;font-weight:700;color:#B4AFA3">›</span>
+                </div>
+                <div style="padding:14px 20px 10px">
+                  <div style="display:flex;flex-direction:column">
+                    <sc-for list="{{ timeline }}" as="step">
+                      <div style="display:flex;gap:8px">
+                        <div style="width:44px;flex-shrink:0;display:flex;flex-direction:column;align-items:center">
+                          <div style="width:2px;flex:none;height:8px;background:{{ step.lineTop }}"></div>
+                          <div onClick="{{ step.onToggle }}" style="width:44px;height:36px;margin:-4px 0;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;z-index:1">
+                            <div style="width:26px;height:26px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:{{ step.dotBg }};border:{{ step.dotBorder }};box-sizing:border-box;color:{{ step.dotColor }};font-size:11.5px;font-weight:700">{{ step.dotLabel }}</div>
+                          </div>
+                          <div style="width:2px;flex:1;background:{{ step.lineBottom }}"></div>
+                        </div>
+                        <div style="flex:1;padding:0 0 14px;min-width:0">
+                          <div onClick="{{ step.onExpand }}" style="display:flex;align-items:center;gap:8px;min-height:36px;cursor:pointer">
+                            <span style="flex:1;font-size:15px;font-weight:700;color:{{ step.titleColor }};line-height:1.3">{{ step.title }}</span>
+                            <span style="font-size:12px;font-weight:700;color:#B4AFA3">{{ step.expandGlyph }}</span>
+                          </div>
+                          <sc-if value="{{ step.expanded }}">
+                            <div style="display:flex;flex-direction:column;gap:10px;padding:8px 0 4px">
+                              <div style="display:flex;gap:6px;flex-wrap:wrap">
+                                <sc-for list="{{ step.needs }}" as="need">
+                                  <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:13px;background:rgba(0,0,0,0.055);font-size:11.5px;font-weight:700;color:#55524B">{{ need }}</span>
+                                </sc-for>
+                              </div>
+                              <div style="display:flex;flex-direction:column;gap:7px">
+                                <sc-for list="{{ step.paras }}" as="para">
+                                  <p style="margin:0;font-size:13.5px;line-height:1.55;font-weight:500;color:#3D3B36">{{ para }}</p>
+                                </sc-for>
+                              </div>
+                              <div style="border-radius:12px;background:rgba(184,92,56,0.12);padding:10px 12px;display:flex;flex-direction:column;gap:2px">
+                                <span style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#A14E2C">Safety</span>
+                                <span style="font-size:13px;line-height:1.5;font-weight:600;color:#7E4527">{{ step.watchOut }}</span>
+                              </div>
+                              <div onClick="{{ step.onToggle }}" style="height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;background:{{ step.btnBg }};color:{{ step.btnColor }};border:1.8px solid {{ ctaColor }};box-sizing:border-box;font-size:14.5px;font-weight:700;cursor:pointer" style-active="transform:scale(0.98)">{{ step.btnLabel }}</div>
+                            </div>
+                          </sc-if>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div onClick="{{ onComplete }}" style="height:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;margin-top:8px;background:{{ completeBg }};color:{{ completeColor }};font-size:17px;font-weight:700;letter-spacing:0.2px;cursor:{{ completeCursor }};transition:background 0.3s,color 0.3s" style-active="transform:scale(0.985)">{{ completeLabel }}</div>
+                </div>
+              </sc-if>
+
+              <div style="height:{{ tabInset }}px"></div>
+            </div>
+
+            <a href="Explore%20Variations.dc.html" style="position:absolute;top:64px;left:16px;width:44px;height:44px;border-radius:22px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.55);box-shadow:0 1px 3px rgba(0,0,0,0.08);backdrop-filter:blur(10px);color:#1C1C1A;font-size:20px;font-weight:700;text-decoration:none;z-index:34">‹</a>
+
+            <x-import component-from-global-scope="IOSTabBar" from="./ios-frame.jsx" active="projects" accent="{{ ctaColor }}" onSelect="{{ onTab }}" hint-size="345px,58px"></x-import>
+
+            <sc-if value="{{ showParts }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;justify-content:flex-end">
+                <div onClick="{{ closeParts }}" style="position:absolute;inset:0;background:rgba(28,28,26,0.35);backdrop-filter:blur(3px)"></div>
+                <div style="position:relative;border-radius:28px 28px 0 0;background:#FAF8F3;padding:14px 20px 48px;display:flex;flex-direction:column;max-height:75%;overflow:auto">
+                  <div style="width:40px;height:5px;border-radius:3px;background:rgba(0,0,0,0.15);margin:0 auto 8px"></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+                    <span style="font-size:19px;font-weight:700;color:#1C1C1A">Parts and materials</span>
+                    <div onClick="{{ closeParts }}" style="width:44px;height:44px;margin:-7px -7px -7px 0;display:flex;align-items:center;justify-content:center;cursor:pointer"><div style="width:30px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.06);color:#6E6E68;font-size:14px;font-weight:700">✕</div></div>
+                  </div>
+                  <sc-for list="{{ parts }}" as="part">
+                    <div style="display:flex;align-items:center;gap:14px;padding:9px 0">
+                      <img src="{{ part.img }}" alt="{{ part.name }}" style="width:56px;height:56px;border-radius:14px;object-fit:cover;flex-shrink:0">
+                      <div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+                        <span style="font-size:15px;font-weight:700;color:#1C1C1A">{{ part.name }}</span>
+                        <span style="font-size:12.5px;font-weight:500;color:#6E6E68;line-height:1.35">{{ part.spec }}</span>
+                      </div>
+                      <span style="font-size:14px;font-weight:700;color:{{ ctaColor }};font-variant-numeric:tabular-nums">{{ part.qty }}</span>
+                    </div>
+                  </sc-for>
+                  <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(0,0,0,0.08);margin-top:8px;padding:12px 0 2px">
+                    <span style="font-size:14px;font-weight:700;color:#1C1C1A">Estimated cost</span>
+                    <span style="font-size:15px;font-weight:700;color:{{ ctaColor }};font-variant-numeric:tabular-nums">About NOK 1,200</span>
+                  </div>
+                  <p style="margin:6px 0 0;font-size:12.5px;line-height:1.5;font-weight:500;color:#8A867C">Tip: Use a towel or felt mat to protect the acrylic.</p>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showStep }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;justify-content:flex-end">
+                <div onClick="{{ closeStep }}" style="position:absolute;inset:0;background:rgba(28,28,26,0.35);backdrop-filter:blur(3px)"></div>
+                <div style="position:relative;border-radius:28px 28px 0 0;background:#FAF8F3;padding:14px 20px 48px;display:flex;flex-direction:column;gap:12px;max-height:82%;overflow:auto">
+                  <div style="width:40px;height:5px;border-radius:3px;background:rgba(0,0,0,0.15);margin:0 auto 2px"></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between">
+                    <span style="font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Step {{ active.n }} of 10</span>
+                    <div onClick="{{ closeStep }}" style="width:44px;height:44px;margin:-7px -7px -7px 0;display:flex;align-items:center;justify-content:center;cursor:pointer"><div style="width:30px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.06);color:#6E6E68;font-size:14px;font-weight:700">✕</div></div>
+                  </div>
+                  <span style="font-size:21px;font-weight:700;color:#1C1C1A;line-height:1.2">{{ active.title }}</span>
+                  <div style="height:150px;border-radius:16px;background:repeating-linear-gradient(-45deg,rgba(0,0,0,0.045) 0 10px,rgba(0,0,0,0.015) 10px 20px);display:flex;align-items:center;justify-content:center">
+                    <span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#8A867C">Step {{ active.n }} illustration</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <sc-for list="{{ active.paras }}" as="para">
+                      <p style="margin:0;font-size:14px;line-height:1.55;font-weight:500;color:#3D3B36">{{ para }}</p>
+                    </sc-for>
+                  </div>
+                  <div style="border-radius:14px;background:rgba(184,92,56,0.12);padding:12px 14px;display:flex;flex-direction:column;gap:3px">
+                    <span style="font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#A14E2C">Safety</span>
+                    <span style="font-size:13.5px;line-height:1.5;font-weight:600;color:#7E4527">{{ active.watchOut }}</span>
+                  </div>
+                  <div onClick="{{ toggleDone }}" style="height:54px;border-radius:27px;display:flex;align-items:center;justify-content:center;gap:8px;background:{{ active.btnBg }};color:{{ active.btnColor }};border:1.8px solid {{ active.btnBorder }};font-size:16px;font-weight:700;cursor:pointer;margin-top:4px" style-active="transform:scale(0.98)">{{ active.btnLabel }}</div>
+                </div>
+              </div>
+            </sc-if>
+
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;background&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;section&quot;: &quot;Colors&quot;, &quot;default&quot;: [&quot;#F1EEE7&quot;, &quot;#DBD5C7&quot;], &quot;tsType&quot;: &quot;string[]&quot;, &quot;options&quot;: [[&quot;#F0E5D2&quot;, &quot;#CDD6C1&quot;], [&quot;#F5E4D8&quot;, &quot;#E3C9B8&quot;], [&quot;#EAEDF1&quot;, &quot;#C9D4DC&quot;], [&quot;#F1EEE7&quot;, &quot;#DBD5C7&quot;], [&quot;#EFE3CE&quot;, &quot;#D9C9E0&quot;]]},
+  &quot;ctaColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;section&quot;: &quot;Colors&quot;, &quot;default&quot;: &quot;#26313B&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#2F5646&quot;, &quot;#B85C38&quot;, &quot;#26313B&quot;, &quot;#8A9B7A&quot;]}
+}">
+const VARIANTS = [
+  { n: 1, label: "V1 · Checklist" },
+  { n: 2, label: "V2 · Up next" },
+  { n: 3, label: "V3 · Timeline" },
+];
+const SIZES = [
+  { key: "se", label: "SE", dims: "375" },
+  { key: "standard", label: "Standard", dims: "393" },
+  { key: "promax", label: "Pro Max", dims: "430" },
+];
+const DIMS = { se: [375, 667], standard: [393, 852], promax: [430, 932] };
+const TAB_INSET = 46 + 58 + 12; // IOSTabBarMetrics.inset
+
+class Component extends DCLogic {
+  state = (() => {
+    let v = 1, size = "standard";
+    try {
+      const q = new URLSearchParams(location.search);
+      const qv = parseInt(q.get("v"), 10);
+      if (qv >= 1 && qv <= 3) v = qv;
+      if (DIMS[q.get("size")]) size = q.get("size");
+    } catch (e) {}
+    return {
+      variant: v, size, vh: 900,
+      activeStep: null, showParts: false, completed: false,
+      done: { 0: true, 1: true, 2: true },
+      doneGroupOpen: false, expanded: 3,
+    };
+  })();
+  _onResize = () => this.setState({ vh: window.innerHeight });
+  componentDidMount() {
+    this.setState({ vh: window.innerHeight });
+    window.addEventListener("resize", this._onResize);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this._onResize); }
+  _sync(patch) {
+    this.setState(patch, () => {
+      try {
+        const q = new URLSearchParams(location.search);
+        q.set("v", String(this.state.variant));
+        q.set("size", this.state.size);
+        history.replaceState(null, "", location.pathname + "?" + q.toString());
+      } catch (e) {}
+    });
+  }
+  renderVals() {
+    const pal = this.props.background ?? ["#F1EEE7", "#DBD5C7"];
+    const [c1, c2] = Array.isArray(pal) ? pal : [pal, pal];
+    const cta = this.props.ctaColor ?? "#26313B";
+    const { variant, size } = this.state;
+    const [devW, devH] = DIMS[size];
+    const scale = Math.min(1, (this.state.vh - 130) / devH);
+    const chip = (on) => ({
+      bg: on ? "#1C1C1A" : "rgba(255,255,255,0.7)",
+      color: on ? "#F6F3EC" : "#55524B",
+    });
+    const stepsData = [
+      { title: "Sort the plates", needs: ["Acrylic plate set", "Soft mat", "Marker"], paras: [
+        "Lay the plates out in order.",
+        "Start with an outer plate. Put the largest opening in the middle. Finish in reverse order.",
+        "Keep every plate facing the same way. Mark the top and the cord exit.",
+      ], watchOut: "Remove the protective film one plate at a time to avoid scratches." },
+      { title: "Attach the rods", needs: ["Outer plate", "6 rods", "6 end caps"], paras: [
+        "Lay the first outer plate flat on the soft work mat.",
+        "Insert the six rods. Secure them underneath with six end caps.",
+      ], watchOut: "Keep the caps loose enough to straighten the rods later." },
+      { title: "Add spacers", needs: ["6 spacers"], paras: [
+        "Add one spacer to each rod.",
+        "Check that all six spacers are equal, flat and straight.",
+      ], watchOut: "Use the same spacer type at all six points in every layer." },
+      { title: "Build the first half", needs: ["Plates", "Spacers"], paras: [
+        "Lower the next plate over all six rods. Add six spacers.",
+        "Repeat until the plate with the largest opening is in place.",
+      ], watchOut: "Never force a plate. Check that all six holes line up with the rods." },
+      { title: "Place the lamp", needs: ["FADO lamp"], paras: [
+        "Unplug the FADO lamp.",
+        "Place the globe in the opening with its base facing up.",
+        "Center the globe. Guide the cord to the back without a sharp bend.",
+      ], watchOut: "Do not pinch the cord or press the globe against the acrylic." },
+      { title: "Build the second half", needs: ["Plates", "Spacers"], paras: [
+        "Add the remaining plates in reverse order.",
+        "Place six spacers between every plate.",
+      ], watchOut: "Keep the globe centered and the cord in place." },
+      { title: "Mount the end plate", needs: ["Outer plate", "6 end caps"], paras: [
+        "Place the last outer plate over the rods.",
+        "Fit all six end caps finger-tight.",
+        "Check that the plates are parallel, the gaps are even and the cord moves freely.",
+      ], watchOut: "Fit every cap before tightening any of them." },
+      { title: "Tighten the screws", needs: ["Allen key"], paras: [
+        "Tighten each cap a little at a time in a cross pattern.",
+        "Repeat until the frame feels stable.",
+      ], watchOut: "Stop if the acrylic bends, creaks or marks around the holes." },
+      { title: "Stand the lamp up", needs: [], paras: [
+        "Hold the frame with both hands and lift carefully.",
+        "Place it on a stable, flat surface with the cord at the back.",
+      ], watchOut: "Never lift the lamp by the globe, cord, one plate or one rod." },
+      { title: "Switch it on", needs: ["LED bulb", "Soft cloth"], paras: [
+        "Check that the globe is stable, the cord is free and the frame stands firmly.",
+        "Use a compatible LED bulb. Plug in the lamp and switch it on.",
+        "Wipe away dust and fingerprints with a soft cloth.",
+      ], watchOut: "Use LED bulbs only. Other bulbs may get too hot for acrylic." },
+    ];
+    const doneCount = Object.values(this.state.done).filter(Boolean).length;
+    let next = stepsData.findIndex((_, i) => !this.state.done[i]);
+    if (next === -1) next = 9;
+    const openStep = (i) => () => this.setState({ activeStep: i });
+    const toggle = (i) => (e) => {
+      if (e && e.stopPropagation) e.stopPropagation();
+      this.setState(st => ({ done: { ...st.done, [i]: !st.done[i] } }));
+    };
+    const steps = stepsData.map((s, i) => {
+      const done = !!this.state.done[i];
+      const isNext = i === next && !done;
+      return {
+        n: i + 1, title: s.title,
+        numLabel: done ? "✓" : String(i + 1),
+        numBg: done ? cta : isNext ? "transparent" : cta + "1A",
+        numColor: done ? "#FFFFFF" : cta,
+        numBorder: isNext ? "2px solid " + cta : "2px solid transparent",
+        titleColor: done ? "#8A867C" : "#1C1C1A",
+        onOpen: openStep(i),
+        onToggle: toggle(i),
+      };
+    });
+    const timeline = stepsData.map((s, i) => {
+      const done = !!this.state.done[i];
+      const isNext = i === next && !done;
+      const expanded = this.state.expanded === i;
+      const prevDone = i > 0 && !!this.state.done[i - 1];
+      return {
+        n: i + 1, title: s.title, needs: s.needs, paras: s.paras, watchOut: s.watchOut,
+        dotLabel: done ? "✓" : String(i + 1),
+        dotBg: done ? cta : "rgba(255,255,255,0.85)",
+        dotColor: done ? "#FFFFFF" : cta,
+        dotBorder: isNext ? "2px solid " + cta : done ? "2px solid " + cta : "2px solid rgba(0,0,0,0.14)",
+        lineTop: i === 0 ? "transparent" : (done || prevDone ? cta : "rgba(0,0,0,0.12)"),
+        lineBottom: i === stepsData.length - 1 ? "transparent" : (done ? cta : "rgba(0,0,0,0.12)"),
+        titleColor: done ? "#8A867C" : "#1C1C1A",
+        expanded,
+        expandGlyph: expanded ? "▴" : "▾",
+        btnLabel: done ? "✓  Done" : "Mark done",
+        btnBg: done ? "transparent" : cta,
+        btnColor: done ? cta : "#F6F3EC",
+        onExpand: () => this.setState({ expanded: expanded ? null : i }),
+        onToggle: toggle(i),
+      };
+    });
+    const ai = this.state.activeStep;
+    const a = ai === null ? null : stepsData[ai];
+    const aDone = ai !== null && !!this.state.done[ai];
+    return {
+      screenBg: `linear-gradient(155deg, ${c1} 0%, ${c2} 100%)`,
+      pageBg: `linear-gradient(155deg, ${c1} 0%, ${c2} 100%)`,
+      ctaColor: cta,
+      variant, sizeKey: size,
+      isV1: variant === 1, isV2: variant === 2, isV3: variant === 3,
+      tabInset: TAB_INSET,
+      stageW: Math.round(devW * scale), stageH: Math.round(devH * scale),
+      scale: Math.round(scale * 1000) / 1000,
+      variantChips: VARIANTS.map((v) => ({ label: v.label, ...chip(v.n === variant), onPick: () => this._sync({ variant: v.n }) })),
+      sizeChips: SIZES.map((s) => ({ label: s.label, dims: s.dims, ...chip(s.key === size), onPick: () => this._sync({ size: s.key }) })),
+      progressPct: doneCount * 10,
+      doneCount,
+      steps,
+      timeline,
+      upNext: {
+        n: next + 1, title: stepsData[next].title,
+        preview: stepsData[next].paras[0],
+        onDone: toggle(next),
+        onOpen: openStep(next),
+      },
+      comingUp: stepsData.map((s, i) => ({ n: i + 1, title: s.title, onOpen: openStep(i), done: !!this.state.done[i], isNext: i === next }))
+        .filter(s => !s.done && !s.isNext),
+      doneList: stepsData.map((s, i) => ({ title: s.title, onOpen: openStep(i), done: !!this.state.done[i] })).filter(s => s.done),
+      doneGroupOpen: this.state.doneGroupOpen,
+      doneGroupGlyph: this.state.doneGroupOpen ? "▴" : "▾",
+      toggleDoneGroup: () => this.setState(st => ({ doneGroupOpen: !st.doneGroupOpen })),
+      showStep: ai !== null,
+      active: a === null ? { n: 0, title: "", paras: [], watchOut: "", btnLabel: "", btnBg: cta, btnColor: "#fff", btnBorder: cta } : {
+        n: ai + 1, title: a.title, paras: a.paras, watchOut: a.watchOut,
+        btnLabel: aDone ? "✓  Done" : "Mark done",
+        btnBg: aDone ? "transparent" : cta,
+        btnColor: aDone ? cta : "#F6F3EC",
+        btnBorder: cta,
+      },
+      closeStep: () => this.setState({ activeStep: null }),
+      toggleDone: () => {
+        const i = this.state.activeStep;
+        const wasDone = !!this.state.done[i];
+        this.setState(st => ({ done: { ...st.done, [i]: !st.done[i] }, activeStep: wasDone ? i : null }));
+      },
+      completeLabel: this.state.completed ? "✓  Project complete" : (doneCount === 10 ? "Finish project" : "Complete all steps"),
+      completeBg: this.state.completed ? cta : (doneCount === 10 ? cta : "rgba(0,0,0,0.08)"),
+      completeColor: this.state.completed ? "#F6F3EC" : (doneCount === 10 ? "#F6F3EC" : "#A6A29A"),
+      completeCursor: doneCount === 10 ? "pointer" : "default",
+      onComplete: () => { if (Object.values(this.state.done).filter(Boolean).length === 10) this.setState({ completed: true }); },
+      parts: [
+        { img: "assets/elements/parts-globe.png", name: "FADO lamp", spec: "Includes cord, base and LED bulb", qty: "× 1" },
+        { img: "assets/elements/parts-plates.png", name: "Acrylic plate set", spec: "Orange acrylic · 2 outer plates · 6 holes each", qty: "× 1" },
+        { img: "assets/elements/parts-rods.png", name: "Threaded rods", spec: "Equal length · preferably stainless steel", qty: "× 6" },
+        { img: "assets/elements/parts-hardware.png", name: "Spacers", spec: "6 equal spacers per layer", qty: "6 / layer" },
+        { img: "assets/elements/parts-hardware.png", name: "End screws / caps", spec: "6 for the first plate + 6 for the last · silver finish", qty: "× 12" },
+      ],
+      showParts: this.state.showParts,
+      openParts: () => this.setState({ showParts: true }),
+      closeParts: () => this.setState({ showParts: false }),
+      onTab: (key) => {
+        if (key === "explore") window.location.href = "Explore%20Variations.dc.html?size=" + size;
+        if (key === "projects") window.location.href = "Explore%20Variations.dc.html?v=2&size=" + size;
+        if (key === "profile") window.location.href = "Profile%20Variations.dc.html?size=" + size;
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

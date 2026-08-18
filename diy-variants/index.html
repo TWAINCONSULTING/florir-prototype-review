@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>DIY guide · 12 variants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: 'Nunito', sans-serif; color: #1C1C1A;
+    background: linear-gradient(155deg, #F1EEE7 0%, #DBD5C7 100%); min-height: 100vh; }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+  h1 { margin: 0 0 6px; font-size: 30px; font-weight: 800; letter-spacing: -0.4px; }
+  .sub { margin: 0 0 34px; font-size: 15px; font-weight: 500; color: #6E6E68; line-height: 1.5; }
+  .file { border-radius: 22px; background: rgba(255,255,255,0.72);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 20px 22px; margin-bottom: 16px; }
+  .file h2 { margin: 0 0 4px; font-size: 18.5px; font-weight: 800; letter-spacing: -0.2px; }
+  .file h2 a { color: #1C1C1A; text-decoration: none; }
+  .file h2 a:hover { color: #2F5646; }
+  .file p { margin: 0 0 12px; font-size: 13.5px; font-weight: 500; color: #6E6E68; line-height: 1.5; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips a { display: inline-flex; align-items: center; height: 34px; padding: 0 14px;
+    border-radius: 17px; background: rgba(0,0,0,0.055); color: #1C1C1A;
+    font-size: 13px; font-weight: 700; text-decoration: none; }
+  .chips a:hover { background: #26313B; color: #F6F3EC; }
+  .note { margin-top: 30px; font-size: 13px; font-weight: 500; color: #8A867C; line-height: 1.6; }
+</style>
+</head>
+<body>
+<main>
+  <h1>DIY guide · 12 variants</h1>
+  <p class="sub">Four screens, three directions each. Every page has a toolbar with V1 / V2 / V3
+  and device-size chips — SE (375&nbsp;×&nbsp;667), Standard (393&nbsp;×&nbsp;852), Pro&nbsp;Max (430&nbsp;×&nbsp;932).
+  Sizes and variants are also deep-linkable, for example <code>?v=2&amp;size=se</code>.</p>
+
+  <div class="file">
+    <h2><a href="Explore%20Variations.dc.html">Explore</a></h2>
+    <p>V1 keeps the hero carousel with the onboarding headline slimmed to one compact block.
+    V2 drops the headline and leads with the full Projects catalogue. V3 is an image-led cover feed.</p>
+    <div class="chips">
+      <a href="Explore%20Variations.dc.html?v=1">V1 · Carousel</a>
+      <a href="Explore%20Variations.dc.html?v=2">V2 · Catalogue</a>
+      <a href="Explore%20Variations.dc.html?v=3">V3 · Covers</a>
+    </div>
+  </div>
+
+  <div class="file">
+    <h2><a href="Guide%20Variations.dc.html">Guide header</a></h2>
+    <p>Steel Tier Shelf. V1 is the classic hero with “Watch assembly” (AR dropped). V2 is a compact
+    split header where the AR slot becomes “View in 3D assembly” — it opens the interactive 3D player.
+    V3 is an immersive full-bleed header with the primary action on the hero.</p>
+    <div class="chips">
+      <a href="Guide%20Variations.dc.html?v=1">V1 · Hero</a>
+      <a href="Guide%20Variations.dc.html?v=2">V2 · Split + 3D</a>
+      <a href="Guide%20Variations.dc.html?v=3">V3 · Immersive</a>
+    </div>
+  </div>
+
+  <div class="file">
+    <h2><a href="Steps%20Variations.dc.html">Steps + parts</a></h2>
+    <p>Layered Glow Lamp. V1 is a direct checklist — the step number is a 44&nbsp;pt checkbox, the
+    redundant status line is gone. V2 leads with an “Up next” card and collapses finished steps.
+    V3 is a timeline rail with inline step details. The parts sheet drops its per-row hairlines everywhere.</p>
+    <div class="chips">
+      <a href="Steps%20Variations.dc.html?v=1">V1 · Checklist</a>
+      <a href="Steps%20Variations.dc.html?v=2">V2 · Up next</a>
+      <a href="Steps%20Variations.dc.html?v=3">V3 · Timeline</a>
+    </div>
+  </div>
+
+  <div class="file">
+    <h2><a href="Profile%20Variations.dc.html">Profile</a></h2>
+    <p>V1 leads with honest stat tiles — “Parts spent · NOK 1,840” as a swappable label/value pair.
+    V2 is a visual project shelf with milestones. V3 is the signed-out state with tightened copy,
+    a de-boxed offline line and a de-boxed empty state.</p>
+    <div class="chips">
+      <a href="Profile%20Variations.dc.html?v=1">V1 · Stats</a>
+      <a href="Profile%20Variations.dc.html?v=2">V2 · Shelf</a>
+      <a href="Profile%20Variations.dc.html?v=3">V3 · Signed out</a>
+    </div>
+  </div>
+
+  <p class="note">All costs render as NOK in display copy; underlying guide data is untouched.
+  Bottom elements anchor to the tab-bar metrics plus the safe area — no fixed pixel offsets.
+  The “Prototype 0.4.0” footer is removed. “Ori Build Guide.dc.html” is included as an unmodified
+  reference so ORI links resolve.</p>
+</main>
+</body>
+</html>
