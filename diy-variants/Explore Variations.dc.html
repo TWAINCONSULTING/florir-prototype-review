@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F5646;text-decoration:none}
+a:hover{color:#1F3D31}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:{{ pageBg }};font-family:'Nunito',sans-serif">
+  <div style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 20px;background:rgba(241,238,231,0.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,0.06)">
+    <a href="index.html" style="font-size:13px;font-weight:700;color:#6E6E68">‹ All variations</a>
+    <span style="font-size:15px;font-weight:800;color:#1C1C1A;margin-left:4px">Explore</span>
+    <div style="display:flex;gap:6px;margin-left:10px">
+      <sc-for list="{{ variantChips }}" as="c">
+        <div onClick="{{ c.onPick }}" style="height:32px;display:flex;align-items:center;padding:0 13px;border-radius:16px;background:{{ c.bg }};color:{{ c.color }};font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ c.label }}</div>
+      </sc-for>
+    </div>
+    <div style="flex:1"></div>
+    <div style="display:flex;gap:6px">
+      <sc-for list="{{ sizeChips }}" as="s">
+        <div onClick="{{ s.onPick }}" style="height:32px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:16px;background:{{ s.bg }};color:{{ s.color }};font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap">{{ s.label }}<span style="font-size:11px;font-weight:600;opacity:0.65">{{ s.dims }}</span></div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="flex:1;display:flex;justify-content:center;padding:28px 24px 40px">
+    <div data-stage data-variant="{{ variant }}" style="width:{{ stageW }}px;height:{{ stageH }}px">
+      <div style="transform:scale({{ scale }});transform-origin:top left">
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" size="{{ sizeKey }}" hint-size="393px,852px">
+          <div data-screen-label="Explore" style="position:absolute;inset:0;background:{{ screenBg }}">
+
+            <sc-if value="{{ isV1 }}">
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:70px 24px 0;text-align:center">
+                  <h1 style="margin:0;font-family:'Nunito',sans-serif;font-size:21.5px;line-height:1.2;font-weight:700;letter-spacing:-0.3px;color:#1C1C1A;text-wrap:balance">Make every corner feel special</h1>
+                  <p style="margin:0;font-size:13.5px;line-height:1.4;font-weight:500;color:#6E6E68">Simple DIY guides for your home.</p>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;min-height:0;padding:12px 0 0">
+                  <div onScroll="{{ onCarouselScroll }}" style="flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;min-height:0">
+                    <sc-for list="{{ products }}" as="p">
+                      <div style="flex:none;width:100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:8px 44px;box-sizing:border-box;min-height:0">
+                        <img src="{{ p.img }}" alt="{{ p.name }}" style="max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 26px 40px rgba(90,70,40,0.22))">
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:center;gap:7px;padding-top:12px">
+                    <sc-for list="{{ dots }}" as="d">
+                      <div style="width:{{ d.size }}px;height:7px;border-radius:4px;background:{{ d.bg }};transition:all 0.3s cubic-bezier(0.32,0.72,0,1)"></div>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 24px 0;text-align:center">
+                    <span style="font-size:16.5px;font-weight:700;color:#1C1C1A">{{ activeProduct.name }}</span>
+                    <span style="font-size:12.5px;font-weight:500;color:#6E6E68">{{ activeProduct.meta }}</span>
+                    <sc-if value="{{ activeProduct.pro }}">
+                      <span style="font-size:11.5px;font-weight:700;color:#A6382A">Professional help required</span>
+                    </sc-if>
+                  </div>
+                </div>
+                <div style="padding:12px 20px 0">
+                  <div onClick="{{ onViewGuide }}" style="height:52px;border-radius:26px;display:flex;align-items:center;justify-content:center;background:{{ ctaColor }};color:#F6F3EC;font-size:16.5px;font-weight:700;letter-spacing:0.2px;cursor:pointer" style-active="transform:scale(0.98)">View guide</div>
+                </div>
+                <div style="height:{{ tabInset }}px;flex-shrink:0"></div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isV2 }}">
+              <div style="position:absolute;inset:0;overflow:auto">
+                <div style="padding:66px 20px 12px">
+                  <h1 style="margin:0;font-family:'Nunito',sans-serif;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-0.4px;color:#1C1C1A">Explore</h1>
+                </div>
+                <div onClick="{{ onContinue }}" style="display:flex;align-items:center;gap:12px;margin:0 20px;padding:6px 0 14px;cursor:pointer">
+                  <div style="width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;flex-shrink:0"><img src="assets/elements/shelf-cutout.png" alt="" style="width:34px;height:34px;object-fit:contain"></div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:1px;min-width:0">
+                    <span style="font-size:14.5px;font-weight:700;color:#1C1C1A">Continue Steel Tier Shelf</span>
+                    <span style="font-size:12.5px;font-weight:500;color:#6E6E68">Step 5 of 11 · In progress</span>
+                  </div>
+                  <span style="font-size:17px;font-weight:700;color:#B4AFA3">›</span>
+                </div>
+                <div style="padding:4px 20px 8px">
+                  <p style="margin:0;font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8A867C">Projects</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px;padding:0 20px {{ tabInset }}px">
+                  <sc-for list="{{ catalogue }}" as="p">
+                    <div onClick="{{ p.onOpen }}" style="display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:20px;background:rgba(255,255,255,0.72);box-shadow:0 1px 3px rgba(0,0,0,0.06);cursor:pointer;min-height:44px" style-active="transform:scale(0.985)">
+                      <div style="width:72px;height:72px;border-radius:16px;background:{{ p.thumbBg }};display:flex;align-items:center;justify-content:center;flex-shrink:0"><img src="{{ p.img }}" alt="{{ p.name }}" style="max-width:82%;max-height:82%;object-fit:contain"></div>
+                      <div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+                        <span style="font-size:15.5px;font-weight:700;color:#1C1C1A;line-height:1.25">{{ p.name }}</span>
+                        <span style="font-size:12.5px;font-weight:500;color:#6E6E68;line-height:1.35">{{ p.meta }}</span>
+                        <sc-if value="{{ p.pro }}">
+                          <span style="font-size:11.5px;font-weight:700;color:#A6382A">Professional help required</span>
+                        </sc-if>
+                        <span style="font-size:12px;font-weight:700;color:{{ p.statusColor }}">{{ p.status }}</span>
+                      </div>
+                      <span style="font-size:17px;font-weight:700;color:#B4AFA3">›</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isV3 }}">
+              <div style="position:absolute;inset:0;overflow:auto">
+                <div style="padding:66px 20px 10px;display:flex;align-items:baseline;gap:8px">
+                  <span style="font-size:12.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#8A867C">Explore</span>
+                  <span style="font-size:12.5px;font-weight:500;color:#B4AFA3">3 guides</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:16px;padding:0 20px {{ tabInset }}px">
+                  <sc-for list="{{ catalogue }}" as="p">
+                    <div onClick="{{ p.onOpen }}" style="position:relative;aspect-ratio:4/4.6;border-radius:26px;background:{{ p.coverBg }};overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.07);cursor:pointer" style-active="transform:scale(0.99)">
+                      <img src="{{ p.img }}" alt="{{ p.name }}" style="position:absolute;left:10%;right:10%;top:6%;width:80%;height:64%;object-fit:contain;filter:drop-shadow(0 18px 28px rgba(90,70,40,0.2))">
+                      <div style="position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(250,248,243,0.92) 38%);display:flex;align-items:flex-end;gap:12px">
+                        <div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+                          <span style="font-size:18.5px;font-weight:800;letter-spacing:-0.2px;color:#1C1C1A;line-height:1.2">{{ p.name }}</span>
+                          <span style="font-size:12.5px;font-weight:500;color:#6E6E68">{{ p.meta }}</span>
+                          <sc-if value="{{ p.pro }}">
+                            <span style="font-size:11.5px;font-weight:700;color:#A6382A">Professional help required</span>
+                          </sc-if>
+                        </div>
+                        <div style="height:44px;display:flex;align-items:center;padding:0 18px;border-radius:22px;background:{{ ctaColor }};color:#F6F3EC;font-size:14px;font-weight:700;flex-shrink:0">View guide</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <x-import component-from-global-scope="IOSTabBar" from="./ios-frame.jsx" active="explore" accent="{{ ctaColor }}" onSelect="{{ onTab }}" hint-size="345px,58px"></x-import>
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;background&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;section&quot;: &quot;Colors&quot;, &quot;default&quot;: [&quot;#F1EEE7&quot;, &quot;#DBD5C7&quot;], &quot;tsType&quot;: &quot;string[]&quot;, &quot;options&quot;: [[&quot;#F0E5D2&quot;, &quot;#CDD6C1&quot;], [&quot;#F5E4D8&quot;, &quot;#E3C9B8&quot;], [&quot;#EAEDF1&quot;, &quot;#C9D4DC&quot;], [&quot;#F1EEE7&quot;, &quot;#DBD5C7&quot;], [&quot;#EFE3CE&quot;, &quot;#D9C9E0&quot;]]},
+  &quot;ctaColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;section&quot;: &quot;Colors&quot;, &quot;default&quot;: &quot;#26313B&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#2F5646&quot;, &quot;#B85C38&quot;, &quot;#26313B&quot;, &quot;#8A9B7A&quot;]}
+}">
+const VARIANTS = [
+  { n: 1, label: "V1 · Carousel" },
+  { n: 2, label: "V2 · Catalogue" },
+  { n: 3, label: "V3 · Covers" },
+];
+const SIZES = [
+  { key: "se", label: "SE", dims: "375" },
+  { key: "standard", label: "Standard", dims: "393" },
+  { key: "promax", label: "Pro Max", dims: "430" },
+];
+const DIMS = { se: [375, 667], standard: [393, 852], promax: [430, 932] };
+const TAB_INSET = 46 + 58 + 12; // IOSTabBarMetrics.inset — bottom offset + bar height + clearance
+
+class Component extends DCLogic {
+  state = (() => {
+    let v = 1, size = "standard";
+    try {
+      const q = new URLSearchParams(location.search);
+      const qv = parseInt(q.get("v"), 10);
+      if (qv >= 1 && qv <= 3) v = qv;
+      if (DIMS[q.get("size")]) size = q.get("size");
+    } catch (e) {}
+    return { variant: v, size, active: 0, vh: 900 };
+  })();
+  _onResize = () => this.setState({ vh: window.innerHeight });
+  componentDidMount() {
+    this.setState({ vh: window.innerHeight });
+    window.addEventListener("resize", this._onResize);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this._onResize); }
+  _sync(patch) {
+    this.setState(patch, () => {
+      try {
+        const q = new URLSearchParams(location.search);
+        q.set("v", String(this.state.variant));
+        q.set("size", this.state.size);
+        history.replaceState(null, "", location.pathname + "?" + q.toString());
+      } catch (e) {}
+    });
+  }
+  renderVals() {
+    const pal = this.props.background ?? ["#F1EEE7", "#DBD5C7"];
+    const [c1, c2] = Array.isArray(pal) ? pal : [pal, pal];
+    const cta = this.props.ctaColor ?? "#26313B";
+    const { variant, size, active } = this.state;
+    const [devW, devH] = DIMS[size];
+    const scale = Math.min(1, (this.state.vh - 130) / devH);
+    const chip = (on) => ({
+      bg: on ? "#1C1C1A" : "rgba(255,255,255,0.7)",
+      color: on ? "#F6F3EC" : "#55524B",
+    });
+    const productsData = [
+      { id: "lamp", name: "Layered Glow Lamp", img: "assets/elements/lamp-cutout.png", meta: "10 steps · 1 hour · About NOK 1,200", status: "Done", statusColor: cta, href: "Steps%20Variations.dc.html", thumbBg: "rgba(255,255,255,0.5)", coverBg: "linear-gradient(165deg,#F5E4D8 0%,#E3C9B8 100%)" },
+      { id: "shelf", name: "Steel Tier Shelf", img: "assets/elements/shelf-cutout.png", meta: "11 steps · 2 hours · About NOK 2,000", status: "In progress", statusColor: "#A14E2C", href: "Guide%20Variations.dc.html", thumbBg: "rgba(255,255,255,0.5)", coverBg: "linear-gradient(165deg,#EAEDF1 0%,#C9D4DC 100%)" },
+      { id: "ori", name: "ORI Wall Lamp", img: "assets/elements/ori-cutout.png", meta: "12 steps · 11–22 hours · NOK 6,500–14,000", status: "To do", statusColor: "#8A867C", pro: true, href: "Ori%20Build%20Guide.dc.html", thumbBg: "rgba(255,255,255,0.5)", coverBg: "linear-gradient(165deg,#F0E5D2 0%,#CDD6C1 100%)" },
+    ];
+    const open = (p) => () => { window.location.href = p.href; };
+    return {
+      pageBg: `linear-gradient(155deg, ${c1} 0%, ${c2} 100%)`,
+      screenBg: `linear-gradient(155deg, ${c1} 0%, ${c2} 100%)`,
+      ctaColor: cta,
+      variant, sizeKey: size,
+      isV1: variant === 1, isV2: variant === 2, isV3: variant === 3,
+      tabInset: TAB_INSET,
+      stageW: Math.round(devW * scale), stageH: Math.round(devH * scale),
+      scale: Math.round(scale * 1000) / 1000,
+      variantChips: VARIANTS.map((v) => ({ label: v.label, ...chip(v.n === variant), onPick: () => this._sync({ variant: v.n }) })),
+      sizeChips: SIZES.map((s) => ({ label: s.label, dims: s.dims, ...chip(s.key === size), onPick: () => this._sync({ size: s.key }) })),
+      products: productsData,
+      catalogue: productsData.map((p) => ({ ...p, onOpen: open(p) })),
+      activeProduct: productsData[Math.min(active, 2)],
+      dots: productsData.map((_, i) => ({
+        size: i === active ? 20 : 7,
+        bg: i === active ? "#1C1C1A" : "rgba(0,0,0,0.18)",
+      })),
+      onCarouselScroll: (e) => {
+        const el = e.target;
+        const i = Math.round(el.scrollLeft / el.clientWidth);
+        if (i !== this.state.active) this.setState({ active: i });
+      },
+      onViewGuide: open(productsData[Math.min(active, 2)]),
+      onContinue: open(productsData[1]),
+      onTab: (key) => {
+        if (key === "projects") this._sync({ variant: 2 });
+        if (key === "profile") window.location.href = "Profile%20Variations.dc.html?size=" + size;
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

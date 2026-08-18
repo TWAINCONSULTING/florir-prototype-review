@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #101112; }
+a { color: #6b7075; } a:hover { color: #2c2e30; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+<script>window.OM_SCENES = '[{"name":"Opening","dur":1.5,"desc":"Empty studio floor, a faint ghost of the finished piece appears"},{"name":"Feet","dur":2,"desc":"The four feet drop in and land"},{"name":"Lower shelf","dur":2.5,"desc":"The lower shelf settles down and its collars snap on"},{"name":"Lower posts","dur":2,"desc":"The four lower posts slide down into the collars"},{"name":"Middle shelf","dur":2.5,"desc":"Collars click on, the middle shelf drops in, upper collars follow"},{"name":"Upper posts","dur":2,"desc":"The four upper posts slide down"},{"name":"Upper shelf","dur":2.5,"desc":"Collars click on and the top shelf drops in"},{"name":"Finials","dur":1.5,"desc":"The four finials cap the posts"},{"name":"Reveal","dur":3.5,"desc":"Camera pulls back and circles the finished etagere"}]';</script>
+<script>window.OM_PLAYBACK = '{"mode":"times","count":1}';</script>
+<script>window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "motionEditor": true,
+  "shadows": false,
+  "background": "#edeae5"
+}/*EDITMODE-END*/;</script>
+</helmet>
+<div data-screen-label="Etagere assembly video" style="position: fixed; inset: 0;">
+<x-import component-from-global-scope="EtagereAnimation" from="./animations-v3.jsx ./tweaks-panel.jsx ./etagere-scene.jsx" hint-size="100%,100%"></x-import>
+</div>
+</x-dc>
+</body>
+</html>
