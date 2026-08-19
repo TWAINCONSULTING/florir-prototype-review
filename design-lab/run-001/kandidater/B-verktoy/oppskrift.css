@@ -1,0 +1,67 @@
+/* B · Verktøy — oppskriftsdetalj */
+
+.hero{position:relative}
+.hero img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.hero__krom{position:absolute;top:calc(env(safe-area-inset-top) + 10px);
+  left:10px;right:10px;display:flex;justify-content:space-between}
+.hero__knapp{width:48px;height:48px;display:grid;place-items:center;
+  background:var(--flate);color:var(--blekk);border:0;cursor:pointer;
+  border-radius:var(--r-rund);text-decoration:none;
+  box-shadow:0 1px 3px rgba(26,24,21,.18)}
+.hero__knapp svg{width:22px;height:22px}
+
+.tittelblokk{padding:18px var(--marg) 0}
+.tittelblokk h1{margin-bottom:8px}
+
+.fakta{display:flex;align-items:center;gap:9px;margin-top:12px}
+.fakta__karakter{font-family:'Familjen Grotesk',system-ui,sans-serif;
+  font-size:16px;font-weight:600;color:var(--blekk);font-variant-numeric:tabular-nums}
+.fakta__skille{width:1px;height:14px;background:var(--linje)}
+.kreditering{margin-top:8px}
+
+.handlingsrad{display:flex;gap:10px;padding:16px var(--marg)}
+.handlingsrad .knapp{flex:1}
+.knapp--ikon{flex:0 0 48px;width:48px;padding:0}
+.knapp--ikon svg{width:21px;height:21px}
+
+.rad--verdi{grid-template-columns:minmax(0,1fr) auto}
+.stepper{display:flex;align-items:center;gap:2px}
+.stepper button{width:48px;height:48px;border:0;background:transparent;cursor:pointer;
+  font-family:inherit;font-size:19px;color:var(--handling);border-radius:var(--r-bilde);line-height:1}
+.stepper button:active{background:var(--flate-dyp)}
+.stepper__tall{min-width:34px;text-align:center;
+  font-family:'Familjen Grotesk',system-ui,sans-serif;font-size:17px;font-weight:600;
+  font-variant-numeric:tabular-nums}
+
+/* Segmentkontroll: plattformens form, men flat og ikke sticky. */
+.segment{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:4px var(--marg) 14px;
+  padding:3px;background:var(--flate-dyp);border-radius:var(--r-gruppe)}
+.segment button{min-height:48px;border:0;cursor:pointer;border-radius:var(--r-bilde);
+  font-family:inherit;font-size:15px;font-weight:600;color:var(--blekk-2);
+  background:transparent}
+.segment button[aria-selected="true"]{background:var(--flate);color:var(--blekk);
+  box-shadow:0 1px 2px rgba(26,24,21,.12)}
+
+.rad--ingrediens{grid-template-columns:52px minmax(0,1fr) auto;min-height:64px;
+  padding-top:8px;padding-bottom:8px}
+.rad--ingrediens img{width:48px;height:48px;object-fit:contain;display:block}
+.rad--ingrediens em{font-style:normal;color:var(--blekk-2);font-size:13.5px}
+.mengde{font-family:'Familjen Grotesk',system-ui,sans-serif;font-size:14.5px;
+  font-weight:600;color:var(--blekk-2);white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+
+.gruppe__hode--rad{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.lenke{min-height:48px;display:inline-flex;align-items:center;border:0;
+  background:none;cursor:pointer;font-family:inherit;font-size:14px;
+  font-weight:600;color:var(--handling)}
+
+.rad--kommentar{grid-template-columns:minmax(0,1fr);padding-top:13px;padding-bottom:13px}
+.kommentar__hode{display:flex;align-items:baseline;gap:9px}
+.kommentar__hode .meta{margin-left:auto}
+.meta--brod{line-height:1.45}
+
+/* 72px firkantet foto. Ikke 64px sirkel: sirkelmasken fjerner
+   komposisjonen og gjør retten til et ikon. */
+.rad--relatert{grid-template-columns:72px minmax(0,1fr);min-height:96px}
+.rad--relatert img{width:72px;height:72px;object-fit:cover;border-radius:var(--r-bilde);display:block}
+.rad--relatert .rad__copy{gap:5px}

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A · Kokebok — Oppskrift</title>
+<link rel="stylesheet" href="../_assets/fonts/fonter.css">
+<link rel="stylesheet" href="stil.css">
+<link rel="stylesheet" href="oppskrift.css">
+</head>
+<body>
+<div class="device">
+  <div class="scroll">
+
+    <!-- Fotoet ligger ØVERST, uten header oppå. Tilbake og lagre står
+         på fotoet som blekk på papir, ikke som knapper i en linje. -->
+    <div class="hero">
+      <img src="../_assets/mat/r-01.jpg" alt="Mochagrøt">
+      <a class="hero__knapp hero__knapp--venstre" href="#" aria-label="Tilbake">←</a>
+      <button class="hero__knapp hero__knapp--hoyre" aria-pressed="false" aria-label="Lagre oppskriften">♡</button>
+    </div>
+
+    <section class="tittelblokk">
+      <p class="kicker">Frokost · Grøt</p>
+      <h1>Mochagrøt</h1>
+      <p class="lead">Havregrøt med kakao og et streif av kaffe. Toppes med bær og peanøttsmør.</p>
+      <p class="byline">
+        <span class="karakter">4,6</span>
+        <span class="grunnlag">142 vurderinger</span>
+        <span class="prikk">·</span>
+        <span class="kilde">Livsstilsdagboken MariaClausen</span>
+      </p>
+    </section>
+
+    <hr class="rule">
+
+    <!-- Porsjoner: tall som typografi, ikke en pille med + og −. -->
+    <section class="porsjoner">
+      <span class="porsjoner__etikett">Porsjoner</span>
+      <div class="porsjoner__velger">
+        <button aria-label="Færre porsjoner">−</button>
+        <span class="porsjoner__tall">1</span>
+        <button aria-label="Flere porsjoner">+</button>
+      </div>
+    </section>
+
+    <!-- Modusvelgeren er to fanenavn med understrek, ikke en pille-i-pille.
+         Den er IKKE sticky: baseline-funn F-13 var at den sticky pillen la
+         seg over ni tekstflater, deriblant primærknappen. -->
+    <nav class="deler" aria-label="Del av oppskriften">
+      <a class="del er-valgt" href="#" aria-current="true">Ingredienser</a>
+      <a class="del" href="#">Slik gjør du</a>
+    </nav>
+
+    <section class="ingredienser">
+      <ol class="liste">
+        <li><img src="../_assets/ingredienser/oats.png" alt=""><span class="navn">havregryn</span><span class="mengde">1 dl</span></li>
+        <li><img src="../_assets/ingredienser/water.png" alt=""><span class="navn">vann</span><span class="mengde">2 dl</span></li>
+        <li><img src="../_assets/ingredienser/milk.png" alt=""><span class="navn">melk <em>(evt. 2 ss. vaniljeyoghurt)</em></span><span class="mengde">1 dl</span></li>
+        <li><img src="../_assets/ingredienser/cocoa.png" alt=""><span class="navn">kakaopulver</span><span class="mengde">2 ss</span></li>
+        <li><img src="../_assets/ingredienser/coffee.png" alt=""><span class="navn">pulverkaffe</span><span class="mengde">½ ts</span></li>
+        <li><img src="../_assets/ingredienser/salt.png" alt=""><span class="navn">salt</span><span class="mengde">en klype</span></li>
+        <li><img src="../_assets/ingredienser/syrup.png" alt=""><span class="navn">sirup</span><span class="mengde">1 ss</span></li>
+      </ol>
+
+      <h3 class="bolk">Topping</h3>
+      <ol class="liste">
+        <li><img src="../_assets/ingredienser/raspberries.png" alt=""><span class="navn">frosne eller ferske bringebær</span><span class="mengde">1 neve</span></li>
+        <li><img src="../_assets/ingredienser/banana.png" alt=""><span class="navn">banan</span><span class="mengde">½</span></li>
+        <li><img src="../_assets/ingredienser/peanut-butter.png" alt=""><span class="navn">peanøttsmør</span><span class="mengde">½ ss</span></li>
+        <li><img src="../_assets/ingredienser/walnuts.png" alt=""><span class="navn">valnøttkjerner</span><span class="mengde">1 neve</span></li>
+      </ol>
+    </section>
+
+    <section class="handling">
+      <a class="knapp" href="#">Legg i matplanen</a>
+    </section>
+
+    <hr class="rule">
+
+    <section class="kommentarer">
+      <div class="kommentarer__hode">
+        <h3>Kommentarer</h3>
+        <a class="lenke" href="#">Mest nyttig</a>
+      </div>
+      <article class="kommentar">
+        <p class="kommentar__hode"><span class="navn">Maria</span><span class="karakter">5,0</span><span class="tid">For 2 dager siden</span></p>
+        <p class="brod">Kaffen er valgfri. Uten den smaker den som en sjokolademilkshake.</p>
+      </article>
+      <article class="kommentar">
+        <p class="kommentar__hode"><span class="navn">Anonym</span><span class="karakter">4,0</span><span class="tid">For 5 dager siden</span></p>
+        <p class="brod">Brukte vanlig yoghurt i stedet for melk. Ble tykkere og helt fint.</p>
+      </article>
+      <a class="knapp knapp--stille" href="#">Skriv en kommentar</a>
+    </section>
+
+    <hr class="rule">
+
+    <section class="flere">
+      <h3>Flere som denne</h3>
+      <a class="flere__rad" href="#">
+        <img src="../_assets/mat/r-09.jpg" alt="">
+        <span class="flere__copy"><span class="tittel">Bakt havregrøt cookie dough</span><span class="karakter">4,5</span></span>
+      </a>
+      <a class="flere__rad" href="#">
+        <img src="../_assets/mat/r-10.jpg" alt="">
+        <span class="flere__copy"><span class="tittel">Overnight oats blåbær</span><span class="karakter">4,4</span></span>
+      </a>
+      <a class="flere__rad" href="#">
+        <img src="../_assets/mat/r-02.jpg" alt="">
+        <span class="flere__copy"><span class="tittel">Hjemmelaget grovbrød</span><span class="karakter">4,8</span></span>
+      </a>
+    </section>
+
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D · Arkivet — Oppskrift</title>
+<link rel="stylesheet" href="../_assets/fonts/fonter.css">
+<link rel="stylesheet" href="stil.css">
+<link rel="stylesheet" href="oppskrift.css">
+</head>
+<body>
+<div class="device">
+  <div class="scroll">
+
+    <header class="arkivtopp">
+      <a class="arkivtopp__knapp" href="#" aria-label="Tilbake">←</a>
+      <span class="etikett">Oppføring 01 · Frokost</span>
+      <button class="arkivtopp__knapp" aria-pressed="false" aria-label="Lagre oppskriften">☆</button>
+    </header>
+
+    <div class="bilde">
+      <img src="../_assets/mat/r-01.jpg" alt="Mochagrøt">
+    </div>
+
+    <section class="tittelblokk">
+      <h1>Mochagrøt</h1>
+      <p class="ingress">Havregrøt med kakao og et streif av kaffe. Toppes med bær og peanøttsmør.</p>
+    </section>
+
+    <!-- Nøkkeltallene som en ekte tabell, i tabellsifre. Det er formen
+         et arkiv bruker for målbare verdier, og den gjør «4,6» til et
+         tall man kan sammenligne — ikke fem stjerner som alltid tegner
+         omtrent samme figur. -->
+    <dl class="tabell">
+      <div><dt>Vurdering</dt><dd class="tall">4,6 <span class="av">av 5</span></dd></div>
+      <div><dt>Grunnlag</dt><dd class="tall">142</dd></div>
+      <div><dt>Råvarer</dt><dd class="tall">7 <span class="av">+ 4 topping</span></dd></div>
+      <div><dt>Kilde</dt><dd>Livsstilsdagboken MariaClausen</dd></div>
+    </dl>
+
+    <section class="porsjoner">
+      <span class="porsjoner__etikett">Porsjoner</span>
+      <span class="stepper">
+        <button aria-label="Færre porsjoner">−</button>
+        <span class="stepper__tall tall">1</span>
+        <button aria-label="Flere porsjoner">+</button>
+      </span>
+    </section>
+
+    <div class="handlingsrad">
+      <a class="knapp knapp--primar knapp--bred" href="#">Legg i matplanen</a>
+    </div>
+
+    <!-- Ikke sticky. F-13 i baselinen: den sticky pillen dekket ni
+         tekstflater, blant dem primærknappen. -->
+    <nav class="deler" aria-label="Del av oppskriften">
+      <a class="del er-valgt" href="#" aria-current="true">Ingredienser</a>
+      <a class="del" href="#">Slik gjør du</a>
+    </nav>
+
+    <!-- Råvarene stort. I baselinen var de 40px ikoner i en rad; her er
+         de oppføringens hovedillustrasjon. -->
+    <ol class="raavareliste">
+      <li><span class="nr tall">1</span><img src="../_assets/ingredienser/oats.png" alt=""><span class="navn">havregryn</span><span class="mengde tall">1 dl</span></li>
+      <li><span class="nr tall">2</span><img src="../_assets/ingredienser/water.png" alt=""><span class="navn">vann</span><span class="mengde tall">2 dl</span></li>
+      <li><span class="nr tall">3</span><img src="../_assets/ingredienser/milk.png" alt=""><span class="navn">melk <em>(evt. 2 ss. vaniljeyoghurt)</em></span><span class="mengde tall">1 dl</span></li>
+      <li><span class="nr tall">4</span><img src="../_assets/ingredienser/cocoa.png" alt=""><span class="navn">kakaopulver</span><span class="mengde tall">2 ss</span></li>
+      <li><span class="nr tall">5</span><img src="../_assets/ingredienser/coffee.png" alt=""><span class="navn">pulverkaffe</span><span class="mengde tall">½ ts</span></li>
+      <li><span class="nr tall">6</span><img src="../_assets/ingredienser/salt.png" alt=""><span class="navn">salt</span><span class="mengde">en klype</span></li>
+      <li><span class="nr tall">7</span><img src="../_assets/ingredienser/syrup.png" alt=""><span class="navn">sirup</span><span class="mengde tall">1 ss</span></li>
+    </ol>
+
+    <h3 class="bolk">Topping</h3>
+    <ol class="raavareliste" start="8">
+      <li><span class="nr tall">8</span><img src="../_assets/ingredienser/raspberries.png" alt=""><span class="navn">frosne eller ferske bringebær</span><span class="mengde">1 neve</span></li>
+      <li><span class="nr tall">9</span><img src="../_assets/ingredienser/banana.png" alt=""><span class="navn">banan</span><span class="mengde tall">½</span></li>
+      <li><span class="nr tall">10</span><img src="../_assets/ingredienser/peanut-butter.png" alt=""><span class="navn">peanøttsmør</span><span class="mengde tall">½ ss</span></li>
+      <li><span class="nr tall">11</span><img src="../_assets/ingredienser/walnuts.png" alt=""><span class="navn">valnøttkjerner</span><span class="mengde">1 neve</span></li>
+    </ol>
+
+    <hr class="strek">
+
+    <section class="kommentarer">
+      <div class="seksjonshode"><h3>Kommentarer</h3><button class="lenke">Mest nyttig</button></div>
+      <article class="kommentar">
+        <p class="kommentar__hode"><span class="navn">Maria</span><span class="karakter tall">5,0</span><span class="tid meta">For 2 dager siden</span></p>
+        <p>Kaffen er valgfri. Uten den smaker den som en sjokolademilkshake.</p>
+      </article>
+      <article class="kommentar">
+        <p class="kommentar__hode"><span class="navn">Anonym</span><span class="karakter tall">4,0</span><span class="tid meta">For 5 dager siden</span></p>
+        <p>Brukte vanlig yoghurt i stedet for melk. Ble tykkere og helt fint.</p>
+      </article>
+      <a class="knapp knapp--stille knapp--bred" href="#">Skriv en kommentar</a>
+    </section>
+
+    <hr class="strek">
+
+    <section class="flere">
+      <h3>Flere i samme kategori</h3>
+      <a class="flere__rad" href="#"><span class="nr tall">09</span><img src="../_assets/mat/r-09.jpg" alt=""><span class="flere__copy"><span class="tittel">Bakt havregrøt cookie dough</span><span class="meta tall">4,5 · 104 vurderinger</span></span></a>
+      <a class="flere__rad" href="#"><span class="nr tall">10</span><img src="../_assets/mat/r-10.jpg" alt=""><span class="flere__copy"><span class="tittel">Overnight oats blåbær</span><span class="meta tall">4,4 · 79 vurderinger</span></span></a>
+      <a class="flere__rad" href="#"><span class="nr tall">02</span><img src="../_assets/mat/r-02.jpg" alt=""><span class="flere__copy"><span class="tittel">Hjemmelaget grovbrød</span><span class="meta tall">4,8 · 217 vurderinger</span></span></a>
+    </section>
+
+  </div>
+</div>
+</body></html>

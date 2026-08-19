@@ -1,0 +1,115 @@
+/* ═══════════════════════════════════════════════════════════════════
+   D · ARKIVET  (wildcard)
+   Tese: Florir er ikke en app som viser mat — det er et velholdt arkiv
+   over den. Formen er en oppslagsbok: nummererte oppføringer, harde
+   kanter, tabellsifre, og de 51 utskårne ingrediensbildene brukt som
+   selve billedspråket i stedet for som 40px-ikoner.
+
+   Dette er retningen ingen annen app kan kopiere, fordi den er bygget
+   på et aktivum bare Florir har.
+
+   Den nordiske gesten er hentet fra norsk institusjonstradisjon —
+   Nasjonalmuseets serif+sans-PAR, Monokroms bevisste uregelmessighet —
+   ikke fra «skandi = minimalisme + beige», som forskningen fant er en
+   ettermontert eksportmyte.
+
+   Svar på baseline-funnene:
+   F-01  Papir og blekk. Blekkblått er signalfargen: den leser som
+         registrering og notat, ikke som velvære.
+   F-02  Newsreader med optisk størrelse mot Karla. To stemmer, tydelig
+         forskjellige, ingen av dem systemfonten.
+   F-04  Linjer på 4,3:1. I et arkiv er linjen bærende konstruksjon.
+   F-08  NULL radius i hele systemet, uten unntak. En oppføring har ikke
+         avrundede hjørner. Det er den enkleste radiusregelen som finnes,
+         og den er umulig å bryte ved et uhell.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root{
+  --papir:      #FAF6EE;
+  --papir-2:    #F1EADC;
+  --blekk:      #17150F;
+  --blekk-2:    #4E4838;
+  --linje:      #A79C82;   /* 4,3:1 mot papir — bærende, ikke antydet */
+  --linje-fin:  #D3CAB4;
+  --arkivtall:  #7C7157;   /* eget token: oppføringsnummeret er tekst, ikke strek */
+
+  --blaa:       #23406E;   /* registrering, notat, handling */
+  --blaa-trykk: #16294A;
+  --blaa-svak:  #E4E7EE;
+
+  --fullfort:   #37603F;   /* grønt, degradert til én jobb */
+
+  --r:          0;         /* systemets eneste radius. Null. */
+  --marg:       20px;
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;border-radius:0}
+/* Knapper arver ikke skrift av seg selv. Uten denne linjen faller
+   hver <button> og <a class=knapp> tilbake til nettleserens Arial —
+   og retningen som skulle bevise at Florir har en typografisk
+   stemme rendrer plutselig i tre snitt, det ene ubestemt. */
+button,input,select,textarea{font:inherit;color:inherit}
+html,body{margin:0;padding:0;height:100%}
+body{background:var(--papir);color:var(--blekk);
+  font-family:Karla,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow:hidden}
+
+.device{position:relative;width:100%;height:100dvh;overflow:hidden;
+  background:var(--papir);display:flex;flex-direction:column}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding-bottom:20px}
+.dock{flex-shrink:0}
+
+/* ─── Typografi ────────────────────────────────────────────────────
+   Newsreader har en optisk akse. Overskrifter settes høyt på aksen —
+   tettere, mer kontrast — og småstoff lavt, der bokstaven åpner seg.
+   Sifre er ALLTID tabellsifre: i et arkiv skal en kolonne stå i lodd. */
+h1,h2,h3{margin:0;font-family:Newsreader,Georgia,serif;font-weight:600}
+h1{font-size:38px;line-height:1.06;letter-spacing:-.014em;
+   font-variation-settings:'opsz' 60}
+h2{font-size:27px;line-height:1.12;letter-spacing:-.01em;
+   font-variation-settings:'opsz' 40}
+h3{font-size:19px;line-height:1.2;font-variation-settings:'opsz' 28}
+
+p{margin:0;font-size:15px;line-height:1.5;color:var(--blekk-2)}
+.meta{font-size:12.5px;line-height:1.35;color:var(--blekk-2);
+  font-variant-numeric:tabular-nums}
+.etikett{display:block;font-size:11px;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--blaa)}
+.tall{font-variant-numeric:tabular-nums lining-nums}
+
+/* ─── Regelverk ────────────────────────────────────────────────────
+   Ett skille: streken. Ingen kortkant, ingen skygge, ingen hevet flate. */
+.strek{border:0;height:1px;background:var(--linje);margin:22px var(--marg)}
+.strek--fin{background:var(--linje-fin);margin:0 var(--marg)}
+
+/* ─── Knapper ──────────────────────────────────────────────────────
+   Firkantet. Ikke full bredde: en primærhandling som fyller hele
+   skjermbredden påstår at det ikke finnes andre valg. */
+.knapp{display:inline-flex;align-items:center;justify-content:center;min-height:52px;
+  padding:0 26px;border:0;cursor:pointer;font-family:inherit;
+  font-size:16px;font-weight:700;text-decoration:none;letter-spacing:.01em}
+.knapp--primar{background:var(--blaa);color:var(--papir)}
+.knapp--primar:active{background:var(--blaa-trykk)}
+.knapp--stille{background:transparent;color:var(--blaa);
+  box-shadow:inset 0 0 0 1px var(--linje)}
+.knapp--stille:active{background:var(--blaa-svak)}
+.knapp--bred{display:flex;width:100%}
+
+/* Fremdrift som en oppdelt strek: fem deler, to fylte. Ikke en glidende
+   pille — antallet ER informasjonen. */
+.deler-spor{display:flex;gap:3px}
+.deler-spor i{flex:1;height:5px;background:var(--linje-fin)}
+.deler-spor i.er-lest{background:var(--fullfort)}
+
+/* ─── Bunnmeny ─────────────────────────────────────────────────────*/
+.dock{display:grid;grid-template-columns:repeat(4,1fr);background:var(--papir);
+  border-top:1px solid var(--linje)}
+.fane{display:flex;align-items:center;justify-content:center;min-height:56px;
+  padding-bottom:env(safe-area-inset-bottom);font-size:11.5px;font-weight:700;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--blekk-2);
+  text-decoration:none;position:relative}
+.fane.er-aktiv{color:var(--blaa)}
+.fane.er-aktiv::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--blaa)}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

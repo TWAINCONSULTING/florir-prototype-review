@@ -1,0 +1,33 @@
+/* C · Bordet — Hjem */
+
+.intro{padding:calc(env(safe-area-inset-top) + 26px) var(--marg) 0}
+.ukesmaal{margin-top:10px;font-size:16px}
+
+.hero{position:relative;display:block;margin-top:24px;text-decoration:none;color:inherit}
+.hero img{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
+/* Mørkningen er kontrastarbeid, ikke stemning: uten den ligger cremetekst
+   på et lyst fotoparti og ryker under 4,5:1. */
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(14,11,8,.92) 0%,rgba(14,11,8,.72) 26%,rgba(14,11,8,0) 58%)}
+.hero__tekst{position:absolute;left:var(--marg);right:var(--marg);bottom:18px;z-index:1;
+  display:grid;gap:6px}
+.hero__tittel{font-family:'Instrument Serif',Georgia,serif;font-size:32px;
+  line-height:1.06;letter-spacing:-.008em;color:var(--creme)}
+.hero__meta{font-size:13px;color:#D9CEC0;font-variant-numeric:tabular-nums}
+
+.modul{padding:30px var(--marg) 0}
+.modul__hode{display:flex;align-items:center;gap:12px}
+.modul__nr{font-family:'Instrument Serif',Georgia,serif;font-size:22px;
+  color:var(--creme-2);font-variant-numeric:lining-nums}
+.modul__linje{flex:1;height:1px;background:var(--kant)}
+.modul h2{margin-top:14px}
+.modul p{margin-top:9px}
+.modul__fremdrift{display:flex;align-items:center;gap:12px;margin-top:20px}
+.modul__fremdrift .stolpe{flex:1}
+.modul .knapp{margin-top:22px}
+
+/* Innsikten er en hevet flate, ikke et kort med kant. På mørk grunn
+   bærer verdiforskjellen separasjonen — der trengs ingen ramme. */
+.innsikt{margin:30px var(--marg) 0;padding:20px 18px;background:var(--hevet);
+  border-radius:var(--r-flate)}
+.innsikt p{margin-top:9px}

@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════════════════════════════════
+   B · VERKTØY
+   Tese: Florir er et godt bygget verktøy som tilfeldigvis er varmt.
+   Plattformkyndig, tett, effektivt — men med paletten og typografien
+   reparert. Ikke redaksjonelt, ikke dekorativt: en app som gjør jobben
+   og ikke ber om oppmerksomhet for utseendet sitt.
+
+   Svar på baseline-funnene:
+   F-01  Grunnen er varm off-white. Handlingsfargen er okergul. Grønt
+         er degradert til ÉN semantisk jobb: fullført/fremdrift.
+   F-02  Familjen Grotesk på titler — nordisk, med egen karakter, ikke
+         Inter. Grensesnittet ellers er systemfont, og det er et VALG:
+         tesen er plattformkyndighet.
+   F-04  Skillelinjer på 3,1:1. Grupperte lister med ekte separatorer.
+   F-08  To radier med hver sin regel: 10px på grupperte flater,
+         999px kun på selve trykkflatene som er runde av funksjon.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root{
+  --grunn:        #F7F4EF;   /* varm off-white, ikke mint */
+  --flate:        #FFFFFF;
+  --flate-dyp:    #EFEAE1;
+  --blekk:        #1A1815;
+  --blekk-2:      #55504A;   /* 7,4:1 mot grunn */
+  --linje:        #C9C1B4;   /* 3,1:1 mot grunn — en ekte separator */
+  --linje-fin:    #E2DBD0;
+
+  --handling:     #96560F;   /* oker: primærhandling og lenker */
+  --handling-trykk:#74420B;
+  --handling-svak:#F6EADC;
+
+  --fullfort:     #2F6B47;   /* grønt, degradert til én jobb */
+  --varsel:       #9A4520;
+
+  --r-gruppe:     10px;      /* grupperte lister og flater */
+  --r-bilde:      6px;       /* foto og miniatyrer */
+  --r-rund:       999px;     /* kun det som er rundt av funksjon */
+  --marg:         16px;
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+/* Knapper arver ikke skrift av seg selv. Uten denne linjen faller
+   hver <button> og <a class=knapp> tilbake til nettleserens Arial —
+   og retningen som skulle bevise at Florir har en typografisk
+   stemme rendrer plutselig i tre snitt, det ene ubestemt. */
+button,input,select,textarea{font:inherit;color:inherit}
+html,body{margin:0;padding:0;height:100%}
+body{background:var(--grunn);color:var(--blekk);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow:hidden}
+
+.device{position:relative;width:100%;height:100dvh;overflow:hidden;
+  background:var(--grunn);display:flex;flex-direction:column}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding-bottom:20px}
+.dock{flex-shrink:0}
+
+/* ─── Typografi ────────────────────────────────────────────────────
+   Familjen Grotesk KUN på skjermtitler og korttitler. Alt annet er
+   systemfont. Grensen er tesen: appen skal kjennes hjemme på
+   plattformen, ikke som en font-demo. */
+h1,h2,h3{margin:0;font-family:'Familjen Grotesk',system-ui,sans-serif;font-weight:600}
+h1{font-size:30px;line-height:1.14;letter-spacing:-.021em}
+h2{font-size:20px;line-height:1.22;letter-spacing:-.013em}
+h3{font-size:16px;line-height:1.3;letter-spacing:-.008em}
+
+p{margin:0;font-size:15px;line-height:1.47;color:var(--blekk-2)}
+.meta{font-size:12.5px;line-height:1.35;color:var(--blekk-2)}
+.kicker{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--blekk-2)}
+
+/* ─── Navigasjonslinje ─────────────────────────────────────────────
+   Plattformkonvensjon: tittel til venstre, stor. Ingen sentrert tittel
+   med chevron, som er formen alle generatorer lager først. */
+.navbar{padding:calc(env(safe-area-inset-top) + 14px) var(--marg) 10px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.navbar__handling{min-width:48px;min-height:48px;display:flex;align-items:center;
+  justify-content:flex-end;color:var(--handling);font-size:15px;font-weight:600;
+  text-decoration:none;background:none;border:0;cursor:pointer;font-family:inherit}
+
+/* ─── Gruppert liste ───────────────────────────────────────────────
+   iOS-konvensjonen, men på varm grunn og med separatorer som faktisk
+   er synlige. Baseline hadde kortkant på 1,25:1 — usynlig. */
+.gruppe{margin:0 var(--marg) 14px;background:var(--flate);
+  border:1px solid var(--linje-fin);border-radius:var(--r-gruppe);overflow:hidden}
+.gruppe__hode{padding:0 var(--marg) 6px;margin:0 var(--marg)}
+.rad{display:grid;align-items:center;gap:12px;padding:12px 14px;
+  min-height:60px;text-decoration:none;color:inherit;
+  border-bottom:1px solid var(--linje-fin)}
+.rad:last-child{border-bottom:0}
+.rad:active{background:var(--flate-dyp)}
+
+/* ─── Knapper ──────────────────────────────────────────────────────*/
+.knapp{display:flex;align-items:center;justify-content:center;min-height:48px;
+  padding:0 20px;border-radius:var(--r-gruppe);border:0;cursor:pointer;
+  font-family:inherit;font-size:16px;font-weight:600;text-decoration:none}
+.knapp--primar{background:var(--handling);color:#fff}
+.knapp--primar:active{background:var(--handling-trykk)}
+.knapp--stille{background:var(--flate);color:var(--handling);
+  border:1px solid var(--linje)}
+
+/* ─── Fremdrift ────────────────────────────────────────────────────
+   Grønt brukes her, og bare her. Det er hele poenget med å degradere
+   det: når det dukker opp, betyr det noe. */
+.stolpe{height:6px;border-radius:var(--r-rund);background:var(--flate-dyp);overflow:hidden}
+.stolpe>i{display:block;height:100%;border-radius:var(--r-rund);background:var(--fullfort)}
+
+/* ─── Bunnmeny ─────────────────────────────────────────────────────
+   Plattformens tab bar: full bredde, kant øverst, ikke en flytende
+   pille med skygge. */
+.dock{display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--flate);border-top:1px solid var(--linje)}
+.fane{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;min-height:56px;padding-bottom:env(safe-area-inset-bottom);
+  font-size:11px;font-weight:500;color:var(--blekk-2);text-decoration:none}
+.fane svg{width:24px;height:24px}
+.fane.er-aktiv{color:var(--handling)}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

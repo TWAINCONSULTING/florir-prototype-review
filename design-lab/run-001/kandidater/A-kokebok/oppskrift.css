@@ -1,0 +1,106 @@
+/* A · Kokebok — oppskriftsdetalj.
+   Bygger på stil.css. Ingen nye radier, ingen nye farger. */
+
+/* ─── Hero ─────────────────────────────────────────────────────────
+   Fullbredde, ingen marg, ingen radius, ingen header oppå. Baseline
+   holdt fotoet på 20px armlengdes avstand med 24px hjørner (F-07). */
+.hero{position:relative}
+.hero img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero__knapp{position:absolute;top:calc(env(safe-area-inset-top) + 12px);
+  width:48px;height:48px;display:flex;align-items:center;justify-content:center;
+  background:var(--papir);color:var(--blekk);border:0;
+  border-radius:var(--r-kontroll);font-size:20px;line-height:1;
+  text-decoration:none;cursor:pointer}
+.hero__knapp--venstre{left:12px}
+.hero__knapp--hoyre{right:12px}
+
+.tittelblokk{padding:22px var(--marg) 0}
+.tittelblokk h1{margin-top:8px;font-size:36px}
+.tittelblokk .lead{font-size:17px}
+
+/* Vurderingen er et TALL, ikke fem stjerner. Fem stjerner tegner alltid
+   omtrent samme form; 4,6 mot 3,8 er en forskjell man faktisk leser. */
+.byline{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin:16px 0 0;
+  font-size:13px;color:var(--blekk-svak)}
+.karakter{font-family:Fraunces,Georgia,serif;font-size:17px;font-weight:600;
+  color:var(--blekk);font-variant-numeric:lining-nums;
+  font-variation-settings:'opsz' 24,'SOFT' 10}
+.byline .prikk{color:var(--linje)}
+
+/* ─── Porsjoner ────────────────────────────────────────────────────
+   Tallet er satt i display-skriften. Det er den ene verdien på skjermen
+   brukeren faktisk endrer, så den skal se ut som en verdi. */
+.porsjoner{display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--marg)}
+.porsjoner__etikett{font-size:15.5px;color:var(--blekk-svak)}
+.porsjoner__velger{display:flex;align-items:center;gap:4px}
+.porsjoner__velger button{width:48px;height:48px;border:1px solid var(--linje);
+  background:transparent;border-radius:var(--r-kontroll);
+  font-size:19px;color:var(--blekk);cursor:pointer;line-height:1}
+.porsjoner__velger button:active{background:var(--papir-dyp)}
+.porsjoner__tall{min-width:44px;text-align:center;
+  font-family:Fraunces,Georgia,serif;font-size:24px;font-weight:600;
+  font-variant-numeric:lining-nums;font-variation-settings:'opsz' 36,'SOFT' 10}
+
+/* ─── Deler ────────────────────────────────────────────────────────
+   To ord med understrek. IKKE sticky, og ikke en pille inne i en pille.
+   F-13: den sticky pillen dekket ni tekstflater, blant dem primærknappen. */
+.deler{display:flex;gap:26px;margin:26px var(--marg) 0;
+  border-bottom:1px solid var(--linje)}
+.del{min-height:50px;display:flex;align-items:center;
+  font-size:16px;font-weight:600;color:var(--blekk-svak);
+  text-decoration:none;position:relative}
+.del.er-valgt{color:var(--blekk)}
+.del.er-valgt::after{content:"";position:absolute;left:0;right:0;bottom:-1px;
+  height:2px;background:var(--leire)}
+
+/* ─── Ingredienser ─────────────────────────────────────────────────
+   Ingrediensbildene er Florirs eneste aktivum ingen konkurrent har.
+   De er større her enn i baselinen (54 → 60px) og står mot papir,
+   ikke mot en mintgrønn flate. */
+.ingredienser{padding:0 var(--marg)}
+.liste{list-style:none;margin:0;padding:0}
+.liste li{display:grid;grid-template-columns:60px minmax(0,1fr) auto;
+  align-items:center;gap:14px;min-height:64px;
+  border-bottom:1px solid var(--linje-fin)}
+.liste li:last-child{border-bottom:0}
+.liste img{width:56px;height:56px;object-fit:contain;display:block}
+.liste .navn{font-size:16px;line-height:1.35}
+.liste .navn em{font-style:normal;color:var(--blekk-svak);font-size:14px}
+.liste .mengde{font-family:Fraunces,Georgia,serif;font-size:15px;font-weight:600;
+  color:var(--blekk-svak);white-space:nowrap;font-variant-numeric:lining-nums;
+  font-variation-settings:'opsz' 20,'SOFT' 10}
+.bolk{margin:26px 0 4px;font-size:19px}
+
+.handling{padding:28px var(--marg) 0}
+.handling .knapp{margin-top:0}
+.knapp--stille{background:transparent;color:var(--leire);
+  border:1px solid var(--linje);margin-top:22px}
+.knapp--stille:active{background:var(--leire-svak)}
+
+/* ─── Kommentarer ──────────────────────────────────────────────────*/
+.kommentarer{padding:0 var(--marg)}
+.kommentarer__hode{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.lenke{min-height:48px;display:inline-flex;align-items:center;
+  font-size:14px;color:var(--leire);text-decoration:none}
+.kommentar{padding:18px 0;border-bottom:1px solid var(--linje-fin)}
+.kommentar__hode{display:flex;align-items:baseline;gap:10px;margin:0}
+.kommentar__hode .navn{font-size:15px;font-weight:600}
+.kommentar__hode .karakter{font-size:15px}
+.kommentar__hode .tid{margin-left:auto;font-size:12.5px;color:var(--blekk-svak)}
+.kommentar .brod{margin-top:7px}
+
+/* ─── Flere som denne ──────────────────────────────────────────────
+   Fotoet er 88px, ikke 64px, og firkantet. En sirkulær miniatyr
+   beskjærer bort halve retten. */
+.flere{padding:0 var(--marg) 8px}
+.flere h3{margin-bottom:6px}
+.flere__rad{display:grid;grid-template-columns:88px minmax(0,1fr);
+  align-items:center;gap:16px;min-height:104px;text-decoration:none;color:inherit;
+  border-bottom:1px solid var(--linje-fin)}
+.flere__rad:last-child{border-bottom:0}
+.flere__rad img{width:88px;height:88px;object-fit:cover;
+  border-radius:var(--r-kontroll)}
+.flere__copy{display:grid;gap:5px;min-width:0}
+.flere__copy .tittel{font-family:Fraunces,Georgia,serif;font-size:18px;font-weight:600;
+  line-height:1.22;letter-spacing:-.01em;font-variation-settings:'opsz' 28,'SOFT' 14}

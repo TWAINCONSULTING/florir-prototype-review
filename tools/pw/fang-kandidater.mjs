@@ -106,8 +106,18 @@ for (const kid of kandidater) {
         .filter(x => (x.h > 0 && x.h < 47.5) || (x.w > 0 && x.w < 47.5));
 
       // Skriftfamilier i faktisk bruk.
+      //
+      // Bare elementer som SELV tegner tekst teller. Uten filteret arvet
+      // <img> og <svg> sin computed fontFamily og la «Arial» i settet på
+      // hver skjerm med bilder — en målefeil som ville fått hver kandidat
+      // til å se ut som den brukte tre snitt i stedet for to.
       const fam = new Set();
-      for (const e of synlig) fam.add(getComputedStyle(e).fontFamily.split(',')[0].replace(/["']/g, '').trim());
+      for (const e of synlig) {
+        if (/^(IMG|SVG|PATH|CIRCLE|RECT|BR|HR|INPUT)$/.test(e.tagName)) continue;
+        const egen = [...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim().length > 0);
+        if (!egen) continue;
+        fam.add(getComputedStyle(e).fontFamily.split(',')[0].replace(/["']/g, '').trim());
+      }
 
       let bunn = 0;
       for (const e of sc.children) { const b = e.getBoundingClientRect(); if (b.height > 0) bunn = Math.max(bunn, b.bottom); }

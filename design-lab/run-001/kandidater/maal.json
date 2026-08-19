@@ -1,0 +1,155 @@
+{
+  "A-kokebok": {
+    "hjem": {
+      "gronnandel": 0,
+      "flater": 3,
+      "radier": {
+        "3px": 1
+      },
+      "distinkteRadier": 1,
+      "skriftfamilier": [
+        "Fraunces",
+        "Instrument Sans"
+      ],
+      "svakesteKontrast": 6.72,
+      "kontrastbrudd": [],
+      "smaaTrykkflater": [],
+      "doedLuft": 0,
+      "ruller": true,
+      "hScroll": false
+    },
+    "oppskrift": {
+      "gronnandel": 0,
+      "flater": 3,
+      "radier": {
+        "3px": 4
+      },
+      "distinkteRadier": 1,
+      "skriftfamilier": [
+        "Instrument Sans",
+        "Fraunces"
+      ],
+      "svakesteKontrast": 6.72,
+      "kontrastbrudd": [],
+      "smaaTrykkflater": [],
+      "doedLuft": 0,
+      "ruller": true,
+      "hScroll": false
+    }
+  },
+  "B-verktoy": {
+    "hjem": {
+      "gronnandel": 9,
+      "flater": 11,
+      "radier": {
+        "10px": 7,
+        "6px": 3
+      },
+      "distinkteRadier": 2,
+      "skriftfamilier": [
+        "Familjen Grotesk",
+        "system-ui"
+      ],
+      "svakesteKontrast": 5.78,
+      "kontrastbrudd": [],
+      "smaaTrykkflater": [],
+      "doedLuft": 0,
+      "ruller": true,
+      "hScroll": false
+    },
+    "oppskrift": {
+      "gronnandel": 0,
+      "flater": 8,
+      "radier": {
+        "999px": 2,
+        "10px": 4,
+        "6px": 4
+      },
+      "distinkteRadier": 3,
+      "skriftfamilier": [
+        "Familjen Grotesk",
+        "system-ui"
+      ],
+      "svakesteKontrast": 5.78,
+      "kontrastbrudd": [],
+      "smaaTrykkflater": [],
+      "doedLuft": 0,
+      "ruller": true,
+      "hScroll": false
+    }
+  },
+  "C-bord": {
+    "hjem": {
+      "gronnandel": 0,
+      "flater": 4,
+      "radier": {
+        "14px": 2
+      },
+      "distinkteRadier": 1,
+      "skriftfamilier": [
+        "Instrument Serif",
+        "Figtree"
+      ],
+      "svakesteKontrast": 7.07,
+      "kontrastbrudd": [],
+      "smaaTrykkflater": [],
+      "doedLuft": 0,
+      "ruller": true,
+      "hScroll": false
+    },
+    "oppskrift": {
+      "gronnandel": 0,
+      "flater": 6,
+      "radier": {
+        "999px": 4,
+        "14px": 3
+      },
+      "distinkteRadier": 2,
+      "skriftfamilier": [
+        "Instrument Serif",
+        "Figtree"
+      ],
+      "svakesteKontrast": 7.76,
+      "kontrastbrudd": [],
+      "smaaTrykkflater": [],
+      "doedLuft": 0,
+      "ruller": true,
+      "hScroll": false
+    }
+  },
+  "D-arkiv": {
+    "hjem": {
+      "gronnandel": 0,
+      "flater": 3,
+      "radier": {},
+      "distinkteRadier": 0,
+      "skriftfamilier": [
+        "Newsreader",
+        "Karla"
+      ],
+      "svakesteKontrast": 4.47,
+      "kontrastbrudd": [],
+      "smaaTrykkflater": [],
+      "doedLuft": 0,
+      "ruller": true,
+      "hScroll": false
+    },
+    "oppskrift": {
+      "gronnandel": 0,
+      "flater": 2,
+      "radier": {},
+      "distinkteRadier": 0,
+      "skriftfamilier": [
+        "Karla",
+        "Newsreader"
+      ],
+      "svakesteKontrast": 8.44,
+      "kontrastbrudd": [],
+      "smaaTrykkflater": [],
+      "doedLuft": 0,
+      "ruller": true,
+      "hScroll": false
+    }
+  },
+  "_assets": {}
+}

@@ -1,0 +1,50 @@
+/* B · Verktøy — Hjem */
+
+.ukesmaal{padding:0 var(--marg) 14px;font-size:15.5px}
+
+/* Aktiv modul: en egen flate, ikke en rad i en liste. Den er den ene
+   tingen skjermen ber om, så den får være større enn alt annet. */
+.aktiv{margin:0 var(--marg) 18px;padding:16px 14px 14px;background:var(--flate);
+  border:1px solid var(--linje-fin);border-radius:var(--r-gruppe)}
+.aktiv__hode{display:flex;align-items:center;gap:14px}
+.aktiv__nr{flex-shrink:0;width:52px;height:52px;display:grid;place-items:center;
+  background:var(--handling-svak);color:var(--handling-trykk);
+  border-radius:var(--r-gruppe);
+  font-family:'Familjen Grotesk',system-ui,sans-serif;font-size:21px;font-weight:600;
+  font-variant-numeric:tabular-nums}
+.aktiv h2{margin-top:2px}
+.aktiv p{margin-top:10px}
+.aktiv__fremdrift{display:flex;align-items:center;gap:11px;margin-top:14px}
+.aktiv__fremdrift .stolpe{flex:1}
+.aktiv .knapp{margin-top:14px}
+
+/* Oppgaverader: avkryssingsboks til venstre, tekst til høyre. */
+.rad--oppgave{grid-template-columns:26px minmax(0,1fr);align-items:start;
+  padding-top:13px;padding-bottom:13px}
+.boks{width:24px;height:24px;margin-top:1px;border:1.8px solid var(--linje);
+  border-radius:var(--r-bilde);background:var(--flate)}
+.boks--av{border-color:var(--fullfort);background:var(--fullfort);color:#fff;
+  display:grid;place-items:center;font-size:14px;line-height:1}
+.rad__copy{display:grid;gap:4px;min-width:0}
+.rad__tittel{font-family:'Familjen Grotesk',system-ui,sans-serif;
+  font-size:15.5px;font-weight:600;line-height:1.3;color:var(--blekk)}
+.rad__tittel.er-gjort{color:var(--blekk-2);text-decoration:line-through;
+  text-decoration-color:var(--linje)}
+
+/* Ukas rett: 96px firkantet foto, ikke 64px sirkel. */
+.ukesrett{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;
+  align-items:center;margin:0 var(--marg);padding:11px;min-height:114px;
+  background:var(--flate);border:1px solid var(--linje-fin);
+  border-radius:var(--r-gruppe);text-decoration:none;color:inherit}
+.ukesrett img{width:96px;height:96px;object-fit:cover;border-radius:var(--r-bilde);display:block}
+.ukesrett__copy{display:grid;gap:5px;min-width:0}
+.karakter{font-family:'Familjen Grotesk',system-ui,sans-serif;font-size:14.5px;
+  font-weight:600;font-variant-numeric:tabular-nums}
+
+/* Låst rad: samme form som en aktiv rad, dempet. Ingen hengelås og ingen
+   «Kommer» — baseline hadde fem visuelt identiske rader uten skanneverdi. */
+.rad--laast{grid-template-columns:44px minmax(0,1fr);align-items:center;
+  padding-top:12px;padding-bottom:12px;cursor:default}
+.aktiv__nr--liten{width:44px;height:44px;font-size:17px;
+  background:var(--flate-dyp);color:var(--blekk-2)}
+.rad--laast .rad__tittel{color:var(--blekk-2)}
