@@ -1,0 +1,72 @@
+/* E · Dagen — Hjem */
+
+.dag{background:var(--paprika);color:var(--pa-tekst);
+  padding:calc(env(safe-area-inset-top) + 18px) var(--marg) 26px}
+.dag h1{margin-top:14px;color:var(--pa-tekst);font-size:52px;
+  font-variation-settings:'opsz' 96,'wdth' 84}
+.dag .etikett{color:var(--pa-tekst);opacity:.86}
+.dag__maal{margin-top:9px;font-size:15.5px;color:var(--pa-tekst);opacity:.88}
+
+/* Ukevelgeren. Navigasjonen er POSISJON I EN SEKVENS, ikke en
+   innholdskategori — det er hele forskjellen på en dagbok og en katalog.
+   Sju like celler over full bredde: 50px hver, godt over 48px-kravet. */
+.uke{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-top:22px}
+.uke a{min-height:56px;display:grid;place-items:center;align-content:center;gap:3px;
+  border-radius:var(--r-ark);color:var(--pa-tekst);opacity:.66;text-decoration:none}
+.uke a span{font-size:10.5px;font-weight:700;letter-spacing:.08em}
+.uke a em{font-style:normal;font-size:15px;font-weight:600;
+  font-variant-numeric:tabular-nums;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif}
+.uke a.er-i-dag{background:var(--pa-tekst);color:var(--paprika);opacity:1}
+
+/* ─── Stabelen ─────────────────────────────────────────────────────
+   Arkene overlapper. Det øverste er åpent; de neste stikker fram under
+   det, slik papir ligger på et bord. Dette er varmen som IKKE er malt
+   på: bytt paprikaen mot hva som helst, og stablingen står igjen. */
+.stabel{padding:0 var(--marg) 28px;margin-top:-14px}
+.ark{background:var(--ark);border-radius:var(--r-ark);padding:18px;position:relative}
+.ark__hode{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-bottom:12px}
+.etikett--tid{color:var(--paprika)}
+.etikett--nr{color:var(--blekk-2);font-variant-numeric:tabular-nums}
+
+.ark--topp{box-shadow:0 6px 0 -2px var(--ark-2),0 12px 0 -4px #D6D3CB}
+.ark--topp h2{margin-bottom:9px}
+.ark--neste{margin-top:14px}
+.ark--dypest{background:#F6F4EF}
+
+.fremdrift{display:flex;align-items:center;gap:12px;margin-top:18px}
+.fremdrift__spor{flex:1;height:6px;border-radius:999px;background:var(--ark-2);
+  position:relative;overflow:hidden}
+.fremdrift__spor>i{position:absolute;inset:0 auto 0 0;background:var(--fullfort);
+  border-radius:999px}
+.ark--topp .knapp{margin-top:18px}
+
+.ark__mat{display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;align-items:center}
+.ark__mat img{width:84px;height:84px;object-fit:cover;border-radius:10px;display:block}
+.ark__matcopy{display:grid;gap:5px;min-width:0}
+
+.imorgen{display:grid;grid-template-columns:minmax(0,1fr) 48px;align-items:center;
+  gap:4px 12px;margin-top:22px;padding:16px 4px 0;
+  border-top:1px solid var(--linje);text-decoration:none;color:inherit}
+.imorgen .etikett{color:var(--blekk-2)}
+/* Etiketten og teksten står under hverandre i venstre kolonne. Som
+   flex-rad ble «I morgen» klemt til «I» av naboen — flex krymper
+   gjerne det korteste barnet først. */
+.imorgen__hva{grid-column:1;font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:15px;font-weight:600;font-variation-settings:'opsz' 18,'wdth' 96}
+.imorgen .etikett{grid-column:1}
+.imorgen__pil{grid-column:2;grid-row:1/3;min-width:48px;min-height:48px;display:grid;
+  place-items:center;color:var(--paprika);font-size:17px}
+
+.fremdrift{display:flex;align-items:center;gap:12px;margin-top:18px}
+.fremdrift__spor{flex:1;height:6px;border-radius:999px;background:var(--ark-2);
+  position:relative;overflow:hidden}
+.fremdrift__spor>i{position:absolute;inset:0 auto 0 0;background:var(--fullfort);
+  border-radius:999px}
+.ark--topp .knapp{margin-top:18px}
+
+/* Måltidet vises med foto i firkant, ikke sirkel. */
+.ark__mat{display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;align-items:center}
+.ark__mat img{width:84px;height:84px;object-fit:cover;border-radius:10px;display:block}
+.ark__matcopy{display:grid;gap:5px;min-width:0}

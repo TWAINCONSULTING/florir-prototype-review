@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E · Dagen — Hjem</title>
+<link rel="stylesheet" href="../_assets/fonts/fonter.css">
+<link rel="stylesheet" href="stil.css">
+<link rel="stylesheet" href="hjem.css">
+</head>
+<body>
+<div class="device">
+  <div class="scroll">
+
+    <!-- Paprikafeltet BÆRER dagen. Varmen er en flate med areal, ikke en
+         bakgrunnsfarge — grunnen under er kjølig kritt. -->
+    <header class="dag">
+      <span class="etikett">Hei, Ingrid</span>
+      <h1>I dag</h1>
+      <p class="dag__maal">Denne uka: løsne på én matregel.</p>
+
+      <!-- Ukevelgeren på egen rad. Sju dager delt på 393px gir 50px per
+           celle; klemt inn ved siden av hilsenen ble hver celle 30px, og
+           det er under Florirs egen 48px-regel. -->
+      <nav class="uke" aria-label="Velg dag">
+        <a href="#"><span>M</span><em>15</em></a>
+        <a href="#"><span>T</span><em>16</em></a>
+        <a href="#"><span>O</span><em>17</em></a>
+        <a href="#" class="er-i-dag" aria-current="date"><span>T</span><em>18</em></a>
+        <a href="#"><span>F</span><em>19</em></a>
+        <a href="#"><span>L</span><em>20</em></a>
+        <a href="#"><span>S</span><em>21</em></a>
+      </nav>
+    </header>
+
+    <!-- Arkene ligger fysisk stablet. Det øverste er åpent, de neste
+         stikker fram under det. Det er en romlig varme som overlever et
+         palettbytte — i motsetning til beige. -->
+    <div class="stabel">
+
+      <article class="ark ark--topp">
+        <div class="ark__hode">
+          <span class="etikett etikett--tid">08:00 · Mat</span>
+          <span class="etikett etikett--nr">1 av 3</span>
+        </div>
+        <div class="ark__mat">
+          <img src="../_assets/mat/r-01.jpg" alt="">
+          <div class="ark__matcopy">
+            <h3>Mochagrøt</h3>
+            <span class="meta">4,6 · 142 vurderinger</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="ark ark--neste">
+        <div class="ark__hode">
+          <span class="etikett etikett--tid">08:30 · Læring</span>
+          <span class="etikett etikett--nr">2 av 3</span>
+        </div>
+        <h2>Matstøy</h2>
+        <p>Hvorfor tankene om mat kan ta så mye plass.</p>
+        <div class="fremdrift">
+          <span class="fremdrift__spor"><i style="width:40%"></i></span>
+          <span class="meta">2 av 5 deler</span>
+        </div>
+        <a class="knapp knapp--paprika knapp--bred" href="#">Fortsett</a>
+      </article>
+
+      <article class="ark ark--neste ark--dypest">
+        <div class="ark__hode">
+          <span class="etikett etikett--tid">Når det passer · Notat</span>
+          <span class="etikett etikett--nr">3 av 3</span>
+        </div>
+        <h3>Når «sunt» blir en regel</h3>
+        <p>Legg merke til forskjellen mellom et råd du kan velge, og en regel du må følge.</p>
+      </article>
+
+
+      <a class="imorgen" href="#">
+        <span class="etikett">I morgen</span>
+        <span class="imorgen__hva">Matstøy, del 3 · Hjemmelaget grovbrød</span>
+        <span class="imorgen__pil" aria-hidden="true">→</span>
+      </a>
+
+    </div>
+  </div>
+
+  <nav class="dock" aria-label="Hovedmeny">
+    <a class="fane er-aktiv" href="#" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4" stroke-linecap="round"/></svg>Dagen</a>
+    <a class="fane" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></svg>Moduler</a>
+    <a class="fane" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 13h16a8 8 0 0 1-16 0z"/><path d="M3 20h18"/><path d="M12 4v3"/></svg>Mat</a>
+    <a class="fane" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20a7 7 0 0 1 14 0" stroke-linecap="round"/></svg>Meg</a>
+  </nav>
+</div>
+</body></html>

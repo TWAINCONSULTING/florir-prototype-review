@@ -122,7 +122,37 @@ for (const kid of kandidater) {
       let bunn = 0;
       for (const e of sc.children) { const b = e.getBoundingClientRect(); if (b.height > 0) bunn = Math.max(bunn, b.bottom); }
 
-      return { flater, gronn, rad, tekst, smaa, familier: [...fam].filter(Boolean),
+      // Tekst som ligger UNDER bunnmenyen.
+      //
+      // Måleren hadde et hull her: den talte død luft (for lite innhold)
+      // men ikke avkuttet innhold (for lite bunnpolstring). To uavhengige
+      // evaluatorer fant samme feil på to kandidater før måleren gjorde
+      // det — «Ukas rett»-beskrivelsen i A og «I morgen»-raden i E lå
+      // begge halvveis bak dokken. Død luft og avkutting er samme
+      // spørsmål stilt fra hver sin side, og bare det ene ble målt.
+      // Sjekken må gjøres NEDERST i rullingen. Midt i en rullbar skjerm
+      // krysser alltid et element dokkens overkant, og det er ikke en feil
+      // — brukeren ruller videre. Feilen er når det siste innholdet blir
+      // liggende under dokken selv når det ikke er mer å rulle.
+      sc.scrollTop = sc.scrollHeight;
+      const dock = document.querySelector('.dock');
+      const klippet = [];
+      if (dock) {
+        const d = dock.getBoundingClientRect();
+        for (const e of document.querySelectorAll('body *')) {
+          if (dock.contains(e) || e.contains(dock)) continue;
+          const egen = [...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim().length > 1);
+          if (!egen) continue;
+          const b = e.getBoundingClientRect();
+          if (b.height < 1) continue;
+          // Elementet starter over dokkens overkant, men slutter under den.
+          if (b.top < d.top && b.bottom > d.top + 1)
+            klippet.push(e.textContent.trim().slice(0, 30));
+        }
+      }
+
+      sc.scrollTop = 0;
+      return { flater, gronn, rad, tekst, smaa, familier: [...fam].filter(Boolean), klippet,
                scrollH: sc.scrollHeight, klientH: Math.round(sc.getBoundingClientRect().height),
                innholdBunn: Math.round(bunn),
                hScroll: document.documentElement.scrollWidth > document.documentElement.clientWidth };
@@ -144,13 +174,23 @@ for (const kid of kandidater) {
       kontrastbrudd: brudd.map(k => `«${k.txt}» ${k.ratio}:1 (krav ${k.krav})`),
       smaaTrykkflater: m.smaa.map(s => `«${s.txt}» ${s.w}×${s.h}`),
       doedLuft: m.scrollH <= m.klientH + 2 ? Math.max(0, m.klientH - m.innholdBunn) : 0,
+      klippetAvDock: m.klippet,
       ruller: m.scrollH > m.klientH + 2,
       hScroll: m.hScroll,
     };
 
     // Full høyde der skjermen ruller.
+    //
+    // Dokkens høyde MÅ legges til. .device arver 100dvh, så når viewporten
+    // vokser flytter dokken seg til den nye bunnen — og uten påslaget havner
+    // de siste ~58px av innholdet bak den. Det leste som manglende
+    // bunnpolstring i kandidaten, men var riggen som klippet.
+    const dokkH = await page.evaluate(() => {
+      const d = document.querySelector('.dock');
+      return d ? Math.ceil(d.getBoundingClientRect().height) : 0;
+    });
     if (m.scrollH > m.klientH + 2) {
-      await page.setViewportSize({ width: 393, height: Math.min(m.scrollH + 8, 6000) });
+      await page.setViewportSize({ width: 393, height: Math.min(m.scrollH + dokkH + 8, 6000) });
       await page.waitForTimeout(300);
       await page.screenshot({ path: join(dir, 'png', `${navn}-full.png`) });
     }
@@ -160,6 +200,7 @@ for (const kid of kandidater) {
                 `radier:${a.distinkteRadier} skrift:${a.skriftfamilier.length} ` +
                 `min-kontrast:${a.svakesteKontrast} brudd:${a.kontrastbrudd.length} ` +
                 `små:${a.smaaTrykkflater.length} død-luft:${a.doedLuft}px` +
+                (a.klippetAvDock.length ? ` ⚠KLIPPET:${a.klippetAvDock.length}` : '') +
                 (a.hScroll ? ' ⚠H-SCROLL' : ''));
   }
 }

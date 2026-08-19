@@ -1,10 +1,15 @@
-# Fase 3 — Fire designretninger
+# Fase 3 — Fem designretninger
 
 **Ankerskjermer:** `#/hjem` og `#/oppskrift/r-01` · **Viewport:** 393 × 852
 **Filer:** `design-lab/run-001/kandidater/<ID>/` · **Målinger:** `kandidater/maal.json`
 
-Alle fire leverer kontraktens innhold ordrett, med samme handlinger og
-omtrent samme informasjonsmengde. Ingen versjoner er overskrevet.
+Alle leverer kontraktens innhold ordrett, med samme handlinger og omtrent
+samme informasjonsmengde. Ingen versjoner er overskrevet.
+
+**E kom til etter Fase 4.** Distinkthetstesten strøk settet på fire — to
+reelle retninger, ikke fire — og navnga tre hull. E er bygget for å fylle
+dem. Se `04-evaluering.md` § 4.3 og § 4.4 for hva testen så, og for
+evaluatorens dom over om E faktisk lukket dem.
 
 ## Målt mot baselinen
 
@@ -15,6 +20,7 @@ omtrent samme informasjonsmengde. Ingen versjoner er overskrevet.
 | **B · Verktøy** | 9 % / 0 % | 2 / 3 | 2 | 5,78:1 | 0 | 0 |
 | **C · Bordet** | **0 %** | 1 / 2 | 2 | **7,07:1** | 0 | 0 |
 | **D · Arkivet** | **0 %** | **0** | 2 | 4,47:1 | 0 | 0 |
+| **E · Dagen** | **0 %** | 2 | 2 | 4,93:1 | 0 | 0 |
 
 Ingen horisontal scroll. Ingen kontrastbrudd. Modusvelgeren er ikke sticky i
 noen av dem, og primærhandlingen ligger over folden i B, C og D — de tre
@@ -238,3 +244,61 @@ utklipp som representerer den — det finnes ikke i data i dag.
 **⚠ Kjent risiko.** Kritikeren i Fase 1 påpeker at **fritlagte objekter på
 flat flate i seg selv er et stock-/AI-signal**. D sitt kjernegrep er
 eksponert for nøyaktig den innvendingen, og Fase 4 skal prøve den.
+
+
+---
+
+## E · DAGEN
+
+**Kandidat-ID:** E · **Filer:** `E-dagen/` · **Laget etter Fase 4**
+
+**Design thesis.** Florir handler om dagen din, ikke om pensum. «I dag» er
+den bærende aksen, og modul, måltid og notat blandes fordi de skjer samme
+dag. Oppskriften er paginert framfor rullet — det er dessuten slik man
+faktisk lager mat, med telefonen på benken.
+
+**Hvorfor den finnes.** Distinkthetstesten navnga tre hull i settet på fire:
+layouttypen «bla» manglet helt, ingen retning var organisert etter tid, og
+varmen var malt på med én bakgrunnsfarge framfor bygget inn i struktur.
+
+**Farger.**
+
+| Rolle | Verdi |
+|---|---|
+| Grunn | `#EDEBE6` kritt — bevisst **kjølig** |
+| Ark / ark 2 | `#FFFFFF` / `#E3E1DA` |
+| Blekk / blekk 2 | `#1B1B18` / `#57564E` |
+| Linje | `#B5B2A7` (3,0:1) |
+| Paprika | `#B7371C` — brukt som **flate med areal**, ikke som liten aksent |
+| Fullført | `#2F6146` |
+
+Testen er eksplisitt: holder varmen når grunnen ikke er beige? Varmen skal
+komme fra paprikafeltet, fra ark som ligger fysisk stablet med forskyvning,
+og fra matfoto — ikke fra bakgrunnstonen.
+
+**Typografi.** Bricolage Grotesque (`opsz` 12–96, `wdth` 75–100) mot Onest.
+**Sans i display-rollen er et bevisst valg** etter M-01: researchens eneste
+harde måling var at NYT Cooking bruker sans på oppskriftstitler og
+reserverer serif til redaksjonelt innhold. A, C og D kjørte alle
+display-serif uten belegg for matflater.
+
+**Radius.** To verdier: **18 px** ark, **10 px** foto. Regelen er «dette er
+et ark du kan flytte».
+
+**Navigasjon.** Ukestripe med sju like celler à 50 px. Navigasjonen er
+**posisjon i en sekvens**, ikke en innholdskategori — det er forskjellen på
+en dagbok og en katalog.
+
+**Bevisst unngått.** Display-serif. Beige grunn. Seksjoner sortert etter
+innholdstype.
+
+**Estimert kompleksitet.** **Høy.** Krever at hjemskjermen bygges om fra
+seksjoner til hendelser med tidspunkt, og at oppskriften får en ekte
+sidemodell. Ingen av delene finnes i data i dag.
+
+**⚠ Dommen.** Evaluatoren konkluderte med at **E ikke er en tredje
+retning** — den er «verktøyet» (B) med tidsakse og ett farget felt.
+Hierarkiet bæres av container, ikke av typegrad, og layouttypen på hjem er
+fortsatt liste. Hullet «bla» er ikke lukket: pagineringsprikkene på
+oppskriften er «et bla-tegn påklistret en scroll». Se `04-evaluering.md`
+§ 4.4.

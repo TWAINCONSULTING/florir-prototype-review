@@ -1,0 +1,57 @@
+/* E · Dagen — oppskriftsdetalj, paginert */
+
+.sider{display:flex;flex-direction:column;background:var(--kritt)}
+
+.sidetopp{flex-shrink:0;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;
+  align-items:center;gap:8px;
+  padding:calc(env(safe-area-inset-top) + 10px) 10px 10px}
+.ikonknapp{width:48px;height:48px;display:grid;place-items:center;background:none;
+  border:0;cursor:pointer;font-size:19px;color:var(--blekk);text-decoration:none}
+
+/* Sidevelgeren er navigasjon i en SEKVENS, ikke faner over et innhold.
+   Den er ikke sticky, den ligger fast i skallet — det er forskjellen. */
+.pager{display:flex;gap:3px;justify-content:center}
+.pager a{min-height:48px;display:inline-flex;align-items:center;padding:0 11px;
+  border-radius:999px;font-size:12.5px;font-weight:600;color:var(--blekk-2);
+  text-decoration:none;white-space:nowrap}
+.pager a.er-her{background:var(--blekk);color:var(--kritt)}
+
+.side{flex:1;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto auto;
+  gap:0}
+
+/* Fotoet får hele den ledige høyden. Én flate per side — det er det
+   pagineringen kjøper. */
+.side__foto{min-height:0;padding:0 var(--marg)}
+.side__foto img{width:100%;height:100%;object-fit:cover;display:block;
+  border-radius:var(--r-ark)}
+
+.side__tekst{padding:20px var(--marg) 0}
+.side__tekst h1{margin-top:8px}
+.side__tekst p{margin-top:10px}
+
+/* Nøkkeltallene i én rad, med porsjonsjusteringen inne i samme rad.
+   Porsjoner er en VERDI som de andre, ikke en innstillingsrad et helt
+   annet sted på skjermen. */
+.noekkeltall{display:flex;align-items:flex-end;gap:22px;margin-top:20px;
+  padding-top:16px;border-top:1px solid var(--linje)}
+.noekkeltall>span{display:grid;gap:2px}
+.noekkeltall em{font-style:normal;font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:24px;font-weight:700;line-height:1;color:var(--blekk);
+  font-variant-numeric:tabular-nums;font-variation-settings:'opsz' 32,'wdth' 90}
+.porsjon{display:grid;grid-template-columns:auto auto auto;align-items:center;
+  gap:2px;margin-left:auto}
+.porsjon button{width:48px;height:48px;border:1.5px solid var(--linje);
+  background:transparent;border-radius:var(--r-ark);cursor:pointer;
+  font-size:18px;color:var(--blekk);line-height:1}
+.porsjon button:active{background:var(--ark-2)}
+.porsjon em{min-width:38px;text-align:center}
+.porsjon .meta{grid-column:1/-1;text-align:center}
+
+.side__handling{padding:18px var(--marg) calc(env(safe-area-inset-bottom) + 14px)}
+.kilde{margin-top:11px;text-align:center}
+
+/* Posisjon i sekvensen, nederst. Tre sider, du er på den første. */
+.prikker{flex-shrink:0;display:flex;justify-content:center;gap:6px;
+  padding:0 0 calc(env(safe-area-inset-bottom) + 12px)}
+.prikker i{width:7px;height:7px;border-radius:999px;background:var(--linje);display:block}
+.prikker i.er-her{width:22px;background:var(--paprika)}
