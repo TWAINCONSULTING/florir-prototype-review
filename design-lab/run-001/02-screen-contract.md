@@ -215,7 +215,7 @@ Testoppskrift: **Mochagrøt**.
 | 11 | Framgangsmåte, nummererte steg | MÅ | `o.steg` |
 | 12 | Vurderingsblokk | MÅ | eksisterende |
 | 13 | Kommentarer + «Skriv kommentar» → ark | MÅ | eksisterende |
-| 14 | «Legg i planen» | MÅ | `state.plan` |
+| 14 | «Legg i matplanen» | MÅ | `state.plan` |
 | 15 | Relatert, 3 oppskrifter, kuratert — aldri relevanssortert | MÅ | `relatert` |
 
 Mochagrøt, ordrett: 7 ingredienser (havregryn, vann, melk, kakaopulver,
@@ -224,7 +224,7 @@ valnøtter), 1 steg.
 
 ### Handlinger
 
-- **Primær:** «Legg i planen». MÅ.
+- **Primær:** «Legg i matplanen». MÅ.
 - **Sekundær:** lagre (header), porsjoner ±, modusbytte, kommenter, åpne
   relatert, tilbake. MÅ.
 - **Navigasjon:** ingen bunnmeny. MÅ.

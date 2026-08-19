@@ -36,7 +36,17 @@
     "onboarding-klar  aspekt:0 små:0"
   ],
   "konsollfeil": [],
-  "funn": [],
-  "feil": 0,
+  "funn": [
+    "✗ oppskrift: sticky flate dekker «salt»",
+    "✗ oppskrift: sticky flate dekker «en klype»",
+    "✗ oppskrift: sticky flate dekker «Legg i matplanen»",
+    "✗ oppskrift: sticky flate dekker «For 2 dager siden»",
+    "✗ oppskrift: sticky flate dekker «5,0»",
+    "✗ oppskrift: sticky flate dekker «Kaffen er valgfri. Uten den sm»",
+    "✗ oppskrift: sticky flate dekker «Kommentarer»",
+    "✗ oppskrift: sticky flate dekker «Mest nyttig\n            ⌄»",
+    "✗ oppskrift: sticky flate dekker «Maria»"
+  ],
+  "feil": 9,
   "merknader": 0
 }

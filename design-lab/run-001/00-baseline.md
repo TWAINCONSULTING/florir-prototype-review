@@ -208,6 +208,32 @@ Hvert element er isolert sett riktig. Samlet er de standardoppsettet enhver
 generator produserer først. Det er ingenting her en bruker ville kjent igjen
 som Florir.
 
+### F-13 · Den sticky modusvelgeren dekker innhold, også primær-CTA-en
+
+`.recipe-tabs` er `position:sticky; top:0` med ugjennomsiktig
+`--primary-soft`-bakgrunn (`index.html:610`). Den festes ikke til seksjonen
+den styrer — den følger med **hele veien ned**, forbi ingredienser, metode,
+plan-CTA, vurderinger, kommentarer og «Flere som denne». Innholdet ruller
+under den uten kompensasjon i `padding` eller `scroll-margin`.
+
+Målt overlapp mot ekte tekst, `#/oppskrift/r-01`:
+
+| `scrollTop` | Hva pillen dekker |
+|---|---|
+| 900 | ingrediensraden «salt · en klype» |
+| 1400 | **«Legg i matplanen»** — skjermens primærhandling |
+| 1496 | «Kommentarer», sorteringsvelgeren «Mest nyttig», «Maria» |
+| 1900 | en kommentars vurdering «5,0» og brødtekst |
+
+To ting er galt samtidig. Kontrollen **skjuler innhold**, og den er
+**meningsløs der den havner**: «Ingredienser / Slik gjør du» styrer ingenting
+i kommentarfeltet, men opptar 56 px av skjermen der.
+
+Verifiseringssveipet fanger ikke dette. Det måler at flater finnes, har høyde
+og er ≥ 48 px — ikke om to flater dekker hverandre. Kontrollen er lagt til i
+porten som punkt 6, og **baselinen stryker på den**. Se
+`baseline-verification.md`.
+
 ---
 
 ## 0.3 Sammenfatning
@@ -224,9 +250,10 @@ tilstander — havnet i samme lyse grønne bånd.
 Uten skriftkontrast må hierarkiet bæres av flater. Da blir alt et kort, alle
 kort blir like avrundede, og kromet må hentes fra standardbiblioteket.
 
-**C. Innholdet er behandlet som fyll (F-03, F-05, F-07, F-10).**
+**C. Innholdet er behandlet som fyll (F-03, F-05, F-07, F-10, F-13).**
 Rampede vurderinger, tomt førsteskjermbilde, 64 px matfoto og en
-onboarding-kontroll som ikke kan uttrykke sin egen tekst. Appens ekte innhold
+onboarding-kontroll som ikke kan uttrykke sin egen tekst, og en sticky
+modusvelger som legger seg over primærhandlingen. Appens ekte innhold
 — foto, ingredienser, norsk stemme — er der, men designet er ikke bygget rundt
 det.
 
@@ -251,4 +278,5 @@ Tall Fase 4 skal evaluere kandidatene mot:
 | Skriftfamilier i bruk | 1 (system) | ≥ 2, minst én ikke-system |
 | Matfoto-bredde, listerad | 64 px | begrunnet valg, dokumentert |
 | Vurderingsdata | aritmetisk rampe | uregelmessig, troverdig |
-| Verifiseringssveip | 0 feil | 0 feil |
+| Sticky flate over innhold | 4 overlapp | 0 |
+| Verifiseringssveip | 0 feil (av 11 kontroller) | 0 feil (av 12) |

@@ -259,6 +259,56 @@ if (fjernetF03.node)
 if (fjernetF03.innganger)
   legg('✗', `fjernet F03: ${fjernetF03.innganger} innganger finnes fortsatt`);
 
+// ---------------------------------------------------------------------------
+// 6 · Sticky flater skal ikke dekke innhold  [TILLEGG — ikke i originalen]
+// ---------------------------------------------------------------------------
+// Originalen måler at flater finnes, har høyde og er >= 48px. Den måler ikke
+// om to flater ligger OPPÅ hverandre, og derfor passerte den mens
+// .recipe-tabs (position:sticky, top:0) la seg over ingrediensrader,
+// kommentarer og — verst — primærknappen «Legg i matplanen».
+//
+// Kontrollen er lagt til her, ikke i originalen, fordi den fant en feil som
+// allerede fantes. Baselinen STRYKER på den. Det er hele poenget: uten en
+// kontroll som feiler før endringen, kan ingen etterpå vise at den er rettet.
+for (const [rute, id] of [['oppskrift', 'r-01']]) {
+  await page.goto('about:blank');
+  await page.goto(url(`#/${rute}/${id}`), { waitUntil: 'load' });
+  await page.waitForTimeout(200);
+
+  const hoyde = await page.evaluate(() =>
+    document.querySelector('.screen:not([hidden]) .scroll').scrollHeight);
+
+  const sett = new Set();
+  for (const t of [0, 400, 900, 1400, 1900, Math.max(0, hoyde - 852)]) {
+    const dekket = await page.evaluate(async pos => {
+      const sc = document.querySelector('.screen:not([hidden]) .scroll');
+      sc.scrollTop = pos;
+      await new Promise(r => setTimeout(r, 180));
+
+      const faste = [...sc.querySelectorAll('*')]
+        .filter(e => getComputedStyle(e).position === 'sticky');
+      const ut = [];
+      for (const f of faste) {
+        const fb = f.getBoundingClientRect();
+        if (fb.height < 1) continue;
+        for (const e of sc.querySelectorAll('*')) {
+          if (f.contains(e) || e.contains(f)) continue;
+          const egen = [...e.childNodes]
+            .some(n => n.nodeType === 3 && n.textContent.trim().length > 1);
+          if (!egen) continue;
+          const b = e.getBoundingClientRect();
+          const v = Math.min(b.bottom, fb.bottom) - Math.max(b.top, fb.top);
+          const h = Math.min(b.right, fb.right) - Math.max(b.left, fb.left);
+          if (v > 2 && h > 2) ut.push(e.textContent.trim().slice(0, 30));
+        }
+      }
+      return ut;
+    }, t);
+    for (const d of dekket) sett.add(d);
+  }
+  for (const d of sett) legg('✗', `${rute}: sticky flate dekker «${d}»`);
+}
+
 console.log('\n  SKJERMER');
 for (const l of rapport) console.log('    ' + l);
 
