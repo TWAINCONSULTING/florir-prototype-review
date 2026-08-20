@@ -1,0 +1,1252 @@
+{
+  "kjoring": "run-001",
+  "dato": "2026-08-18",
+  "cutoff": "2026-08-18",
+  "antall_vinkler": 6,
+  "antall_kilder": 138,
+  "kilder": [
+    {
+      "url": "https://9to5google.com/2025/05/14/material-3-expressive-navigation/",
+      "tittel": "9to5Google — Material 3 Expressive drops navigation drawers, short bottom bars back",
+      "dato": "14. mai 2025",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://9to5google.com/2025/05/16/material-3-expressive-loading-indicator/",
+      "tittel": "Material 3 Expressive's new loading indicator is already in Android 16",
+      "dato": "2025-05-16",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://9to5google.com/2025/08/11/google-docs-material-3-expressive/",
+      "tittel": "Google Docs gets Material 3 Expressive progress indicator, tweaks",
+      "dato": "2025-08-11",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://9to5google.com/2025/12/27/recap-material-3-expressive/",
+      "tittel": "9to5Google — Recap: Expressive Android, but Material «3.5» apps",
+      "dato": "27. desember 2025",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://appleinsider.com/articles/26/06/05/ios-27-macos-27-siri-what-to-expect-to-launch-at-wwdc-2026",
+      "tittel": "AppleInsider — iOS 27, macOS 27, Siri: what to expect at WWDC 2026 (kontekst for at iOS 27 finjusterer Liquid Glass)",
+      "dato": "5. juni 2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://blakecrosley.com/guides/design/duolingo",
+      "tittel": "Duolingo: Gamification as Design Language",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://dahliaimanbay.com/blog/ai-trust-penalty-2026",
+      "tittel": "The AI Trust Penalty (Klaviyo/Datalily des. 2025, Capgemini 2023–2025)",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://dequeuniversity.com/resources/wcag2.1/1.4.11-non-text-contrast",
+      "tittel": "Deque University — 1.4.11 Non-Text Contrast (AA), normativ ordlyd",
+      "dato": "ukjent; hentet 19.08.2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://devansh.design/daily-refresh",
+      "tittel": "Duolingo's Daily Refresh — nodetilstander, aktiv vs. fullført vs. låst",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://formbricks.com/blog/user-onboarding-best-practices",
+      "tittel": "9 User Onboarding Best Practices for 2026 — kilde til det ubelagte 20-30 %-tallet",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://italic-studio.com/projects/headspace-rebrand/",
+      "tittel": "Headspace Rebrand — ITAL/C",
+      "dato": "2024",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://ixd.prattsi.org/2026/02/design-critique-headspace-ios-app-2/",
+      "tittel": "Design Critique: Headspace (iOS App) — IXD@Pratt",
+      "dato": "februar 2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://makeheadway.com/blog/blinkist-review/",
+      "tittel": "Blinkist Review — lesegrensesnitt, Guides og Collections",
+      "dato": "2025/2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://raggededge.com/partnerships/zoe",
+      "tittel": "ZOE rebrand by Ragged Edge",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://satoristudio.net/blinkist-review/comment-page-4/",
+      "tittel": "The Ultimate 2026 Blinkist Review: 7+ Years of Testing (diskret fremdriftsbar, Guides)",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://screensdesign.com/showcase/waking-up-meditation-wisdom",
+      "tittel": "Waking Up: Meditation & Wisdom — skjermkatalog",
+      "dato": "2025/2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://semnexus.com/app-onboarding-flow-benchmarks-where-users-drop-off-2026",
+      "tittel": "App Onboarding Flow Benchmarks: Where Users Drop Off in 2026",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://silktide.com/accessibility-guide/the-wcag-standard/2-5/input-modalities/2-5-8-target-size-minimum/",
+      "tittel": "Silktide — WCAG 2.5.8 Target Size (Minimum), gjengivelse av normativ tekst og de fem unntakene",
+      "dato": "ukjent; hentet 19.08.2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://the5krunner.com/2025/10/15/whoop-homescreen-gets-a-revamp/",
+      "tittel": "Whoop Homescreen Gets a Revamp",
+      "dato": "2025-10-15",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://theconversation.com/apples-unrivalled-commitment-to-excellence-is-fading-a-designer-explains-why-274475",
+      "tittel": "Apple's unrivalled commitment to excellence is fading – a designer explains why",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://thedecisionlab.com/insights/consumer-insights/streak-creep-the-perils-of-too-much-gamification",
+      "tittel": "Streak Creep: The perils of too much gamification",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://thespoon.tech/combustion-acquires-award-winning-recipe-app-crouton-appoints-crouton-developer-as/",
+      "tittel": "Combustion Acquires Recipe App Crouton (ADA 2024 Interaction-vinner)",
+      "dato": "2025-04",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://uxcam.com/blog/10-apps-with-great-user-onboarding/",
+      "tittel": "12 Apps with Great User Onboarding (2026) — 5-7 spørsmål ved synlig verdiveksling",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://www.925studios.co/blog/whoop-design-breakdown",
+      "tittel": "WHOOP Design Breakdown: Data-Dense UI That Feels Simple",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.appcues.com/blog/in-app-onboarding",
+      "tittel": "In-app onboarding: a step-by-step guide for 2026",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://www.businessofapps.com/data/app-onboarding-rates/",
+      "tittel": "App Onboarding Rates — 8,4 % 30-dagers fullføring Q2 2025",
+      "dato": "2025",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://www.cnn.com/2025/12/16/tech/slop-merriam-webster-2025-scli-intl",
+      "tittel": "Merriam-Webster's 2025 word of the year: «slop»",
+      "dato": "16.12.2025",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026",
+      "tittel": "Texture, warmth and tactile rebellion: the big graphic design trends for 2026 (Graham Sykes, Landor)",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.designstudiouiux.com/blog/mobile-app-onboarding-best-practices/",
+      "tittel": "Mobile App Onboarding: 11 Best Practices & Examples (2026)",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://www.dezeen.com/2025/05/28/google-ushers-in-age-of-expressive-interfaces-with-material-design-update/",
+      "tittel": "Google ushers in age of \"expressive\" interfaces with Material Design update",
+      "dato": "28.05.2025",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.eatyourbooks.com/blog/2026/08/09/ai-menu-photos-spark-backlash",
+      "tittel": "AI menu photos spark backlash",
+      "dato": "09.08.2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.ew.studio/news/brand-identity-and-app-design-for-mindler",
+      "tittel": "Brand identity and app design for Mindler — E&W Design Studio",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.figma.com/blog/building-a-design-system-that-breathes-with-headspace/",
+      "tittel": "Building a Design System That Breathes with Headspace",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.huffpost.com/entry/ai-food-images-restaurant-menus_l_6a721a35e4b02974827b64bf",
+      "tittel": "AI-Generated Food Photos Are Ruining Restaurant Menus",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.itsnicethat.com/articles/italic-studio-headspace-graphic-design-project-250424",
+      "tittel": "Headspace overhauls visual identity to become mental health all-rounder",
+      "dato": "2024-04-25",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.nbcnews.com/tech/tech-news/duolingos-update-redesign-luis-von-ahn-interview-rcna44655",
+      "tittel": "Duolingo's update redesign — Luis von Ahn interview (ELDRE)",
+      "dato": "2022",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://www.productivity-apps.com/apps/waking-up-meditation",
+      "tittel": "Waking Up: Meditation & Wisdom — Review & Alternatives",
+      "dato": "ukjent (2025/2026-kontekst)",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://www.revenuecat.com/blog/growth/web-to-app-onboarding-funnel",
+      "tittel": "Inside Noom's Web-to-App Onboarding Funnel — 113 skjermer",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://www.sammobile.com/news/samsung-food-big-update-tablet-users-any-good/",
+      "tittel": "Samsung Food: redesignet oppskriftsside for tablet, to-kolonne landskap (ingredienser + steg samtidig)",
+      "dato": "2025 (eksakt dato ikke verifisert; kun via søketreff, siden er blokkert av egress-policy)",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://www.scandinaviastandard.com/t-scandinavian-minimalism-was-never-simply-white-walls-and-empty-rooms-the-look-was-shaped-by-social-reform-industrial-production-export-marketing-and-a-much-more-colourful-design-history/",
+      "tittel": "Scandinavian minimalism was never simply white walls and empty rooms",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.simplethread.com/card-components-best-practices/",
+      "tittel": "Card Components: A Dive into Best Practices — kritikk av kort som default",
+      "dato": "2025–2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.techcrunch.com/2025/10/20/oura-launches-redesigned-app-and-cumulative-stress-feature",
+      "tittel": "Oura launches redesigned app and cumulative stress feature",
+      "dato": "2025-10-20",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.typewolf.com/top-10-sans-serif-fonts",
+      "tittel": "Top 10 Most Popular Sans-Serif Fonts of 2026 (bruksdata 2013–2026)",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.typewolf.com/top-10-serif-fonts",
+      "tittel": "Top 10 Most Popular Serif Fonts of 2026",
+      "dato": "2026",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.underconsideration.com/brandnew/archives/new_logo_and_identity_for_zoe_by_ragged_edge.php",
+      "tittel": "Brand New: New Logo and Identity for ZOE by Ragged Edge",
+      "dato": "ukjent",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.wareable.com/wearable-tech/whoop-5-review",
+      "tittel": "Whoop 5.0 review: A bold leap into longevity with familiar drawbacks",
+      "dato": "2025",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.xda-developers.com/finch-productivity-coach/",
+      "tittel": "I used the Finch app for a week and it's now my best productivity coach",
+      "dato": "2025",
+      "type": "bransje-artikkel",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://duoplanet.com/duolingo-new-learning-path-review/",
+      "tittel": "Duolingo New Learning Path Update — HONEST Review (scrollekostnad ~20 s)",
+      "dato": "2025 (oppdatert)",
+      "type": "community",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://forum.figma.com/t/select-only-3-options-in-one-page/86194",
+      "tittel": "Figma-forum: «select only 3 options» — designere må bygge maks-N-logikk selv",
+      "dato": "ukjent",
+      "type": "community",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://github.com/Nutlope/hallmark/blob/main/skills/hallmark/SKILL.md",
+      "tittel": "Hallmark — Anti-AI-slop design skill: SKILL.md (banned patterns, disipliner)",
+      "dato": "juli 2026",
+      "type": "community",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://github.com/Nutlope/hallmark/blob/main/skills/hallmark/references/slop-test.md",
+      "tittel": "Hallmark slop-test: 58 gates (konkrete visuelle anti-mønstre)",
+      "dato": "juli 2026",
+      "type": "community",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://hultso.com/ux-shot-7-headache-with-headspace-2ab155146fc1",
+      "tittel": "UX Shot #7: Headache with Headspace — fremdriftstilstand feiler etter sep. 2025-oppdatering",
+      "dato": "2025/2026",
+      "type": "community",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://knowyourmeme.com/memes/ai-restaurant-food-images",
+      "tittel": "AI Restaurant Food Images (Forkable/Boichik Bagels, SF-restauranten)",
+      "dato": "juli 2026",
+      "type": "community",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://mobbin.com/colors/brand/lifesum",
+      "tittel": "Lifesum Brand Color Palette: Hex, RGB, CMYK and UIs",
+      "dato": "ukjent",
+      "type": "community",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://mobbin.com/colors/brand/whoop",
+      "tittel": "WHOOP Brand Color Palette: Hex, RGB, CMYK and UIs",
+      "dato": "ukjent",
+      "type": "community",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://oh-my-design.kr/design-systems/headspace",
+      "tittel": "Headspace Design System — Colors, Typography & Tokens",
+      "dato": "ukjent",
+      "type": "community",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://tangentsannotated.wordpress.com/2025/10/30/self-care-that-actually-works/",
+      "tittel": "The Finch App: Self-Care That Actually Works",
+      "dato": "2025-10-30",
+      "type": "community",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://vibecodekit.dev/ai-slop-design",
+      "tittel": "AI Slop Design: Why AI-Generated UI Looks Generic — verktøysignaturer (v0, Bolt, Lovable)",
+      "dato": "2026",
+      "type": "community",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.pann-app.com/blog/crouton-app-review",
+      "tittel": "Crouton App Review 2026 – cook mode, prising, eierskap Combustion Inc.",
+      "dato": "2026 (kun via søketreff)",
+      "type": "community",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://www.shadcn.io/design/oura",
+      "tittel": "Oura Ring Design System — AkkuratLL, Editorial New italic, 22 tokens",
+      "dato": "ukjent",
+      "type": "community",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://dl.acm.org/doi/10.1145/3800424.3800430",
+      "tittel": "Generated Inaccessible: Measuring WCAG Violations in AI UI Design Tools (W4A '26)",
+      "dato": "2026",
+      "type": "forskning",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://doi.org/10.1145/3772318.3790373",
+      "tittel": "Usability Hasn't Peaked: How Expressive Design Overcomes the Usability Plateau (CHI 2026)",
+      "dato": "2026",
+      "type": "forskning",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://drafts.csswg.org/mediaqueries-5/",
+      "tittel": "W3C Media Queries Level 5 (definerer prefers-reduced-motion)",
+      "dato": "Working Draft 17. februar 2026. MERK: domenet var blokkert av egress-proxyen — status fra søkeresultat, ikke direkte fetch",
+      "type": "forskning",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://myscp.onlinelibrary.wiley.com/doi/10.1002/arcp.70004",
+      "tittel": "Digital tracking, gamification, social media, and AI: How technology influences motivation (Woolley et al., Consumer Psychology Review)",
+      "dato": "publisert online 2025-11-27, utgave 2026",
+      "type": "forskning",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://news.cornell.edu/stories/2025/12/what-makes-goal-setting-apps-motivate-or-backfire",
+      "tittel": "What makes goal-setting apps motivate – or backfire?",
+      "dato": "desember 2025",
+      "type": "forskning",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://www.jmir.org/2025/1/e68816/XML",
+      "tittel": "JMIR 2025: negative psykologiske effekter av wearable-tracking",
+      "dato": "2025",
+      "type": "forskning",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.nngroup.com/articles/liquid-glass/",
+      "tittel": "Liquid Glass Is Cracked, and Usability Suffers in iOS 26 — NN/g",
+      "dato": "2025",
+      "type": "forskning",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.nngroup.com/articles/state-of-ux-2026/",
+      "tittel": "State of UX in 2026 — Moran, Budiu, Gibbons (NN/g): «UI will gradually become less of a differentiator»",
+      "dato": "16.01.2026",
+      "type": "forskning",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "tittel": "Web Content Accessibility Guidelines (WCAG) 2.2 — SC 1.4.3, 1.4.11, 2.5.8, 2.5.5",
+      "dato": "W3C Recommendation 5. oktober 2023, redaksjonell oppdatering 12. desember 2024 (suksesskriterier uendret). MERK: w3.org var blokkert av egress-proxyen — innhold verifisert via sekundærkilder",
+      "type": "forskning",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://www.w3.org/WAI/news/2025-10-21/wcag22-iso",
+      "tittel": "W3C WAI — WCAG 2.2 Approved as an ISO Standard",
+      "dato": "21. oktober 2025",
+      "type": "forskning",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://apps.apple.com/us/app/crouton-recipe-manager/id1461650987",
+      "tittel": "Crouton: Recipe Manager – v2026.1.2, Apple Design Award 2024 (Interaction)",
+      "dato": "sist oppdatert 14.07.2026 iflg. søketreff (siden er blokkert av egress-policy, ikke verifisert direkte)",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://blog.duolingo.com/new-duolingo-home-screen-design",
+      "tittel": "New Duolingo home screen design (offisiell, ELDRE — lansert 1. nov 2022)",
+      "dato": "2022-11-01",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-lock-a-module/ta-p/1124",
+      "tittel": "How do I lock a module? — Canvas Instructor Guide",
+      "dato": "ukjent (løpende)",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://design.google/library/expressive-material-design-google-research",
+      "tittel": "Expressive Material Design: Google's UX Research (46 studier, >18 000 deltakere)",
+      "dato": "mai 2025",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://developer.android.com/develop/ui/compose/components/chip",
+      "tittel": "Chip — Jetpack Compose / Material 3 (ingen maks-antall, ingen chips-vs-rader-veiledning)",
+      "dato": "løpende oppdatert, hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://developer.android.com/develop/ui/compose/designsystems/material3",
+      "tittel": "Google — Material Design 3 in Compose (fargeroller, type scale: Display Large 57/64 … Label Small 11/16)",
+      "dato": "Sist oppdatert 2026-08-14 UTC; hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3",
+      "tittel": "Google — Compose Material 3 release notes (stabil 1.4.0, alpha 1.5.0-alpha26, @Material3ExpressiveApi, FlexibleBottomAppBar, motionScheme, shape morphing)",
+      "dato": "Begge versjoner utgitt 12. august 2026; hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/awards/",
+      "tittel": "Apple Design Awards — 2026 winners and finalists",
+      "dato": "2026-06",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/awards/2025/",
+      "tittel": "Apple Design Awards — 2025 winners and finalists",
+      "dato": "2025-06",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+      "tittel": "Apple Human Interface Guidelines — Accessibility (kontrolltabell 44x44 default / 28x28 minimum, kontrasttabell, 12pt/24pt padding, Reduce Motion-teknikker)",
+      "dato": "Sist oppdatert 9. juni 2025 (endringslogg, forrige 7. mars 2025); hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/buttons",
+      "tittel": "Apple Human Interface Guidelines — Buttons (44x44 pt hit region, «style not size», maks 1–2 prominente knapper per view)",
+      "dato": "Sist oppdatert 16. desember 2025 (endringslogg); hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/color",
+      "tittel": "Apple Human Interface Guidelines — Color (Liquid Glass color, monokrom chrome over fargerikt innhold, dynamiske systemfarger, Increase Contrast)",
+      "dato": "Sist oppdatert 16. desember 2025 (endringslogg); hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/foundations/typography/",
+      "tittel": "Apple HIG — Typography: dynamiske optiske størrelser i SF / New York",
+      "dato": "løpende 2025–2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/images",
+      "tittel": "Apple Human Interface Guidelines — Images (@2x og @3x påkrevd for iOS, JPEG/HEIC for foto, fargeprofil)",
+      "dato": "ukjent endringsdato; hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+      "tittel": "Apple Human Interface Guidelines — Layout (enhetstabell: iPhone 16 393x852, iPhone 17 402x874, Air 420x912, 17 Pro Max 440x956; kontroller over innhold, scroll edge effect)",
+      "dato": "Sist oppdatert 9. september 2025 (endringslogg, la til iPhone 17-serien); hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/materials",
+      "tittel": "Apple Human Interface Guidelines — Materials (Liquid Glass, regular vs clear, standardmaterialer, 35% dimming layer)",
+      "dato": "Sist oppdatert 9. september 2025 (endringslogg); hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/motion",
+      "tittel": "Apple Human Interface Guidelines — Motion (kvalitative regler, ingen numeriske varigheter)",
+      "dato": "Sist oppdatert 9. september 2025 (endringslogg); hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/onboarding",
+      "tittel": "Onboarding — Apple Human Interface Guidelines",
+      "dato": "løpende oppdatert, hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/progress-indicators",
+      "tittel": "Progress indicators — Apple HIG (dekker kun lasting, ikke stegsekvens)",
+      "dato": "løpende oppdatert, hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/ratings-and-reviews",
+      "tittel": "Apple HIG – Ratings and reviews (gjelder App Store-prompts, IKKE innholdsrating i UI)",
+      "dato": "sist endret 12.09.2023 — ELDRE enn 2025/2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/tab-bars",
+      "tittel": "Apple Human Interface Guidelines — Tab Bars (flytende tab bar, minimert tilstand med accessory, monokrom anbefaling)",
+      "dato": "Sist oppdatert 8. juni 2026 (endringslogg) — nyeste HIG-oppdatering funnet; hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/design/human-interface-guidelines/typography",
+      "tittel": "Apple Human Interface Guidelines — Typography (Dynamic Type-tabeller xSmall–AX5, SF Pro + New York, dynamic optical sizes, minimum 11pt / default 17pt iOS)",
+      "dato": "Sist oppdatert 16. desember 2025 (endringslogg); hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/documentation/SwiftUI/ConcentricRectangle",
+      "tittel": "Apple Developer Documentation — SwiftUI ConcentricRectangle (konsentriske hjørneradier, automatisk beregning fra container)",
+      "dato": "Introdusert iOS/iPadOS/macOS/tvOS/visionOS/watchOS 26.0, ikke-beta; hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Offisielle plattformkonvensjoner per 19."
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/news/?id=3m0ht22s",
+      "tittel": "Behind the Design: How Gentler Streak approaches fitness with \"humanity\"",
+      "dato": "2024-07-11",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/videos/play/wwdc2025/219/",
+      "tittel": "Meet Liquid Glass — WWDC25",
+      "dato": "juni 2025",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/videos/play/wwdc2025/356/",
+      "tittel": "Get to know the new design system — WWDC25",
+      "dato": "juni 2025",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://developerdocs.instructure.com/services/canvas/resources/modules",
+      "tittel": "Modules — Instructure Developer Documentation Portal (Canvas)",
+      "dato": "ukjent (løpende)",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://github.com/material-components/material-components-android/issues/1370",
+      "tittel": "[ChipGroup] Define maximum selection — feature request, aldri levert",
+      "dato": "03.06.2020 (ELDRE KILDE)",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://github.com/undercasetype/Fraunces",
+      "tittel": "Fraunces — variable akser opsz 9–144 / wght / SOFT / WONK, OFL-1.1",
+      "dato": "løpende, lest 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://help.speak.com/en/articles/11645358-streak-101-how-streaks-work-how-to-keep-them",
+      "tittel": "Streak 101: How Streaks Work — Speak Help Center",
+      "dato": "ukjent (2025/2026)",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://m3.material.io/components/chips/guidelines",
+      "tittel": "Chips — Material Design 3 guidelines",
+      "dato": "ukjent (ikke hentbar i dette miljøet, kun via søkeresultat)",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://m3.material.io/components/progress-indicators/specs",
+      "tittel": "Progress indicators — Material Design 3 (Expressive)",
+      "dato": "2025 (løpende oppdatert)",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://ouraring.com/blog/new-app-design/",
+      "tittel": "A New Look for the Oura App: See the Bigger Picture of Your Long-Term Health",
+      "dato": "2025-10",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://ouraring.com/blog/new-oura-app-experience/",
+      "tittel": "Introducing the New Oura App Design: Bring Your Long-Term Health into Focus",
+      "dato": "2025-10-20",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmaasen/apple-dev-mcp/main/content/universal/lists-and-tables.md",
+      "tittel": "HIG Lists and tables (tekstspeil) — checkmark vs. vedvarende highlight",
+      "dato": "hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmaasen/apple-dev-mcp/main/content/universal/onboarding.md",
+      "tittel": "HIG Onboarding (offentlig tekstspeil, brukt fordi developer.apple.com er JS-rendret)",
+      "dato": "hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmaasen/apple-dev-mcp/main/content/universal/toggles.md",
+      "tittel": "HIG Toggles (tekstspeil) — checkbox for flervalg, radioknapper for >2 gjensidig utelukkende",
+      "dato": "hentet 19.08.2026",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://sleepcycle.com/newsroom/press-release/a-fresh-set-of-sheets-for-your-app-experience",
+      "tittel": "A Fresh Set of Sheets for Your App Experience (night-to-day brand refinement)",
+      "dato": "2025-05-20",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.apple.com/newsroom/2026/06/apple-reveals-winners-of-the-2026-apple-design-awards/",
+      "tittel": "Apple reveals winners of the 2026 Apple Design Awards",
+      "dato": "2026-06-02",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse",
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20251020302425/en/URA-Expands-Preventive-Health-Capabilities-Empowering-Members-to-Live-Better-Longer",
+      "tittel": "ŌURA Expands Preventive Health Capabilities (pressemelding, redesignet app)",
+      "dato": "2025-10-20",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.masterclass.com/help-center/masterclass/answers/introduction-to-master-class--id--gFEO15QFQg2i7Gm2qVgEHg",
+      "tittel": "Introduction to MasterClass — MasterClass Help Center (Continue Watching)",
+      "dato": "ukjent",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://www.whoop.com/us/en/thelocker/everything-whoop-launched-in-2025/",
+      "tittel": "Everything WHOOP Launched in 2025",
+      "dato": "2025-12",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://www.whoop.com/us/en/thelocker/the-all-new-whoop-home-screen/",
+      "tittel": "The All-New WHOOP Home Screen",
+      "dato": "2025",
+      "type": "plattform-offisiell",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://apps.apple.com/us/app/how-we-feel/id1562706384",
+      "tittel": "How We Feel (Yale-humørmatrise, fire fargekvadranter)",
+      "dato": "ukjent",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://apps.apple.com/us/app/mela-recipe-manager/id1548466041",
+      "tittel": "Mela — Recipe Manager (ADA 2025 Interaction-finalist)",
+      "dato": "ukjent",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://cooking.nytimes.com/",
+      "tittel": "NYT Cooking – forside (build v5.50-k8s), HTML + embedded state, 180 oppskriftskort",
+      "dato": "hentet 19.08.2026 (innhold datert t.o.m. 19.08.2026)",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://cooking.nytimes.com/v5.50-k8s/_next/static/css/d28f5a25c6c9f3d4.css",
+      "tittel": "NYT Cooking shipped CSS – carousel, cardimage, stars",
+      "dato": "hentet 19.08.2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://cooking.nytimes.com/v5.50-k8s/_next/static/css/e28d07823d2d194b.css",
+      "tittel": "NYT Cooking shipped CSS – Pantry-typografi (nyt-franklin/cheltenham/karnak/imperial), pagegrid, recipecard",
+      "dato": "hentet 19.08.2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://fontsinuse.com/foundry/3851/store-norske-skriftkompani",
+      "tittel": "Store Norske Skriftkompani på Fonts In Use — dokumenterte bruk (Munchmuseet, Vogue, Harvard Art Museums)",
+      "dato": "løpende, sett 2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://gentlerstories.com/gentlerstreak",
+      "tittel": "Gentler Streak: Workout Tracker App That Puts Well-being First",
+      "dato": "ukjent",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Moderne helse-, velvære- og mental helse"
+      ]
+    },
+    {
+      "url": "https://mobbin.com/explore/flows/2ca9968b-a50d-4910-89e7-e894023d7d21",
+      "tittel": "Spotify iOS Onboarding Flow (skjermbildesamling, ikke hentbar i dette miljøet)",
+      "dato": "ukjent",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://mobbin.com/explore/flows/8d024af9-df00-42ca-8b96-40d4571d1294",
+      "tittel": "Oura iOS Onboarding Flow (skjermbildesamling, ikke hentbar i dette miljøet)",
+      "dato": "ukjent",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://mobbin.com/explore/flows/9f17e6ae-cc01-4e9e-abde-b2b01efaabbc",
+      "tittel": "Lifesum iOS Onboarding Flow (skjermbildesamling, ikke hentbar i dette miljøet)",
+      "dato": "ukjent",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Onboarding-valgskjermer og valgkomponent"
+      ]
+    },
+    {
+      "url": "https://monokrom.no/fonts/telefon",
+      "tittel": "Monokrom (Oslo, 2012) — Telefon, Satyr, Vinter, Aften Screen",
+      "dato": "løpende, sett 2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://pcho.medium.com/a-brilliant-brand-refresh-4af021c11486",
+      "tittel": "A Brilliant brand refresh (Peter Cho, VP Design, Brilliant × Koto) — PIX-illustrasjonssystem, CoFo Robert / CoFo Sans",
+      "dato": "arbeid startet høst 2023, artikkel udatert i søketreff",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://rive.app/blog/how-brilliant-org-motivates-learners-with-rive-animations",
+      "tittel": "How Brilliant.org motivates learners with Rive animations",
+      "dato": "ukjent",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://skriftkompani.no/",
+      "tittel": "Store Norske Skriftkompani (Arve Båtevik, 2020) — norsk foundry basert på Oslos skilthistorie og dialekt",
+      "dato": "løpende, sett 2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://ustwo.com/work/brilliant/",
+      "tittel": "Brilliant.org × ustwo — lesson/challenge tiles, progress trackers",
+      "dato": "ukjent",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20250722566346/en/Slingshot-Launches-Ash-the-First-AI-Designed-for-Therapy",
+      "tittel": "Slingshot Launches Ash, the First AI Designed for Therapy",
+      "dato": "2025-07-22",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://www.gabrielvaldivia.com/work/slingshot",
+      "tittel": "Slingshot AI — Personalized AI Counselor (designerens case study)",
+      "dato": "2025",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://www.itsnicethat.com/news/north-munch-museum-identity-graphic-design-210520",
+      "tittel": "North's severe backslanted type for the Munch Museum (MERK: eldre kilde)",
+      "dato": "21.05.2020",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.macrumors.com/2025/09/17/ios-26-liquid-glass-critiques/",
+      "tittel": "iOS 26's Liquid Glass Design Draws Criticism From Users",
+      "dato": "17.09.2025",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.matprat.no/_next/static/css/",
+      "tittel": "MatPrat shipped CSS-bundles – ABC ROM / ABC ROM Condensed / JetBrains Mono, fargeroller, radiushierarki, Ratio-varianter",
+      "dato": "hentet 19.08.2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://www.matprat.no/oppskrifter/",
+      "tittel": "MatPrat oppskriftsliste – 234 oppskriftskort, alle med ratio--mobile-12x16 og 5 stjerner",
+      "dato": "hentet 19.08.2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://www.matprat.no/oppskrifter/familien/pannekaker/",
+      "tittel": "MatPrat oppskriftsdetalj – sticky ankermeny, inset 1:1 hero, porsjonsvelger, ingrediens-checkboxes, wake-lock",
+      "dato": "hentet 19.08.2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Oppskrifts- og måltidsapper, 2025-2026 —"
+      ]
+    },
+    {
+      "url": "https://www.metalab.com/projects/waking-up",
+      "tittel": "Waking Up — MetaLab produktdesign-case",
+      "dato": "ukjent (produkt shipped 2018–, fortsatt i drift)",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Lærings-, kurs- og coachingapper 2025–20"
+      ]
+    },
+    {
+      "url": "https://www.metricdesign.no/work/visual-identity-for-nasjonalmuseet",
+      "tittel": "Visuell identitet for Nasjonalmuseet — Museet Sans + Museet Serif (Metric × Displaay)",
+      "dato": "2022, sett 2026",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    },
+    {
+      "url": "https://www.thegrocer.co.uk/news/nutrition-brand-zoe-launches-radically-redesigned-new-app/709452.article",
+      "tittel": "ZOE lanserer «radically redesigned» app (nærmeste tematiske referanse, PR-preget)",
+      "dato": "2025",
+      "type": "shipped-produkt",
+      "vinkler": [
+        "Hva som i 2025–2026 leses som AI-generer"
+      ]
+    }
+  ]
+}

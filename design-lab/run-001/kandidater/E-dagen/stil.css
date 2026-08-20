@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════════════════════════════
+   E · DAGEN
+   Bygget etter at distinkthetstesten strøk settet: fire kandidater viste
+   seg å være to retninger — «publikasjon» (A, C, D) og «verktøy» (B) —
+   der paletten gjorde 70–80 % av den opplevde avstanden.
+
+   E svarer på de tre hullene evaluatoren navnga:
+
+   1. LAYOUTTYPEN «BLA» MANGLET HELT. Alle fire var vertikal scroll av
+      stablede seksjoner. Her fyller én ting skjermen, og du blar.
+      Oppskriften er paginert i tre sider — det er dessuten slik man
+      faktisk lager mat, med telefonen på benken.
+
+   2. INGEN RETNING VAR ORGANISERT ETTER TID. Alle fire sorterte etter
+      TYPE. Her er «i dag» den bærende aksen, og modul, måltid og notat
+      blandes fordi de skjer samme dag. Det gjør appen til en ledsager
+      gjennom uka framfor en katalog over innhold.
+
+   3. VARMEN VAR MALT PÅ, IKKE BYGGET INN. Alle fire hentet varme fra
+      bakgrunnsfargen; velger man vekk beige, mister settet all varme
+      samtidig. Her er grunnen KJØLIG kritt, og varmen kommer fra
+      struktur: et stort paprikafelt som bærer dagen, ark som ligger
+      fysisk stablet med forskyvning, og matfoto i full skala.
+      Bytt paprikaen mot hvilken som helst annen farge — stablingen og
+      skalaen er der fortsatt.
+
+   Typografi: Bricolage Grotesque med optisk størrelse og bredde-akse.
+   Sans i display-rollen er et bevisst valg: researchens eneste harde
+   måling (M-01) var at NYT Cooking bruker SANS på oppskriftstitler og
+   reserverer serif til redaksjonelt innhold. Tre av fire kandidater
+   kjørte display-serif uten belegg for matflater.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root{
+  /* Grunnen er KJØLIG. Det er testen: holder varmen uten beige? */
+  --kritt:      #EDEBE6;
+  --ark:        #FFFFFF;
+  --ark-2:      #E3E1DA;
+  --blekk:      #1B1B18;
+  --blekk-2:    #57564E;   /* 7,1:1 mot kritt */
+  --linje:      #B5B2A7;   /* 3,0:1 mot kritt */
+
+  /* Paprika. Brukt som FLATE i stor skala, ikke som liten aksent. */
+  --paprika:    #B7371C;
+  --paprika-dyp:#8E2712;
+  --pa-tekst:   #FDF2EC;
+
+  --fullfort:   #2F6146;
+
+  --r-ark:      18px;      /* systemets eneste radius: «dette er et ark» */
+  --marg:       20px;
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{font:inherit;color:inherit}
+html,body{margin:0;padding:0;height:100%}
+body{background:var(--kritt);color:var(--blekk);
+  font-family:Onest,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow:hidden}
+
+.device{position:relative;width:100%;height:100dvh;overflow:hidden;
+  background:var(--kritt);display:flex;flex-direction:column}
+.scroll{flex:1;min-height:0;overflow-y:auto}
+.dock{flex-shrink:0}
+
+/* ─── Typografi ────────────────────────────────────────────────────
+   Bricolage har både opsz og wdth. Store grader settes smalt og tett,
+   små grader bredt og åpent — det er forskjellen på en skrift som er
+   skalert og en som er satt. */
+h1,h2,h3{margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif}
+h1{font-size:40px;line-height:.98;letter-spacing:-.03em;font-weight:700;
+   font-variation-settings:'opsz' 72,'wdth' 88}
+h2{font-size:27px;line-height:1.06;letter-spacing:-.022em;font-weight:600;
+   font-variation-settings:'opsz' 40,'wdth' 92}
+h3{font-size:18px;line-height:1.2;letter-spacing:-.012em;font-weight:600;
+   font-variation-settings:'opsz' 20,'wdth' 100}
+
+p{margin:0;font-size:15px;line-height:1.5;color:var(--blekk-2)}
+.meta{font-size:12.5px;line-height:1.35;color:var(--blekk-2);
+  font-variant-numeric:tabular-nums}
+.etikett{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase}
+
+.knapp{display:inline-flex;align-items:center;justify-content:center;min-height:52px;
+  padding:0 26px;border:0;cursor:pointer;border-radius:var(--r-ark);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:16px;font-weight:700;letter-spacing:-.006em;text-decoration:none;
+  font-variation-settings:'opsz' 18,'wdth' 96}
+.knapp--primar{background:var(--blekk);color:var(--kritt)}
+.knapp--primar:active{background:#000}
+.knapp--paprika{background:var(--paprika);color:var(--pa-tekst)}
+.knapp--paprika:active{background:var(--paprika-dyp)}
+.knapp--stille{background:transparent;color:var(--blekk);
+  box-shadow:inset 0 0 0 1.5px var(--linje)}
+.knapp--bred{display:flex;width:100%}
+
+/* ─── Bunnmeny ─────────────────────────────────────────────────────*/
+.dock{display:grid;grid-template-columns:repeat(4,1fr);background:var(--kritt);
+  border-top:1px solid var(--linje)}
+.fane{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  min-height:58px;padding-bottom:env(safe-area-inset-bottom);
+  font-size:11px;font-weight:600;color:var(--blekk-2);text-decoration:none}
+.fane svg{width:23px;height:23px}
+.fane.er-aktiv{color:var(--paprika)}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C · Bordet — Oppskrift</title>
+<link rel="stylesheet" href="../_assets/fonts/fonter.css">
+<link rel="stylesheet" href="stil.css">
+<link rel="stylesheet" href="oppskrift.css">
+</head>
+<body>
+<div class="device">
+  <div class="scroll">
+
+    <!-- Fotoet fyller nesten hele første viewport. Tesen er at maten er
+         hovedpersonen; da kan ikke hero-en være 235px høy. -->
+    <div class="hero">
+      <img src="../_assets/mat/r-01.jpg" alt="Mochagrøt">
+      <div class="hero__krom">
+        <a class="hero__knapp" href="#" aria-label="Tilbake">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </a>
+        <button class="hero__knapp" aria-pressed="false" aria-label="Lagre oppskriften">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v16l-5-4-5 4z"/></svg>
+        </button>
+      </div>
+      <div class="hero__tekst">
+        <span class="kicker">Frokost · Grøt</span>
+        <h1>Mochagrøt</h1>
+      </div>
+    </div>
+
+    <section class="innledning">
+      <p class="ingress">Havregrøt med kakao og et streif av kaffe. Toppes med bær og peanøttsmør.</p>
+      <div class="fakta">
+        <span class="fakta__karakter">4,6</span>
+        <span class="meta">142 vurderinger</span>
+        <span class="fakta__prikk" aria-hidden="true">·</span>
+        <span class="meta">Livsstilsdagboken MariaClausen</span>
+      </div>
+      <a class="knapp knapp--primar knapp--bred" href="#">Legg i matplanen</a>
+    </section>
+
+    <section class="porsjoner">
+      <span class="porsjoner__etikett">Porsjoner</span>
+      <span class="stepper">
+        <button aria-label="Færre porsjoner">−</button>
+        <span class="stepper__tall">1</span>
+        <button aria-label="Flere porsjoner">+</button>
+      </span>
+    </section>
+
+    <!-- Ikke sticky. F-13: den sticky pillen i baselinen dekket ni
+         tekstflater, blant dem primærknappen. -->
+    <nav class="deler" aria-label="Del av oppskriften">
+      <a class="del er-valgt" href="#" aria-current="true">Ingredienser</a>
+      <a class="del" href="#">Slik gjør du</a>
+    </nav>
+
+    <section class="ingredienser">
+      <ol class="liste">
+        <li><img src="../_assets/ingredienser/oats.png" alt=""><span class="navn">havregryn</span><span class="mengde">1 dl</span></li>
+        <li><img src="../_assets/ingredienser/water.png" alt=""><span class="navn">vann</span><span class="mengde">2 dl</span></li>
+        <li><img src="../_assets/ingredienser/milk.png" alt=""><span class="navn">melk <em>(evt. 2 ss. vaniljeyoghurt)</em></span><span class="mengde">1 dl</span></li>
+        <li><img src="../_assets/ingredienser/cocoa.png" alt=""><span class="navn">kakaopulver</span><span class="mengde">2 ss</span></li>
+        <li><img src="../_assets/ingredienser/coffee.png" alt=""><span class="navn">pulverkaffe</span><span class="mengde">½ ts</span></li>
+        <li><img src="../_assets/ingredienser/salt.png" alt=""><span class="navn">salt</span><span class="mengde">en klype</span></li>
+        <li><img src="../_assets/ingredienser/syrup.png" alt=""><span class="navn">sirup</span><span class="mengde">1 ss</span></li>
+      </ol>
+      <h3 class="bolk">Topping</h3>
+      <ol class="liste">
+        <li><img src="../_assets/ingredienser/raspberries.png" alt=""><span class="navn">frosne eller ferske bringebær</span><span class="mengde">1 neve</span></li>
+        <li><img src="../_assets/ingredienser/banana.png" alt=""><span class="navn">banan</span><span class="mengde">½</span></li>
+        <li><img src="../_assets/ingredienser/peanut-butter.png" alt=""><span class="navn">peanøttsmør</span><span class="mengde">½ ss</span></li>
+        <li><img src="../_assets/ingredienser/walnuts.png" alt=""><span class="navn">valnøttkjerner</span><span class="mengde">1 neve</span></li>
+      </ol>
+    </section>
+
+    <section class="kommentarer">
+      <div class="seksjonshode"><h3>Kommentarer</h3><button class="lenke">Mest nyttig</button></div>
+      <article class="kommentar">
+        <p class="kommentar__hode"><span class="navn">Maria</span><span class="fakta__karakter">5,0</span><span class="tid meta">For 2 dager siden</span></p>
+        <p>Kaffen er valgfri. Uten den smaker den som en sjokolademilkshake.</p>
+      </article>
+      <article class="kommentar">
+        <p class="kommentar__hode"><span class="navn">Anonym</span><span class="fakta__karakter">4,0</span><span class="tid meta">For 5 dager siden</span></p>
+        <p>Brukte vanlig yoghurt i stedet for melk. Ble tykkere og helt fint.</p>
+      </article>
+      <a class="knapp knapp--stille knapp--bred" href="#">Skriv en kommentar</a>
+    </section>
+
+    <section class="flere">
+      <h3>Flere som denne</h3>
+      <div class="flere__rekke">
+        <a class="flere__kort" href="#"><img src="../_assets/mat/r-09.jpg" alt=""><span class="flere__tittel">Bakt havregrøt cookie dough</span><span class="fakta__karakter">4,5</span></a>
+        <a class="flere__kort" href="#"><img src="../_assets/mat/r-10.jpg" alt=""><span class="flere__tittel">Overnight oats blåbær</span><span class="fakta__karakter">4,4</span></a>
+        <a class="flere__kort" href="#"><img src="../_assets/mat/r-02.jpg" alt=""><span class="flere__tittel">Hjemmelaget grovbrød</span><span class="fakta__karakter">4,8</span></a>
+      </div>
+    </section>
+
+  </div>
+</div>
+</body></html>

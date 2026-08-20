@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B · Verktøy — Hjem</title>
+<link rel="stylesheet" href="../_assets/fonts/fonter.css">
+<link rel="stylesheet" href="stil.css">
+<link rel="stylesheet" href="hjem.css">
+</head>
+<body>
+<div class="device">
+  <div class="scroll">
+
+    <header class="navbar">
+      <h1>Hei, Ingrid</h1>
+    </header>
+    <p class="ukesmaal">Denne uka: løsne på én matregel.</p>
+
+    <!-- Aktiv modul. Ingen plassholder-illustrasjon: der det ikke finnes
+         et bilde, står det som IKKE finnes ingenting. Kapittelnummeret
+         gjør jobben en thumbnail ellers ville gjort dårlig. -->
+    <section class="aktiv">
+      <div class="aktiv__hode">
+        <span class="aktiv__nr">01</span>
+        <div>
+          <span class="kicker">Pågår nå</span>
+          <h2>Matstøy</h2>
+        </div>
+      </div>
+      <p>Hvorfor tankene om mat kan ta så mye plass.</p>
+      <div class="aktiv__fremdrift">
+        <div class="stolpe"><i style="width:40%"></i></div>
+        <span class="meta">2 av 5 deler</span>
+      </div>
+      <a class="knapp knapp--primar" href="#">Fortsett</a>
+    </section>
+
+    <!-- Ukesmålet er ikke pynt: det er en oppgave med et avkryssingsfelt.
+         Baseline viste et innsiktskort uten handling. -->
+    <h3 class="gruppe__hode">Denne uka</h3>
+    <div class="gruppe">
+      <a class="rad rad--oppgave" href="#">
+        <span class="boks" aria-hidden="true"></span>
+        <span class="rad__copy">
+          <span class="rad__tittel">Når «sunt» blir en regel</span>
+          <span class="meta">Legg merke til forskjellen mellom et råd du kan velge, og en regel du må følge.</span>
+        </span>
+      </a>
+      <a class="rad rad--oppgave" href="#">
+        <span class="boks boks--av" aria-hidden="true">✓</span>
+        <span class="rad__copy">
+          <span class="rad__tittel er-gjort">Lag én middag du gleder deg til</span>
+          <span class="meta">Gjort på tirsdag</span>
+        </span>
+      </a>
+    </div>
+
+    <h3 class="gruppe__hode">Ukas rett</h3>
+    <a class="ukesrett" href="#">
+      <img src="../_assets/mat/r-03.jpg" alt="">
+      <span class="ukesrett__copy">
+        <span class="rad__tittel">Grønn proteinbowl</span>
+        <span class="meta">Kremet bowl av cottage cheese, avokado og spinat.</span>
+        <span class="karakter">3,8 <span class="meta">· 61 vurderinger</span></span>
+      </span>
+    </a>
+
+    <!-- Neste modul. Svarer på kontraktens B-02: «Kommer» forklarte ingenting.
+         Her står det hva som låser den opp, og det er sant. -->
+    <h3 class="gruppe__hode">Neste</h3>
+    <div class="gruppe">
+      <div class="rad rad--laast">
+        <span class="aktiv__nr aktiv__nr--liten">02</span>
+        <span class="rad__copy">
+          <span class="rad__tittel">Balanse</span>
+          <span class="meta">Åpnes når du er ferdig med Matstøy · 3 deler igjen</span>
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="dock" aria-label="Hovedmeny">
+    <a class="fane er-aktiv" href="#" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Hjem</a>
+    <a class="fane" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></svg>Moduler</a>
+    <a class="fane" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 13h16a8 8 0 0 1-16 0z"/><path d="M3 20h18"/><path d="M12 4v3"/></svg>Mat</a>
+    <a class="fane" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20a7 7 0 0 1 14 0" stroke-linecap="round"/></svg>Meg</a>
+  </nav>
+</div>
+</body></html>

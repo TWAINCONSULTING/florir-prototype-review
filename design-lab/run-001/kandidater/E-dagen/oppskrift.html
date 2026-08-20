@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E · Dagen — Oppskrift</title>
+<link rel="stylesheet" href="../_assets/fonts/fonter.css">
+<link rel="stylesheet" href="stil.css">
+<link rel="stylesheet" href="oppskrift.css">
+</head>
+<body>
+<!-- PAGINERT, IKKE RULLET.
+     Dette er layouttypen «bla», som manglet helt i settet: én ting fyller
+     skjermen og du blar videre. Det er dessuten slik man faktisk lager mat
+     — telefonen står på benken, og man skal ikke lete i en 2350px rulling
+     etter hvor man var. Ingen sticky flate kan dekke noe, fordi ingenting
+     ruller forbi noe annet. -->
+<div class="device sider">
+
+  <header class="sidetopp">
+    <a class="ikonknapp" href="#" aria-label="Tilbake">←</a>
+    <nav class="pager" aria-label="Del av oppskriften">
+      <a class="er-her" href="#" aria-current="step">Retten</a>
+      <a href="#">Råvarer</a>
+      <a href="#">Slik gjør du</a>
+    </nav>
+    <button class="ikonknapp" aria-pressed="false" aria-label="Lagre oppskriften">☆</button>
+  </header>
+
+  <div class="side">
+    <div class="side__foto">
+      <img src="../_assets/mat/r-01.jpg" alt="Mochagrøt">
+    </div>
+
+    <div class="side__tekst">
+      <span class="etikett etikett--tid">Frokost · 08:00 i dag</span>
+      <h1>Mochagrøt</h1>
+      <p>Havregrøt med kakao og et streif av kaffe. Toppes med bær og peanøttsmør.</p>
+
+      <div class="noekkeltall">
+        <span><em>4,6</em><span class="meta">142 vurderinger</span></span>
+        <span><em>11</em><span class="meta">råvarer</span></span>
+        <span class="porsjon">
+          <button aria-label="Færre porsjoner">−</button>
+          <em>1</em>
+          <button aria-label="Flere porsjoner">+</button>
+          <span class="meta">porsjon</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Primærhandlingen er festet til siden, ikke begravd i en rulling.
+         Baselinen hadde den 1400px nede, under en sticky pille som dekket
+         den (F-13). Her kan den ikke havne noe annet sted. -->
+    <div class="side__handling">
+      <a class="knapp knapp--paprika knapp--bred" href="#">Legg i matplanen</a>
+      <p class="kilde meta">Fra Livsstilsdagboken MariaClausen</p>
+    </div>
+  </div>
+
+  <div class="prikker" aria-hidden="true"><i class="er-her"></i><i></i><i></i></div>
+</div>
+</body></html>

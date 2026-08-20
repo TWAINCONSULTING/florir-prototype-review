@@ -1,0 +1,77 @@
+/* C · Bordet — oppskriftsdetalj */
+
+.hero{position:relative}
+.hero img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,10,7,.94) 0%,rgba(13,10,7,.7) 22%,rgba(13,10,7,0) 52%)}
+.hero__krom{position:absolute;top:calc(env(safe-area-inset-top) + 12px);
+  left:12px;right:12px;display:flex;justify-content:space-between;z-index:2}
+.hero__knapp{width:48px;height:48px;display:grid;place-items:center;
+  background:rgba(23,19,15,.82);color:var(--creme);border:1px solid var(--kant);
+  cursor:pointer;border-radius:var(--r-rund);text-decoration:none}
+.hero__knapp svg{width:22px;height:22px}
+.hero__tekst{position:absolute;left:var(--marg);right:var(--marg);bottom:20px;z-index:1;
+  display:grid;gap:8px}
+
+.innledning{padding:22px var(--marg) 0}
+.ingress{font-size:16.5px;line-height:1.5;color:var(--creme-2)}
+.fakta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:14px}
+.fakta__karakter{font-family:'Instrument Serif',Georgia,serif;font-size:19px;
+  color:var(--creme);font-variant-numeric:lining-nums}
+.fakta__prikk{color:var(--kant)}
+.knapp--bred{display:flex;width:100%;margin-top:20px}
+
+.porsjoner{display:flex;align-items:center;justify-content:space-between;
+  padding:26px var(--marg) 0}
+.porsjoner__etikett{font-size:16px;color:var(--creme-2)}
+.stepper{display:flex;align-items:center;gap:2px}
+.stepper button{width:48px;height:48px;border:1px solid var(--kant);background:transparent;
+  cursor:pointer;font-family:inherit;font-size:19px;color:var(--rav);
+  border-radius:var(--r-flate);line-height:1}
+.stepper__tall{min-width:42px;text-align:center;font-family:'Instrument Serif',Georgia,serif;
+  font-size:24px;font-variant-numeric:lining-nums}
+
+.deler{display:flex;gap:24px;margin:26px var(--marg) 0;border-bottom:1px solid var(--kant)}
+.del{min-height:50px;display:flex;align-items:center;font-size:16px;font-weight:600;
+  color:var(--creme-2);text-decoration:none;position:relative}
+.del.er-valgt{color:var(--creme)}
+.del.er-valgt::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;
+  background:var(--rav)}
+
+/* Ingrediensbildene er skåret ut mot hvit bakgrunn. På mørk grunn får
+   de en varm glød i stedet for en hard kant — det er derfor de ligger
+   på en svakt hevet, rund flate og ikke rett på espressoen. */
+.ingredienser{padding:0 var(--marg)}
+.liste{list-style:none;margin:0;padding:0}
+.liste li{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;
+  gap:14px;min-height:66px;border-bottom:1px solid var(--kant)}
+.liste li:last-child{border-bottom:0}
+.liste img{width:52px;height:52px;object-fit:contain;display:block;
+  border-radius:var(--r-rund);background:var(--hevet-2);padding:3px}
+.liste .navn{font-size:16px;line-height:1.35;color:var(--creme)}
+.liste .navn em{font-style:normal;color:var(--creme-2);font-size:13.5px}
+.liste .mengde{font-size:14.5px;color:var(--creme-2);white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.bolk{margin:26px 0 4px}
+
+.kommentarer{padding:30px var(--marg) 0}
+.seksjonshode{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.lenke{min-height:48px;display:inline-flex;align-items:center;border:0;background:none;
+  cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--rav)}
+.kommentar{padding:16px 0;border-bottom:1px solid var(--kant)}
+.kommentar__hode{display:flex;align-items:baseline;gap:10px;margin:0 0 7px}
+.kommentar__hode .navn{font-size:15px;font-weight:600;color:var(--creme)}
+.kommentar__hode .tid{margin-left:auto}
+
+/* Vannrett hylle, ikke en fjerde loddrett liste. «Identiske kortrutenett»
+   er en egen slop-signatur; her er relatert innhold en annen layouttype
+   enn ingrediensene over. */
+.flere{padding:30px 0 0}
+.flere h3{padding:0 var(--marg);margin-bottom:14px}
+.flere__rekke{display:flex;gap:12px;overflow-x:auto;padding:0 var(--marg);
+  scroll-snap-type:x mandatory}
+.flere__kort{flex:0 0 168px;display:grid;gap:7px;text-decoration:none;color:inherit;
+  scroll-snap-align:start}
+.flere__kort img{width:168px;height:126px;object-fit:cover;
+  border-radius:var(--r-flate);display:block}
+.flere__tittel{font-size:15px;font-weight:600;line-height:1.28;color:var(--creme)}
