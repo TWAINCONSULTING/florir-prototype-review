@@ -991,6 +991,10 @@ a.row{text-decoration:none;color:inherit}
 .restart{position:fixed;bottom:16px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-secondary);z-index:20}
 @media (max-width:519px){.restart{display:none}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/recipes.css?v=botanical-2">
 </head>
 <body>
 
@@ -1436,16 +1440,21 @@ a.row{text-decoration:none;color:inherit}
        inngang øverst, kuratert i midten, hele listen bak én dør. ═══════ -->
   <section class="screen" id="s-oppskrifter" hidden>
     <div class="scroll stack mat-scroll">
-      <h1 class="sr" tabindex="-1" data-focus data-slot="tittel">Mat</h1>
-      <div class="mat-featured" data-slot="hero"></div>
+      <header class="discover-heading">
+        <div><span class="discover-eyebrow"><span class="florir-flower" aria-hidden="true">✿</span>Florir · På kjøkkenet</span>
+          <h1 tabindex="-1" data-focus data-slot="tittel">Oppskrifter</h1></div>
+        <button class="discover-plan" data-go="maltidsplan" aria-label="Åpne måltidsplanen">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="4"/><path d="M8 3v4m8-4v4M4 11h16m-11 5h6"/></svg>
+        </button>
+      </header>
 
       <div class="discover-toolbar">
-        <button class="search-entry" data-slot="sokeinngang">
+        <button class="search-entry" data-slot="sokeinngang" aria-label="Søk i oppskrifter">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor"
                stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
             <circle cx="9" cy="9" r="5.5"/><path d="M13 13l4 4"/>
           </svg>
-          <span>Søk i oppskrifter</span>
+          <span>Hva har du lyst på?</span>
         </button>
         <button class="filter-button" data-slot="filterknapp" data-ark="mat-filter" aria-label="Åpne filter">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor"
@@ -1457,6 +1466,8 @@ a.row{text-decoration:none;color:inherit}
 
       <div class="meal-tabs" data-slot="filter" role="group" aria-label="Filtrer på måltid"></div>
 
+      <div class="mat-featured" data-slot="hero"></div>
+
       <div class="stack worth-section" data-slot="hylleseksjon">
         <div class="seksjonshode">
           <h2 class="t-card" data-slot="hylletittel"></h2>
@@ -1464,6 +1475,11 @@ a.row{text-decoration:none;color:inherit}
         </div>
         <div class="hylle" data-slot="hylle"></div>
       </div>
+
+      <figure class="florir-signature">
+        <img src="assets/florir-shoot.jpeg" alt="To kvinner fra Florir-shooten i en blomstrende hage" width="1179" height="1633" loading="lazy" decoding="async">
+        <figcaption><strong>Fra oss i Florir</strong><p>Litt inspirasjon til kjøkkenet ditt.</p></figcaption>
+      </figure>
 
       <button class="utility-row" data-go="maltidsplan">
         <span class="utility-row__icon">
@@ -2725,7 +2741,7 @@ a.row{text-decoration:none;color:inherit}
    * dør til hele listen. «Finn noe bestemt» bor på oppskriftsliste.
    */
   function tegnMat(node, p, state) {
-    const m = p.maltid || 'alle';
+    const m = MALTIDER.some(([v]) => v === p.maltid) ? p.maltid : 'alle';
     const utvalg = DATA.oppskrifter.filter(o => iMaltid(o, m));
 
     // Ukas rett er eksplisitt kuratert. Måltidsfiltrering får fortsatt sin
@@ -2735,17 +2751,18 @@ a.row{text-decoration:none;color:inherit}
     // Featured-flaten skjules når bolken er tom. Ingen tom medieflate.
     const heroEl = node.querySelector('[data-slot="hero"]');
     heroEl.hidden = !topp;
-    node.querySelector('[data-slot="tittel"]').classList.toggle('sr', !!topp);
     heroEl.innerHTML = !topp ? '' : `
-      <button data-go="oppskrift" data-id="${topp.id}" aria-label="Åpne ${topp.navn}">
-        ${BILDER[topp.id]
-          ? `<img src="${BILDER[topp.id]}" alt="" decoding="async">`
-          : `<span class="mat-featured__fallback">${PLASSHOLDER}</span>`}
+      <button class="featured-recipe" data-go="oppskrift" data-id="${topp.id}" aria-label="Åpne ${esc(topp.navn)}">
+        <span class="featured-recipe__media">
+          ${BILDER[topp.id]
+            ? `<img src="${BILDER[topp.id]}" alt="" decoding="async">`
+            : `<span class="mat-featured__fallback">${PLASSHOLDER}</span>`}
+          <span class="featured-recipe__badge">${m === 'alle' ? 'Ukas rett' : MALTIDER.find(x => x[0] === m)[1]}</span>
+        </span>
         <span class="mat-featured__copy">
-          <span class="kicker">Ukas rett</span>
-          <span class="tit">${topp.navn}</span>
-          <p>${topp.beskrivelse}</p>
-          <span class="meta">${vurdering(topp.snitt, topp.vurderinger)}</span>
+          <span class="featured-recipe__topline"><span>${topp.kategori}</span>${vurdering(topp.snitt, topp.vurderinger)}</span>
+          <span class="tit">${esc(topp.navn)}</span>
+          <span class="featured-recipe__cta">Se oppskriften <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
         </span>
       </button>`;
 
@@ -2762,10 +2779,13 @@ a.row{text-decoration:none;color:inherit}
     node.querySelector('[data-slot="hylletittel"]').textContent =
       m === 'alle' ? 'Verdt å prøve' : `Verdt å prøve · ${MALTIDER.find(x => x[0] === m)[1]}`;
     node.querySelector('[data-slot="hylle"]').innerHTML = hylle.map(o => `
-      <button class="kort" data-go="oppskrift" data-id="${o.id}">
-        <span class="bilde">${BILDER[o.id] ? `<img src="${BILDER[o.id]}" alt="" decoding="async">` : PLASSHOLDER}</span>
-        <span class="navn">${o.navn}</span>
-        <span class="meta">${vurdering(o.snitt, o.vurderinger)}</span>
+      <button class="kort" data-go="oppskrift" data-id="${o.id}" aria-label="Åpne ${esc(o.navn)}">
+        <span class="bilde">${BILDER[o.id] ? `<img src="${BILDER[o.id]}" alt="" decoding="async" loading="lazy">` : PLASSHOLDER}</span>
+        <span class="recipe-card__body">
+          <span class="recipe-card__category">${o.kategori}</span>
+          <span class="navn">${esc(o.navn)}</span>
+          <span class="meta">${vurdering(o.snitt, o.vurderinger)}</span>
+        </span>
       </button>`).join('');
 
     // Tom tilstand for et måltid uten innhold. «Middag» er tom i dag, og det
@@ -2791,7 +2811,10 @@ a.row{text-decoration:none;color:inherit}
     sokeinngang.dataset.go = 'oppskriftsliste';
     sokeinngang.dataset.params = JSON.stringify({ maltid: m });
 
-    node.querySelector('[data-slot="filterknapp"]').dataset.params = JSON.stringify({ maltid: m });
+    const filterknapp = node.querySelector('[data-slot="filterknapp"]');
+    filterknapp.dataset.params = JSON.stringify({ maltid: m });
+    filterknapp.classList.toggle('has-active-filter', m !== 'alle');
+    filterknapp.setAttribute('aria-label', `Filtrer oppskrifter. Valgt: ${MALTIDER.find(x => x[0] === m)[1]}`);
 
     node.querySelector('[data-slot="plantall"]').textContent =
       state.plan.length ? `${state.plan.length} oppskrifter` : 'Ingen retter ennå';
