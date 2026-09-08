@@ -1,19 +1,19 @@
 /* Florir recipe discovery. Scoped tokens keep the rest of the prototype intact. */
 #s-oppskrifter {
-  --canvas: #f8f9f5;
-  --surface: #eef1e9;
+  --canvas: #faf8f2;
+  --surface: #eeeee5;
   --surface-raised: #ffffff;
-  --text: #203a30;
-  --text-secondary: #626e64;
-  --primary: #214f3d;
-  --primary-pressed: #173e30;
-  --primary-soft: #e8efdc;
-  --accent: #214f3d;
+  --text: #2a3e31;
+  --text-secondary: #686e61;
+  --primary: #38533f;
+  --primary-pressed: #293f31;
+  --primary-soft: #e5e9dc;
+  --accent: #38533f;
   --icon-muted: #647166;
   --border: #dde3d8;
   --font: 'DM Sans', -apple-system, system-ui, sans-serif;
   --font-display: 'DM Serif Display', Georgia, serif;
-  --focus-color: #214f3d;
+  --focus-color: #38533f;
   font-family: var(--font);
   color: var(--text);
 }
@@ -32,7 +32,7 @@
 #s-oppskrifter .search-entry { padding: 0 16px; gap: 12px; font-size: 1rem; }
 #s-oppskrifter .search-entry svg { flex-shrink: 0; }
 #s-oppskrifter .filter-button { color: #fff; background: var(--primary); border-color: var(--primary); position: relative; }
-#s-oppskrifter .filter-button.has-active-filter::after { content: ''; position: absolute; top: 9px; right: 9px; width: 7px; height: 7px; border-radius: 50%; background: #deeda9; }
+#s-oppskrifter .filter-button.has-active-filter::after { content: ''; position: absolute; top: 9px; right: 9px; width: 7px; height: 7px; border-radius: 50%; background: #eee3bf; }
 #s-oppskrifter .meal-tabs { gap: 8px; padding-bottom: 1px; margin-top: -4px; }
 #s-oppskrifter .meal-tabs button { min-height: 48px; padding: 0 17px; font-size: .875rem; font-weight: 500; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); background: transparent; }
 #s-oppskrifter .meal-tabs button[aria-pressed="true"] { color: #fff; background: var(--primary); border-color: var(--primary); font-weight: 600; }
@@ -41,16 +41,16 @@
 .featured-recipe__media { position: relative; display: block; min-width: 0; height: 100%; }
 #s-oppskrifter .featured-recipe__media img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; border-radius: 0; object-position: 48% 50%; }
 #s-oppskrifter .mat-featured__fallback { aspect-ratio: 2.1; border-radius: 0; }
-.featured-recipe__badge { position: absolute; top: 14px; left: 14px; padding: 8px 12px; border-radius: 999px; background: #deeda9; color: #243d24; font-size: .75rem; font-weight: 700; line-height: 1; }
+.featured-recipe__badge { position: absolute; top: 14px; left: 14px; padding: 8px 12px; border-radius: 999px; background: #eee3bf; color: #243d24; font-size: .75rem; font-weight: 700; line-height: 1; }
 #s-oppskrifter .mat-featured__copy { gap: 10px; padding: 20px 16px; align-content: center; min-width: 0; }
 .featured-recipe__topline { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; font-size: .75rem; color: #d7e2d6; }
 #s-oppskrifter .mat-featured__copy .tit { font: 400 1.625rem/1.15 var(--font-display); color: #fff; letter-spacing: -.02em; overflow-wrap: anywhere; }
 .featured-recipe__description { color: #dce7dc; font-size: .875rem; line-height: 1.5; }
-.featured-recipe__cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 14px; border-top: 1px solid #ffffff29; color: #e3efb7; font-size: .875rem; font-weight: 600; }
+.featured-recipe__cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 14px; border-top: 1px solid #ffffff29; color: #eee3bf; font-size: .875rem; font-weight: 600; }
 #s-oppskrifter .rating-summary { gap: 6px; }
 #s-oppskrifter .mat-featured .rating-summary, #s-oppskrifter .mat-featured .rating-summary strong { color: #fff; }
 #s-oppskrifter .mat-featured .stjerner { color: #6f8877; }
-#s-oppskrifter .mat-featured .stjerner::after { color: #e3efb7; }
+#s-oppskrifter .mat-featured .stjerner::after { color: #eee3bf; }
 #s-oppskrifter .worth-section { gap: 12px; }
 #s-oppskrifter .seksjonshode { align-items: center; }
 #s-oppskrifter .seksjonshode h2 { font: 400 1.625rem/1.2 var(--font-display); letter-spacing: -.02em; }
@@ -62,7 +62,7 @@
 .recipe-card__category { font-size: .75rem; color: var(--text-secondary); }
 #s-oppskrifter .hylle .navn { font-size: 1rem; letter-spacing: -.02em; font-weight: 600; }
 #s-oppskrifter .hylle .meta { margin-top: auto; padding-top: 4px; }
-#s-oppskrifter .utility-row { border: 1px solid #dae3c5; border-radius: 20px; padding: 14px; background: #edf2e0; gap: 12px; }
+#s-oppskrifter .utility-row { border: 1px solid #dde1d3; border-radius: 20px; padding: 14px; background: #eeeee5; gap: 12px; }
 #s-oppskrifter .utility-row__icon { background: #fff; border-radius: 14px; }
 #s-oppskrifter .utility-row__label strong { font-size: .9375rem; font-weight: 600; }
 #s-oppskrifter .utility-row__label .meta { font-size: .875rem; }
@@ -86,3 +86,12 @@
 @media (prefers-reduced-motion: no-preference) {
   #s-oppskrifter .featured-recipe, .discover-plan { transition: filter 160ms ease, background 160ms ease; }
 }
+
+/* A restrained forget-me-not accent, grounded in leaf greens and flower-centre cream. */
+#s-oppskrifter .florir-flower { color: #9aaec9; font-size: 1.25rem; line-height: 1; vertical-align: middle; margin-right: 5px; }
+#s-oppskrifter .florir-signature { display: flex; gap: 18px; align-items: center; padding: 14px; border: 1px solid var(--border); border-radius: 22px; background: #f0eee6; }
+#s-oppskrifter .florir-signature img { width: 92px; height: 112px; object-fit: cover; object-position: 50% 40%; border-radius: 14px; flex-shrink: 0; }
+#s-oppskrifter .florir-signature figcaption { display: grid; gap: 8px; min-width: 0; }
+#s-oppskrifter .florir-signature strong { font: 400 1.375rem/1.2 var(--font-display); }
+#s-oppskrifter .florir-signature p { font: 400 .875rem/1.5 var(--font); color: var(--text-secondary); }
+#s-oppskrifter .florir-signature { margin: 0; }
