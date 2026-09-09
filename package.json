@@ -1,0 +1,13 @@
+{
+  "name": "florir-prototype",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "python3 tools/build-worker.py",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": { "drizzle-orm": "0.45.2" },
+  "devDependencies": { "drizzle-kit": "0.31.10", "vite": "8.2.1" }
+}

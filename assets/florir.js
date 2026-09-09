@@ -27,13 +27,13 @@
   function week(offset=demo.weekOffset){const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-(d.getDay()+6)%7+offset*7);return Array.from({length:7},(_,i)=>{const n=new Date(d);n.setDate(d.getDate()+i);return n});}
   const dateLabel=d=>new Intl.DateTimeFormat('nb-NO',{day:'numeric',month:'long'}).format(d);
   const kr=n=>new Intl.NumberFormat('nb-NO',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n)+' kr';
-  const subscriptionPrice=month=>Math.max(199,499-Math.max(0,Math.floor(month))*50);
+  const subscriptionPrice=month=>Math.max(180,499-Math.max(0,Math.floor(month))*50);
   const extraRecipes=[
     {id:'r-pasta',navn:'Kremet tomatpasta',kategori:'Middag',maltid:'middag',beskrivelse:'En enkel pasta med tomater, basilikum og litt parmesan. God mat på en vanlig tirsdag.',porsjoner:2,snitt:4.7,vurderinger:0,ingredienser:['200 g pasta','400 g hakkede tomater','1 dl matfløte','1 fedd hvitløk','1 ss olivenolje','30 g parmesan'],topping:['1 håndfull basilikum'],steg:['Kok pastaen etter anvisningen på pakken. Ta vare på en kopp av kokevannet.','Finhakk hvitløken. Varm oljen i en panne og la hvitløken surre rolig i ett minutt.','Tilsett hakkede tomater og la sausen småkoke i 10 minutter. Rør inn fløten.','Vend pastaen inn i sausen og spe med kokevann til passe konsistens. Topp med parmesan og basilikum.'],minutes:25},
     {id:'r-waffles',navn:'Grove vafler',kategori:'Frokost',maltid:'frokost',beskrivelse:'Myke, grove vafler med yoghurt og bær. Like gode til frokost som til kaffen.',porsjoner:2,snitt:4.6,vurderinger:0,ingredienser:['2 egg','2 dl melk','1 dl havregryn','1 dl fullkornsmel','1 ts bakepulver','1 ss smør'],topping:['100 g yoghurt','100 g blåbær'],steg:['Visp egg og melk sammen. Rør inn havregryn, mel og bakepulver.','La røren hvile i 10 minutter mens vaffeljernet blir varmt.','Smør jernet lett og stek vaflene til de er gylne.','Server med yoghurt og bær, eller noe annet du liker.'],minutes:20},
     {id:'r-lentils',navn:'Lun linsesalat',kategori:'Lunsj',maltid:'lunsj',beskrivelse:'Ovnsbakt søtpotet, linser og feta. En lun salat med plass til det du har hjemme.',porsjoner:2,snitt:4.5,vurderinger:0,ingredienser:['300 g søtpotet','380 g linser','100 g spinat','80 g feta','1 ss olivenolje','1/2 sitron'],topping:[],steg:['Sett ovnen på 220 °C. Del søtpoteten i små terninger.','Vend søtpoteten med olje og fordel den på et stekebrett. Bak i omtrent 20 minutter, til den er mør.','Skyll og sil linsene. Bland dem med spinat og den lune søtpoteten.','Smuldre feta over og skvis over sitron. Smak til og server.'],minutes:25}
   ];
-  const recipes=[...F.DATA.oppskrifter,...extraRecipes];
+  const recipes=[...F.DATA.oppskrifter,...extraRecipes].map(r=>({...r,steg:[...r.steg]}));
   const recipe=id=>recipes.find(r=>r.id===id);
   const featured=['r-03','r-pasta','r-waffles','r-lentils'];
   const trialRecipes=['r-03','r-pasta','r-waffles','r-lentils','r-10'];
@@ -124,27 +124,28 @@
     case 'goal':{const g=demo.onboarding.goals,i=g.indexOf(p.goal);i<0?g.push(p.goal):g.splice(i,1);redraw();break;}
     case 'ob-choice':demo.onboarding[p.key]=p.value;redraw();break;
     case 'ob-next':if(p.step===1){S.profil.navn=demo.onboarding.name.trim()||'Ingrid';F.show('onboarding-mal');}else if(p.step===2)F.show('onboarding-hverdag');else F.show('onboarding-klar');break;
-    case 'start-trial':{const consent=document.querySelector('#fl-consent');if(!consent.checked){consent.focus();toast('Bekreft pris og fornyelse før du fortsetter.');break;}const end=new Date();end.setDate(end.getDate()+3);demo.trialEnd=end.toISOString();demo.mode='trial';demo.cancelled=false;demo.completed=0;demo.part=0;S.plan=[];modal('Dine tre prøvedager begynner nå',`<p>Prøv første del av Matstøy og finn fem oppskrifter du liker. I en ferdig betalingsflyt ville første betaling vært ${dateLabel(end)}.</p><div class="notice">Dette er en demo. Ingen betaling er registrert eller planlagt.</div>${cta('Gå til min start',action('trial-home'))}`);break;}
+    case 'start-trial':{const consent=document.querySelector('#fl-consent');if(!consent.checked){consent.focus();toast('Bekreft pris og fornyelse før du fortsetter.');break;}const end=new Date();end.setDate(end.getDate()+3);demo.trialEnd=end.toISOString();demo.mode='trial';demo.cancelled=false;demo.completed=0;demo.part=0;demo.finishedParts=[];demo.clipPositions={};demo.clipDone={};modal('Dine tre prøvedager begynner nå',`<p>Prøv første del av Matstøy og finn fem oppskrifter du liker. I en ferdig betalingsflyt ville første betaling vært ${dateLabel(end)}.</p><div class="notice">Dette er en demo. Ingen betaling er registrert eller planlagt.</div>${cta('Gå til min start',action('trial-home'))}`);break;}
     case 'trial-home':dialog.close();F.show('hjem');break;
     case 'cancel-trial':modal('Avslutte prøven?',`<p>Du unngår første betaling og automatisk fornyelse i den foreslåtte medlemsflyten.</p>${cta('Avslutt prøveperioden',action('confirm-cancel'))}<button class="text-button" ${action('close')}>Behold prøven</button>`);break;
     case 'confirm-cancel':demo.cancelled=true;demo.mode='explore';dialog.close();redraw();toast('Prøven er avsluttet. Ingen betaling.');break;
-    case 'demo-month':demo.month=Math.min(6,demo.month+1);demo.mode='preview';redraw();break;
+    case 'demo-month':demo.month=Math.min(7,demo.month+1);demo.mode='preview';redraw();break;
     case 'lesson-format':redraw({format:p.format});break;
     case 'lesson-preview':redraw({format:'text'});break;
     case 'lesson-complete':demo.completed=Math.max(demo.completed,p.part+1);demo.part=Math.min(4,p.part+1);modal('Ta det med deg videre',`<p>Hva la du merke til i denne delen?</p>${cta('Skriv en refleksjon',go('refleksjon'))}<button class="text-button" ${go('moduler')}>Tilbake til modulene</button>`);break;
     case 'note-save':{const t=document.querySelector('[data-note-text]')?.value.trim(),h=document.querySelector('[data-note-title]')?.value.trim();if(!t&&!h){F.show('meg');break;}S.notater.unshift({id:'n-'+Date.now(),type:p.reflection?'refleksjon':'notat',dagerSiden:0,tittel:h||t.split('\n')[0].slice(0,60),tekst:t||''});delete demo.drafts[p.reflection?'reflection':'note'];F.show('meg');toast('Tanken er tatt vare på i denne fanen');break;}
-    case 'delete-note':modal('Slette dette notatet?',`<p>Notatet fjernes fra denne demoøkten.</p>${cta('Slett notatet',action('confirm-delete',{id:p.id}))}`);break;
+    case 'delete-note':modal('Slette dette notatet?',`<p>Notatet fjernes fra dagboken din.</p>${cta('Slett notatet',action('confirm-delete',{id:p.id}))}`);break;
     case 'confirm-delete':S.notater=S.notater.filter(n=>n.id!==p.id);dialog.close();F.show('notater');break;
-    case 'profile-save':S.profil.navn=document.querySelector('#fl-profile-name').value.trim()||S.profil.navn;redraw();toast('Navnet er lagret for denne økten');break;
+    case 'profile-save':S.profil.navn=document.querySelector('#fl-profile-name').value.trim()||S.profil.navn;redraw();toast('Navnet er oppdatert');break;
     case 'logout':demo.provider=null;demo.mode='explore';F.show('onboarding');break;
     case 'demo-menu':modal('Utforsk Florir',`<div class="plan-select-list">${[['hjem','Hjem'],['onboarding','Start og innlogging'],['onboarding-navn','Kort onboarding'],['betaling','Prøve og medlemskap'],['moduler','Moduler'],['oppskrifter','Oppskrifter'],['maltidsplan','Måltidsplan'],['handleliste','Handleliste og Oda'],['meg','Ditt rom']].map(([r,l])=>`<button ${go(r)}>${l}${icon('arrow')}</button>`).join('')}</div><p class="demo-note">Designprototype · Alt du gjør her er en demonstrasjon.</p>`);break;
   }}
-  document.addEventListener('click',e=>{const el=e.target.closest('[data-fl]');if(el){e.preventDefault();e.stopImmediatePropagation();doAction(el.dataset.fl,JSON.parse(el.dataset.flPayload||'{}'),el);return;}if(e.target.closest('[data-go],[data-back],[data-fane]')&&dialog.open)dialog.close();},true);
+  document.addEventListener('click',e=>{const el=e.target.closest('[data-fl]');if(el){e.preventDefault();e.stopImmediatePropagation();doAction(el.dataset.fl,JSON.parse(el.dataset.flPayload||'{}'),el);window.FlorirPersist?.schedule();return;}if(e.target.closest('[data-go],[data-back],[data-fane]')&&dialog.open)dialog.close();},true);
   document.addEventListener('input',e=>{if(e.target.matches('[data-fl-input]'))demo.onboarding[e.target.dataset.flInput]=e.target.value;if(e.target.matches('[data-fl-search]')){const q=e.target.value,pos=e.target.selectionStart;redraw({q,all:true});const f=document.querySelector('.screen:not([hidden]) [data-fl-search]');f?.focus();f?.setSelectionRange(pos,pos);}if(e.target.matches('[data-note-title],[data-note-text]')){demo.drafts[F.current().name==='refleksjon'?'reflection':'note']={title:document.querySelector('[data-note-title]').value,text:document.querySelector('[data-note-text]').value};}});
   document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='fl-name'){e.preventDefault();doAction('ob-next',{step:1});}});
   const launcher=document.createElement('div');launcher.className='review-launcher';launcher.innerHTML=`<span>Florir · designprototype</span><button ${action('demo-menu')}>Alle skjermer</button><button ${go('onboarding')}>Start på nytt</button>`;document.body.append(launcher);
   // Seed the approved meal-plan composition with current dates; all actions remain editable.
   const days=week(0);S.plan=[['r-10',4],['r-03',5],['r-04',6]].map(([id,i],j)=>({id:'seed-'+j,oppskriftId:id,portions:recipe(id).porsjoner,date:dateKey(days[i])}));
   window.FlorirPrototype={demo,recipes,subscriptionPrice,shoppingRows,week,recipeCrops};
-  F.start();
+  window.FlorirUI={icon,action,go,crop,flower,sprig,brand,cta,header,backhead,title,frame,prog,progress,dateKey,dateLabel,kr,recipe,food,minutes,tile,register,toast,modal,redraw,isTrial,locked,steps,products};
+  // The application starts after durable progress has been loaded by experience.js.
 })();

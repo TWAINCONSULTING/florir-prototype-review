@@ -1,4 +1,9 @@
 .DS_Store
 __pycache__/
 *.pyc
+node_modules/
+.preview-data/
+.openai/execution-profile.json
 
+# Rebuilt and archived from the committed source for each Sites version.
+dist/

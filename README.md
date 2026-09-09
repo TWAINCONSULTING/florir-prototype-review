@@ -1,62 +1,50 @@
-# Florir · ny botanisk prototype
+# Florir · botanisk appprototype
 
-Oppdatert september 2026 med godkjent porselen-, salvie- og havrestil.
+Oppdatert 9. september 2026. Privat app: https://florir.mark-twain.chatgpt.site
 
-- Start: `index.html` eller `#/onboarding`. Utforsk-knappen åpner hele demoen.
-- Hjem, moduler, oppskrifter, oppskriftsdetaljer, ukesplan og Ditt rom følger referansene i `assets/reference/`.
-- Tre onboardingsteg: navn, ønsker og hverdag.
-- Apple og Google er hovedvalg, med e-post som alternativ.
-- Oppskriftsingredienser og steg kan krysses av. Hvert steg kan åpnes for full forklaring. Porsjoner skalerer mengdene.
-- Planen samler ingredienser for valgt uke. Varer du allerede har, utelates fra Oda-forslaget.
-- Prøveflyt: tre gratis dager, første moduldel, fem oppskrifter og tre planlagte retter. Foreslått pris er 499 kr/mnd etter prøven, deretter 449, 399, 349, 299, 249 og 199 kr fra måned 7. Priser og fornyelse vises før samtykke. Prøven kan avbrytes under medlemskap.
+## Prøv appen
 
-## Prototypens grenser
+Starten ligger på `/#/hjem`. De fire hovedfanene er Hjem, Moduler, Mat og Meg. Start og demoinnlogging finnes under Innstillinger → Logg ut av demoen, eller direkte på `/#/onboarding`. På større skjermer finnes også «Alle skjermer» under telefonen.
 
-Dette er en statisk, klikkbar prototype. Apple/Google/e-post, betaling og Oda-overføring er eksplisitte demoflyter. Ingen OAuth-konto opprettes, e-post sendes, kort belastes eller varer bestilles. Oda-priser og produktsammenstillinger er eksempler. Lenken åpner Oda, uten å overføre kurven.
+- Tre onboardingsteg: navn, ønsker og hverdag. Apple, Google og e-post har komplette demoflyter.
+- Prisvisningen viser 499 → 449 → 399 → 349 → 299 → 249 → 199 → 180 kr. Gulvet gjelder fra måned 8 mens medlemskapet løper. Tre gratis prøvedager gir første del, fem oppskrifter og inntil tre retter i planen. Fornyelse krever avkrysset samtykke i demoen, og prøven kan avsluttes under medlemskap.
+- Dagbok uten tittelfelt eller hjelpechips, med dato, klokkeslett og et diskret blomsterstempel i arket. Notater kan opprettes, åpnes, endres og slettes.
+- Ingredienser og korte oppskriftssteg kan krysses av separat. Hvert steg åpnes for detaljer. Porsjoner skalerer mengdene, og oppskrifter kan lagres og legges i planen.
+- Uke- og dagsplan med redigerbare retter. Handlelisten samler behov, utelater varer du har hjemme og foreslår pakninger. Antall og eksempelvariant kan endres; summen beregnes fra valgene. Listen kan kopieres før Oda åpnes.
+- Fem deler av Matstøy med fem stående klipp per del. Bla eller trykk videre til oppsummering og neste del. Lagring av klipp, gjenopptakelse, lesetekst og nettleseropplesning er koblet sammen. Vanlig leksjonsvisning finnes under «Alle deler».
+- Profil, notater, utkast, favoritter, avkryssinger, måltidsplan og modulframdrift lagres per autentisert bruker i D1. Tilbakeknapp, nettleserhistorikk og dypelenker fungerer sammen.
 
-Navn, notater, sjekklister og planer holdes i minnet i den åpne fanen. Ingen personlig informasjon persisteres eller sendes til en modell. Laster man siden på nytt, starter en ny demo. Video- og lydinnhold er forhåndsvisninger med lesbar eksempeltekst.
+## Ærlige prototypgrenser
 
-Før en reell lansering må autentisering med verifiserte tilbakekall, serverlagring, betalingsleverandør, abonnementshendelser, ferdige vilkår og Oda-autorisasjon kobles til. Prøvemedlemskapet er en UX-modell, ikke en betalt tjeneste.
+Sidens private innlogging er reell. Apple/Google/e-post **inne i Florir** demonstrerer derimot fremtidig OAuth og sender ingen e-post. Betaling utfører ingen belastning. Oda-lenken åpner Oda; den overfører ingen varer eller bestilling. Pakningsstørrelser og priser er eksempler.
 
-## Kode og referanser
+Ingen innspilte videoer ble levert. Klippene er derfor merket illustrerte forhåndsvisninger med foto og lesbart eksempelinnhold. «Lytt» bruker nettleserens talesyntese der den er tilgjengelig. Wake Lock, deling og utklippstavle avhenger av nettleserstøtte og sikker forbindelse.
 
-- `assets/app.js`: eksisterende innhold og navigasjonsmotor.
-- `assets/florir.js`: nye skjermrenderere og prototypehandlinger.
-- `assets/base.css` og `assets/florir.css`: grunnstil og godkjent designsystem.
-- `design/DESIGN.md`: den godkjente designretningen.
-- `design/login-membership.webp`: nytt forslag til start og medlemskap.
-- `review/index.html`: godkjente referanser og direkte innganger til skjermene.
+## Kjør og bygg
 
-Ingen installasjon eller kompilering er nødvendig. Alt kan serveres statisk. `dist/` inneholder den samme kjørbare prototypen for Sites.
+Node 22+ (med `node:sqlite`) og Python 3 brukes lokalt.
 
-Verifisert med JavaScript-syntakskontroll og automatiserte kjøretidstester av 27 ruter, avkryssing, detaljer, porsjoner, lagring i økten, planlegging, handleliste, onboarding, prøvesamtykke, tilgangsgrenser og avslutning. Ingen visuell nettlesertest ble utført i denne runden.
+```sh
+npm ci
+npm run dev -- --host 0.0.0.0 --port 4173
+npm run build
+node tools/check-progress.mjs
+```
 
----
+Lokal forhåndsvisning bruker en isolert SQLite-database i `.preview-data/`. Den publiseres aldri. Produksjon bruker Sites' pålitelige brukerheader og D1-bindingen `DB`. Migrasjonen ligger i `drizzle/`. API-et bruker brukeravgrensede spørringer, revisjonskontroll og opprinnelseskontroll. Et midlertidig utkast på enheten beskytter dagboktekst ved forbindelsesfeil; serveren er den autoritative lagringen.
 
-## Tidligere leveranse
+`tools/build-worker.py` pakker frontend og API i `dist/server/index.js`. Bruk Sites' offisielle bygge- og pakkeskript for publisering. Dette er nå en Worker-app og kan ikke publiseres uendret som en ren GitHub Pages-side.
 
-Statisk, selvstendig reviewleveranse for Botanical-versjonen av Florir.
-Reviewpakken inkluderer komplett onboarding og designsystemreview i den samme
-Botanical-versjonen.
+## Design og kildefiler
 
-## Innhold
+- `assets/app.js`: grunninnhold og navigasjon.
+- `assets/florir.js`: godkjente grunnskjermer og handlinger.
+- `assets/experience.js` og `.css`: siste designrunde, komplette flyter og lagring.
+- `worker/index.js`: autentisert API og publisert assetserver.
+- `design/DESIGN.md`: designretning.
+- `design/approved-v3/`: siste ni referanser, også prisoppsettet beholdt for mulig flatpris.
+- `/review/`: oppdatert referanseoversikt med lenker til levende skjermer.
+- `design/IMPLEMENTATION.md`: valg og avgrensninger.
+- `design/VALIDATION.md`: gjennomførte kontroller.
 
-- `index.html` — klikkbar mobilprototype med dypelenker
-- `review/index.html` — skjermoversikt med stabile skjermnøkler
-- `review/wireframes.html` — samlet wireframebrett
-- `review/screens.csv` — Notion-klart skjermmanifest
-- `screens/` — mobilbilder for hovedskjermer, onboarding og designsystem
-- `assets/ingredients/` — 51 transparente ingrediensbilder
-- `tools/remove_chroma_key.py` — normalisering til transparent 256 × 256 PNG
-
-## Deling
-
-Pakken er laget for GitHub Pages. Alt er statisk og krever ingen serverlogikk.
-Prototypen bruker hash-ruter, så en skjerm kan lenkes direkte, for eksempel
-`/#/oppskrift/r-01`.
-
-Onboarding er klikkbar fra intro via ni profil-/preferansesteg, planbygging og
-planresultat. Primærhandlingen på resultatet går til `/#/hjem`.
-
-`robots.txt` og sidens metatagger ber søkemotorer om å ikke indeksere
-innholdet. Dette er ikke tilgangskontroll: alle som får lenken kan åpne den.
+Eldre skjermbilder og wireframes er historiske referanser, ikke gjeldende implementasjon.

@@ -2249,7 +2249,8 @@
     const f = r.node.querySelector('[data-focus]');
     if (f) f.focus({ preventScroll:true });
 
-    skrivHash(e);
+    skrivHash(e, opts);
+    window.dispatchEvent(new CustomEvent('florir:navigate'));
   }
 
   // ---- Deeplink ----------------------------------------------------------
@@ -2259,9 +2260,16 @@
    * replaceState, ikke pushState: nettleserhistorikken eies av appens egen
    * stakk, og to konkurrerende historikker gir en tilbakeknapp ingen forstår.
    */
-  function skrivHash(e) {
-    const h = e.params && e.params.id ? `#/${e.name}/${e.params.id}` : `#/${e.name}`;
-    if (location.hash !== h) history.replaceState(null, '', h);
+  let browserIndex = history.state?.florir ? (history.state.index || 0) : 0;
+  function skrivHash(e, opts = {}) {
+    if (opts.noHistory) return;
+    const params = new URLSearchParams();
+    for (const [key, value] of Object.entries(e.params || {})) if (key !== 'id' && value != null) params.set(key, String(value));
+    const h = `#/${e.name}${e.params?.id ? '/' + encodeURIComponent(e.params.id) : ''}${params.size ? '?' + params.toString() : ''}`;
+    if (location.hash === h && history.state?.florir) return;
+    const replace = opts.replace || !history.state?.florir;
+    if (!replace) browserIndex++;
+    history[replace ? 'replaceState' : 'pushState']({ florir: true, index: browserIndex }, '', h);
   }
 
   /**
@@ -2281,16 +2289,27 @@
     'onboarding-tid': 'onboarding-generering',
     // Handlelisten var en egen skjerm. Den er nå en seksjon i måltidsplanen,
     // fordi den hører hjemme der ingrediensene kommer fra.
-    handleliste: 'maltidsplan',
   };
 
   function lesHash() {
-    const m = /^#\/([\w-]+)(?:\/([\w-]+))?$/.exec(location.hash || '');
+    const m = /^#\/([\w-]+)(?:\/([\w-]+))?(?:\?(.*))?$/.exec(location.hash || '');
     if (!m) return null;
     const navn = GAMLE_RUTENAVN[m[1]] || m[1];
     if (!ROUTES[navn] || !ROUTES[navn].node) return null;
-    return { name:navn, params: m[2] ? { id:m[2] } : {} };
+    const params = Object.fromEntries(new URLSearchParams(m[3] || ''));
+    if (m[2]) params.id = m[2];
+    for (const key of ['part','clip','porsjoner','day']) if (params[key] !== undefined) params[key] = Number(params[key]);
+    for (const key of ['all','collection']) if (params[key] !== undefined) params[key] = params[key] === 'true';
+    return { name:navn, params };
   }
+
+  window.addEventListener('popstate', () => {
+    const target = lesHash();
+    if (!target) return;
+    browserIndex = history.state?.index || 0;
+    document.querySelectorAll('dialog[open]').forEach(dialog => dialog.close());
+    show(target.name, target.params, { replace: true, noHistory: true, noAnim: true });
+  });
 
   /** Åpner appen på hash-ruten hvis den finnes, ellers på onboarding. */
   function start() {
@@ -2312,6 +2331,7 @@
   }
 
   function back() {
+    if (history.state?.florir && browserIndex > 0) { history.back(); return; }
     if (stakk().length > 1) {
       const forrige = ROUTES[stakk().pop().name];
       bytt(na(), forrige, { restore:true });
@@ -2355,6 +2375,8 @@
     const felt = a && a.dataset ? (a.dataset.sett ? 'sett' : a.dataset.handling ? 'handling' : null) : null;
     const merke = felt ? a.dataset[felt] : null;
     r.render(r.node, e.params, state);
+    skrivHash(e, {replace:true});
+    window.dispatchEvent(new CustomEvent('florir:navigate'));
     if (merke) {
       const igjen = r.node.querySelector(`[data-${felt}='${merke.replace(/'/g, "\\'")}']`);
       if (igjen) igjen.focus({ preventScroll:true });
